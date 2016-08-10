@@ -188,7 +188,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['./src/**/*.js'],
-        tasks: ['scripts']
+        tasks: ['scripts', 'ftp_push:scriptFiles']
       },
       styles: {
         files: ['./src/**/*.less'],
@@ -203,8 +203,8 @@ module.exports = function(grunt) {
     clean: ['./dest/**']
   });
   grunt.registerTask('ie8', ['pixrem']);
-  grunt.registerTask('scripts', ['jshint', 'jscs', 'closure-compiler', 'uglify']); // 'ftp_push:scriptFiles'
+  grunt.registerTask('scripts', ['jshint', 'jscs', 'closure-compiler', 'uglify']);
   grunt.registerTask('push', ['ftp_push']);
-  grunt.registerTask('run', ['clean', 'jshint', 'jscs', 'closure-compiler', 'less', 'ie8', 'autoprefixer', 'copy']);
+  grunt.registerTask('run', ['clean', 'scripts', 'less', 'ie8', 'autoprefixer', 'copy']);
   grunt.registerTask('default', ['run', 'watch']);
 };

@@ -10,13 +10,15 @@
       <div class="nav prev"><span class="fa fa-arrow-left"></span></div>
       
       <div class="events">
-        <v:variable.set name="events" value="{v:content.get(column:'0', pageUid:'{pageIdEvents}', render:'FALSE')}" />
-        <f:for each="{events}" as="event">
-          <div class="event">
-            <span class="event-title">{event.header}</span>
-            <f:format.html>{event.bodytext}</f:format.html>
-          </div>
-        </f:for>
+        <div class="events-inner">
+          <v:variable.set name="events" value="{v:content.get(column:'0', pageUid:'{pageIdEvents}', render:'FALSE')}" />
+          <f:for each="{events}" as="event">
+            <div class="event">
+              <span class="event-title">{event.header}</span>
+              <f:format.html>{event.bodytext}</f:format.html>
+            </div>
+          </f:for>
+        </div>
       </div>
     </div>
 

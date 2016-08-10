@@ -1,9 +1,18 @@
-<header class="mod-header">
-    <div class="header-inner">
+<header class="mod mod-header">
+    <div class="main-content">
         <a href="/" class="logo-img"></a>
 
         <nav class="mod-nav">
-            <f:cObject typoscriptObjectPath="lib.mainnav" />
+            <ul class="ul-1">
+              <f:cObject typoscriptObjectPath="lib.mainnav" />
+
+              <li class="li-1">
+                <a href="#" class="a-1"><span class="span-1">DE</span></a>
+                <ul class="ul-2">
+                  <li class="li-2"><a href="#" class="a-1"><span class="span-1">EN</span></a></li>
+                </ul>
+              </li>
+            </ul>
         </nav>
 
         <input class="search-input" type="text" placeholder="Suchen">

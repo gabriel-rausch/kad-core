@@ -13,28 +13,34 @@ goog.require('kstatic.module');
  * @constructor
  * @extends {kstatic.module}
  */
-kstatic.modules.header = function() {
-  goog.base(this);
+kstatic.modules.header = function(id, node) {
+  goog.base(this, id, node);
+  this.dom = {
+    searchBtn: this.node.querySelector('.search-btn'),
+    closeBtn: this.node.querySelector('.search-close')
+  };
 };
 
 goog.inherits(kstatic.modules.header, kstatic.module);
 goog.exportSymbol('kstatic.modules.header', kstatic.modules.header);
 
 kstatic.modules.header.prototype.start = function() {
-  /*var self = this;
+  var self = this;
 
-  goog.events.listen(document.querySelector('.search-btn'), 'click', function(e) {
+  goog.events.listen(self.dom.searchBtn, 'click', function(e) {
     e.preventDefault();
     self.toggleSearchbar();
   });
 
-  goog.events.listen(document.querySelector('.search-close'), 'click', function(e) {
+  goog.events.listen(self.dom.closeBtn, 'click', function(e) {
     e.preventDefault();
+    goog.dom.forms.setValue(self.node.querySelector('.search-input'), '');
     self.toggleSearchbar();
-  });*/
+  });
 };
 
 kstatic.modules.header.prototype.toggleSearchbar = function() {
-  goog.dom.classlist.toggle(document.querySelector('.mod-header'), 'search-active');
-  goog.dom.forms.focusAndSelect(document.querySelector('.search-input'));
+  var self = this;
+  goog.dom.classlist.toggle(self.node, 'search-active');
+  goog.dom.forms.focusAndSelect(self.node.querySelector('.search-input'));
 };

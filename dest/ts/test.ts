@@ -4,7 +4,7 @@
 
 lib.mainnav = HMENU
 lib.mainnav {
-    wrap = <ul class="ul-1">|</ul>
+    wrap = |
     1 = TMENU
     1 {
       noBlur = 1

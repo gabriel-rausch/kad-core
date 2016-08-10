@@ -8,18 +8,20 @@
     text-align: center;
     font-weight: bold;
     color: white;
-    padding: 0.5rem;
     text-transform: uppercase;
   }
 
   .events {
+    width: 100%;
+    overflow-x: hidden;
     white-space: nowrap;
-    overflow-x: scroll;
+  }
+  .events-inner {
   }
 
   .event {
     display: inline-block;
-    margin: 1rem 1.2rem;
+    margin: 15px 3%;
     color: white;
 
     .event-title {
@@ -44,7 +46,7 @@
 
     .fa {
       position: relative;
-      left: -3rem;
+      left: -30px;
     }
 
     &.next {
@@ -52,7 +54,7 @@
       right: 0;
 
       .fa {
-        left: 3rem;
+        left: 40px;
       }
     }
   }

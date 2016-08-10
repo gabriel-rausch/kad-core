@@ -19,5 +19,5 @@ goog.inherits(kstatic.modules.newswidget, kstatic.module);
 goog.exportSymbol('kstatic.modules.newswidget', kstatic.modules.newswidget);
 
 kstatic.modules.newswidget.prototype.start = function() {
-  console.log('started');
+  //
 };

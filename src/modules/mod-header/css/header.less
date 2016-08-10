@@ -9,13 +9,12 @@
   position: fixed;
   top: 0;
   left: 0;
-
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
-
-  background: white;
+  background: @col-grey;
   box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+  
   &.search-active {
     .logo {
       opacity: .2;
@@ -30,22 +29,19 @@
       opacity: 1;
     }
     .search-btn {
-      right: calc(100% - @logo-width - 4rem);
       opacity: 0;
+      left: 100px;
     }
     .search-input {
-      width: calc(100% - @logo-width - 2rem);
+      width: 60%;
       padding: 0 0 0 3rem;
-
       opacity: 1;
+      left: (@logo-width + 10);
     }
   }
 
-  .header-inner {
-    position: relative;
-    max-width: @bp-desktop;
+  .main-content {
     height: 80px;
-    margin: auto;
   }
 
   .logo-img {
@@ -54,14 +50,15 @@
     top: 14px;
     width: @logo-width;
     height: @logo-height;
-    background-image: url('img/KADIA-logo.png');
+    //background-image: url('img/KADIA-logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     -ms-behavior: url(/backgroundsize.min.htc);
     transition: all .2s;
 
     .svg & {
-      background-image: url('img/KADIA-logo.svg');
+      //background-image: url('img/KADIA-logo.svg');
+      background: grey;
     }
 
     &:hover {
@@ -73,7 +70,7 @@
   .search-input {
     position: absolute;
     top: 21px;
-    right: 0;
+    left: 1000px;
     font-size: 2rem;
     box-sizing: border-box;
     width: 0;
@@ -91,10 +88,8 @@
     position: absolute;
     top: 29px;
     right: 0;
-
     transition: all @speed-normal;
-
-    color: @col-greylight;
+    color: @col-antrazit;
   }
   .search-close {
     opacity: 0;
