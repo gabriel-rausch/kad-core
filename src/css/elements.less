@@ -1,0 +1,44 @@
+@import './src/css/vars.less';
+
+.main-content {
+  position: relative;
+  width: 100%;
+  max-width: @bp-desktop;
+  margin: auto;
+}
+
+.col-left, .col-right {
+  position: relative;
+  width: 50%;
+  float: left;
+  
+  &.flex {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+}
+.col-right {
+  float: right;
+  
+  &.flex {
+    left: auto;
+    right: 0;
+  }
+}
+
+.clear {
+  clear: both;
+  float: none;
+}
+
+.link-btn {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  color: @col-green;
+  padding: 0.6rem 2rem;
+  border: 0.1rem solid @col-green;
+}

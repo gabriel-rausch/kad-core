@@ -1,0 +1,22 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div style="width:50%;float:right">
+
+  <!-- <f:uri.image src="{item.uid}" width="50" treatIdAsReference="1" /> -->
+  <div class="mod-image" data-srcset="{f:uri.image(src:item.uid, width:50)},
+                    {f:uri.image(src:item.uid, width:100)},
+                    {f:uri.image(src:item.uid, width:200)}">
+        <noscript>
+          <f:image src="{item.uid}" width="1000" treatIdAsReference="1" />
+        </noscript>
+  </div>
+  
+
+  <f:format.crop maxCharacters="50">
+    <f:format.html>{item.bodytext}</f:format.html>
+  </f:format.crop>
+  
+</div>
+
+<div style="clear:both;"></div>

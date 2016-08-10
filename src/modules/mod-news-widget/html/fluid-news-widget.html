@@ -1,0 +1,29 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div class="mod mod-newswidget">
+    <div class="main-content">
+
+        <v:variable.set name="newspage" value="{v:content.get(column:'0', pageUid:'{pageIdNews}', render:'FALSE', limit:'1')}" />
+        <f:for each="{newspage}" as="news">
+        <div class="col-right">
+            <span class="news-title">{news.header}</span>
+            <span class="date"><f:format.date format="d.m.Y">{news.crdate}</f:format.date></span>
+
+            <f:format.crop maxCharacters="200">
+              <f:format.html>{news.bodytext}</f:format.html>
+            </f:format.crop>
+
+            <a href="#" class="link-btn">Alle News</a>
+        </div>
+        
+        <div class="col-left flex">
+            <v:variable.set name="data" value="{uid:'{news.pid}', type:'cover'}" />
+            <f:render partial="fluid-image" arguments="{_all}" />
+        </div>
+
+        <div class="clear"></div>
+        </f:for>
+
+    </div>
+</div>

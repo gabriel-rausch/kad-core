@@ -1,0 +1,122 @@
+@import "./src/css/vars.less";
+
+.mod-nav {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  height: 100%;
+  transition: all .6s;
+
+  .mod-header.search-active & {
+    right: 300px;
+    opacity: 0;
+  }
+
+  ul {
+    margin: 0;
+    height: 100%;
+    font-size: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      list-style: none;
+
+      &.active  {
+        a {
+          color: @col-green;
+        }
+        ul li a {
+          background: @col-antrazitLight;
+        }
+      }
+
+      &:hover {
+        a {
+          background: @col-antrazit;
+          color: white;
+        }
+        ul {
+          display: block;
+        }
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        padding: 0 12px;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        color: @col-antrazit;
+        text-transform: uppercase;
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: 300;
+        transition: all .1s;
+        font-weight: 300;
+
+        span {
+          position: relative;
+          top: 31px;
+        }
+
+        &:hover {
+          background: @col-antrazit;
+          color: white;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        min-width: 100%;
+        height: 0;
+        padding: 0;
+        
+        li {
+          display: block;
+          height: auto;
+
+          &:nth-child(odd) a {
+            background: @col-antrazitLight;
+            color: @col-greylight;
+          }
+          &:nth-child(even) a {
+            background: @col-antrazitLighter;
+            color: @col-greylight;
+          }
+
+          &:first-child {
+            a {
+              box-shadow: 1px 3px 4px -2px rgba(0,0,0,0.5) inset;
+            }
+          }
+          a {
+            display: block;
+            background: @col-antrazitLight;
+            color: @col-greylight;
+            color: white;
+            padding: 12px 12px;
+            white-space: nowrap;
+
+            &:hover {
+              background: @col-antrazit;
+              color: white;
+            }
+
+            span {
+              display: static;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

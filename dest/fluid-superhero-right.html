@@ -1,0 +1,16 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+  <div class="col-right">
+    <div class="bg">
+        <v:variable.set name="data" value="{uid:'{item.uid}', type:'cover'}" />
+        <f:render partial="fluid-image" arguments="{_all}" />
+    </div>
+    <div class="content">
+      <h2>{item.header}</h2>
+      <f:format.html>{item.bodytext}</f:format.html>
+      <a href="#" class="link-btn">Mehr</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>  

@@ -1,0 +1,14 @@
+.font-face(@fontname, @filename, @fontweight: normal, @fontstyle: normal) {
+  @font-face {
+    font-family: "@{fontname}";
+    src: url("webfonts/@{filename}.woff") format("woff"),
+    url("webfonts/@{filename}.ttf") format("truetype");
+    font-weight: @fontweight;
+    font-style: @fontstyle;
+  }
+}
+
+.mainFont() {
+  font-family: 'TheSans', sans-serif;
+  font-weight: 300;
+}

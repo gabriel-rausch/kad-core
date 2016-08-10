@@ -1,0 +1,59 @@
+@import './src/css/vars.less';
+
+.mod-eventwidget {
+    background: @col-antrazit;
+  
+  .widget-title {
+    background: @col-antrazitLight;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .events {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .event {
+    display: inline-block;
+    margin: 1rem 1.2rem;
+    color: white;
+
+    .event-title {
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+    color: @col-grey;
+    }
+
+    .fa {
+      position: relative;
+      left: -3rem;
+    }
+
+    &.next {
+      left: auto;
+      right: 0;
+
+      .fa {
+        left: 3rem;
+      }
+    }
+  }
+}
