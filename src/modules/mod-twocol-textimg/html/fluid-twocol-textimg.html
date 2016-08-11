@@ -1,0 +1,20 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div class="mod-twocol-textimg">
+  <div class="main-content">
+    
+    <div class="{f:if(condition: '{textImgReversed == 1}', then: 'col-right', else: 'col-left')}">
+      <h2>{item.header}</h2>
+      <f:format.html>{item.bodytext}</f:format.html>
+    </div>
+    
+    <div class="{f:if(condition: '{textImgReversed == 1}', then: 'col-left flex', else: 'col-right flex')}">
+      <!-- <v:variable.set name="data" value="{uid:'{item.uid}', type:'cover'}" />
+      <f:render partial="fluid-image" arguments="{_all}" /> -->
+      <f:image src="{item.uid}" width="100" />
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
