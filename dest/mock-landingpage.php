@@ -10,7 +10,7 @@
     <script src="script.min.js" async></script>
 
     <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -20,6 +20,8 @@
 
 
 <?php include('mock-superhero.html'); ?>
+
+<?php include('mock-header.html'); ?>
 
 <script>
 window.onload = function() {
