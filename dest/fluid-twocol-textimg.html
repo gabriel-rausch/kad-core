@@ -12,8 +12,13 @@
     <div class="{f:if(condition: '{textImgReversed == 1}', then: 'col-left flex', else: 'col-right flex')}">
       <!-- <v:variable.set name="data" value="{uid:'{item.uid}', type:'cover'}" />
       <f:render partial="fluid-image" arguments="{_all}" /> -->
-      <f:image src="{item.uid}" width="100" />
+      a
+      <v:content.resources.fal table="'tt_content'" field="'image'" uid="1">
+        <!-- tag content - may be ignored! -->
+      </v:content.resources.fal>
+      b
     </div>
+
 
     <div class="clear"></div>
   </div>

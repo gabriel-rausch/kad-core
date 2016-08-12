@@ -1,4 +1,29 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+{records}
+
+
+<f:comment>
+    // memory help for debugging:
+    <f:debug>{data}</f:debug>
+    <f:debug>{settings}</f:debug>
+    <f:debug>{file}</f:debug>
+</f:comment>
+
+
+<f:comment>
+    {v:content.resources.fal(table: ''tt_content'', field: ''image'', record: {foo: 'bar'}, uid: 123, as: 'NULL')}
+
+
+    <f:uri.image src="{v:page.info(pageUid: 11, field: 'media')}" treatIdAsReference="1" />
+
+
+    <f:image src="{data.pid}" width="100" treatIdAsReference="1" />
+    <v:content.render contentUids="{0:item.uid}" />
+
+
+
 
 <v:variable.set name="pageIdHonen" value="1" />
 <v:variable.set name="pageIdEntgraten" value="1" />
@@ -30,7 +55,7 @@
             </f:case>
 
             <f:case value="0">
-                <!-- <f:render partial="test-partial-2" arguments="{_all}" /> -->
+                &lt;!&ndash; <f:render partial="test-partial-2" arguments="{_all}" /> &ndash;&gt;
             </f:case>
 
             <f:case value="2">
@@ -70,6 +95,7 @@
 <f:render partial="fluid-footer" arguments="{_all}" />
 
 
-<f:comment>
+
+
     <v:content.render contentUids="{0:item.uid}" />
 </f:comment>
