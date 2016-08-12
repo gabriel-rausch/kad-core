@@ -10,8 +10,8 @@
     </div>
     
     <div class="{f:if(condition: '{textImgReversed} == 1'}', then: 'col-left flex', else: 'col-right flex')}">
-      <!-- <v:variable.set name="data" value="{uid:'{item.files.0.originalFile.uid}', type:'cover'}" />
-      <f:render partial="fluid-image" arguments="{_all}" /> -->
+      <v:variable.set name="data" value="{uid:'{item.files.0.originalFile.uid}', type:'cover'}" />
+      <f:render partial="fluid-image" arguments="{_all}" />
     </div>
 
 
