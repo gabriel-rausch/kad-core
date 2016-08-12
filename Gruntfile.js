@@ -184,7 +184,7 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['./src/**/*.html', './src/**/*.php'],
-        tasks: ['copy']
+        tasks: ['copy', 'ftp_push:markupFiles']
       },
       scripts: {
         files: ['./src/**/*.js'],
@@ -196,7 +196,7 @@ module.exports = function(grunt) {
       },
       ts: {
         files: ['./src/**/*.ts'],
-        tasks: ['copy']
+        tasks: ['copy', 'ftp_push:tsFiles']
       }
     },
 

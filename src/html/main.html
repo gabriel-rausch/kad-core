@@ -1,28 +1,6 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-{records}
-
-
-<f:comment>
-    // memory help for debugging:
-    <f:debug>{data}</f:debug>
-    <f:debug>{settings}</f:debug>
-    <f:debug>{file}</f:debug>
-</f:comment>
-
-
-<f:comment>
-    {v:content.resources.fal(table: ''tt_content'', field: ''image'', record: {foo: 'bar'}, uid: 123, as: 'NULL')}
-
-
-    <f:uri.image src="{v:page.info(pageUid: 11, field: 'media')}" treatIdAsReference="1" />
-
-
-    <f:image src="{data.pid}" width="100" treatIdAsReference="1" />
-    <v:content.render contentUids="{0:item.uid}" />
-
-
 
 
 <v:variable.set name="pageIdHonen" value="1" />
@@ -32,15 +10,13 @@
 <v:variable.set name="pageIdUnternehmen" value="1" />
 <v:variable.set name="pageIdImpressum" value="1" />
 
-
 <div class="main-wrapper">
-    
-    <v:variable.set name="contentElements" value="{v:content.get(column:'0', render:'FALSE')}" />
+    <f:for each="{content}" as="item">
+        
+        <f:debug>{item}</f:debug>
 
-    <f:for each="{contentElements}" as="item" iteration="footerIteration">
+        <f:switch expression="{item.data.layout}">
 
-        <f:switch expression="{item.layout}">
-            
             <f:case value="1">
                 <f:if condition="{superheroOpen}==1">
                     <f:then>
@@ -55,7 +31,7 @@
             </f:case>
 
             <f:case value="0">
-                &lt;!&ndash; <f:render partial="test-partial-2" arguments="{_all}" /> &ndash;&gt;
+                <!-- <f:render partial="test-partial-2" arguments="{_all}" /> -->
             </f:case>
 
             <f:case value="2">
@@ -79,23 +55,27 @@
             <f:case value="6">
                 <f:render partial="fluid-news-widget" arguments="{_all}" />
             </f:case>
-            
+
             <f:case default="TRUE">
-                default
+                -
             </f:case>
-         </f:switch>
+        </f:switch>
 
     </f:for>
-
 </div>
 
-
-
-<f:render partial="fluid-header" arguments="{_all}" />
-<f:render partial="fluid-footer" arguments="{_all}" />
+<!-- <f:render partial="fluid-header" arguments="{_all}" /> -->
+<!-- <f:render partial="fluid-footer" arguments="{_all}" /> -->
 
 
 
 
+<f:comment>
+    // memory help for debugging:
+    
+    <f:debug>{data}</f:debug>
+    <f:debug>{settings}</f:debug>
+    <f:debug>{file}</f:debug>
+    <f:image src="{item.files.0.originalFile.uid}" width="100" />
     <v:content.render contentUids="{0:item.uid}" />
 </f:comment>

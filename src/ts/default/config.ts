@@ -18,7 +18,7 @@ config {
    # typolinkCheckRootline = 1
    simulateStaticDocuments = 0
    absRefPrefix = /
-   baseURL = http://localhost/
+   #baseURL = http://localhost/
    tx_realurl_enable = 1
    # prefixLocalAnchors = all
    # uniqueLinkVars = 1

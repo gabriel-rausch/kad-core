@@ -4,19 +4,14 @@
 <div class="mod-twocol-textimg">
   <div class="main-content">
     
-    <div class="{f:if(condition: '{textImgReversed == 1}', then: 'col-right', else: 'col-left')}">
-      <h2>{item.header}</h2>
-      <f:format.html>{item.bodytext}</f:format.html>
+    <div class="{f:if(condition: '{textImgReversed} == 1', then: 'col-right', else: 'col-left')}">
+      <h2>{textImgReversed}</h2>
+      <f:format.html>{item.data.bodytext}</f:format.html>
     </div>
     
-    <div class="{f:if(condition: '{textImgReversed == 1}', then: 'col-left flex', else: 'col-right flex')}">
-      <!-- <v:variable.set name="data" value="{uid:'{item.uid}', type:'cover'}" />
+    <div class="{f:if(condition: '{textImgReversed} == 1'}', then: 'col-left flex', else: 'col-right flex')}">
+      <!-- <v:variable.set name="data" value="{uid:'{item.files.0.originalFile.uid}', type:'cover'}" />
       <f:render partial="fluid-image" arguments="{_all}" /> -->
-      a
-      <v:content.resources.fal table="'tt_content'" field="'image'" uid="1">
-        <!-- tag content - may be ignored! -->
-      </v:content.resources.fal>
-      b
     </div>
 
 

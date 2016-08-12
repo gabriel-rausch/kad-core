@@ -61,25 +61,6 @@ lib.mainnav {
     }
 }
 
-lib.records = CONTENT
-lib.records {
-    table = tt_content
-    select {
-        orderBy = sorting
-        where = colPos = 0
-    }
-    renderObj = FLUIDTEMPLATE
-    renderObj{
-        file = typo3conf/ext/ktempl/partials.html
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references.fieldName = image
-            }
-        }
-    }
-}
-
 page = PAGE
 page.10 = FLUIDTEMPLATE
 page.10 {
@@ -87,14 +68,18 @@ page.10 {
     file = typo3conf/ext/ktempl/main.html
     partialRootPath = typo3conf/ext/ktempl/
     layoutRootPath = typo3conf/ext/ktempl/
-    variables {
-        records < lib.records
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            table = tt_content
+            orderBy = sorting
+            as = content
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = assets
+                }
+            }
+        }
     }
-
-    #dataProcessing {
-    #    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    #    10 {
-    #        references.fieldName = media
-    #    }
-    #}
 }
