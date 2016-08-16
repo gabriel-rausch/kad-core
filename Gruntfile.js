@@ -184,7 +184,7 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['./src/**/*.html', './src/**/*.php'],
-        tasks: ['copy', 'ftp_push:markupFiles']
+        tasks: ['copy']
       },
       scripts: {
         files: ['./src/**/*.js'],
@@ -196,12 +196,13 @@ module.exports = function(grunt) {
       },
       ts: {
         files: ['./src/**/*.ts'],
-        tasks: ['copy', 'ftp_push:tsFiles']
+        tasks: ['copy']
       }
     },
 
     clean: ['./dest/**']
   });
+
   grunt.registerTask('ie8', ['pixrem']);
   grunt.registerTask('scripts', ['jshint', 'jscs', 'closure-compiler', 'uglify']);
   grunt.registerTask('push', ['ftp_push']);

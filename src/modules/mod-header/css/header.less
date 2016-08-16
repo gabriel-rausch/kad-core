@@ -2,8 +2,8 @@
 @import './src/css/vars.less';
 
 
-@logo-width: 190px;
-@logo-height: 63px;
+@logo-width: 163px;
+@logo-height: 53px;
 
 .mod-header {
   position: fixed;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
-  background: @col-grey;
+  background: white;
   box-shadow: 1px 1px 4px rgba(0,0,0,.4);
   
   &.search-active {
@@ -40,25 +40,19 @@
     }
   }
 
-  .main-content {
-    height: 80px;
-  }
-
   .logo-img {
-    position: relative;
     display: inline-block;
-    top: 14px;
     width: @logo-width;
     height: @logo-height;
-    //background-image: url('img/KADIA-logo.png');
+    background-image: url('img/KADIA-logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     -ms-behavior: url(/backgroundsize.min.htc);
     transition: all .2s;
+    margin: 16px 0 6px;
 
     .svg & {
-      //background-image: url('img/KADIA-logo.svg');
-      background: grey;
+      background-image: url('img/KADIA-logo.svg');
     }
 
     &:hover {

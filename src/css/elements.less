@@ -3,8 +3,16 @@
 .main-content {
   position: relative;
   width: 100%;
-  max-width: @bp-desktop;
+  max-width: @bp-large;
   margin: auto;
+}
+
+.content {
+  box-sizing: border-box;
+  padding-left: @padding-h;
+  padding-right: @padding-h;
+  padding-bottom: @padding-v-large;
+  padding-top: @padding-v-large;
 }
 
 .col-left, .col-right {
@@ -33,15 +41,52 @@
   float: none;
 }
 
+.text-grey {
+  color: @col-grey;
+}
+
 .link-btn {
+  position: relative;
   display: inline-block;
   text-transform: uppercase;
   color: @col-green;
-  padding: 0.6rem 2rem;
-  border: 0.1rem solid @col-green;
+  padding: 0.6rem 4rem;
+  border: 2px solid @col-green;
+  font-style: normal;
+  font-weight: normal;
+  transition: all @speed-fast;
+
+  &:hover {
+    background: @col-green;
+    color: white;
+
+    &:before {
+      border-top-color: white;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: -2px;
+    width: 12px;
+    border-top: 2px solid @col-green;
+  }
 }
 
-a {
-  text-decoration: none;
-  outline: none;
+.link-arrow {
+  display: inline-block;
+  text-transform: uppercase;
+  color: @col-green;
+}
+
+.pattern {
+  margin-bottom: @margin-after;
+}
+
+@media screen and (min-width:1500px) {
+  .main-content {
+    max-width: @bp-large1500;
+  }
 }

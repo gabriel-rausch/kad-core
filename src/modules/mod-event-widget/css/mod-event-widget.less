@@ -6,36 +6,35 @@
   .widget-title {
     background: @col-antrazitLight;
     text-align: center;
-    font-weight: bold;
     color: white;
-    text-transform: uppercase;
+    padding: 1rem;
   }
 
   .events {
     width: 100%;
-    overflow-x: hidden;
     white-space: nowrap;
-  }
-  .events-inner {
   }
 
   .event {
     display: inline-block;
-    margin: 15px 3%;
+    margin: 45px 3%;
     color: white;
+    overflow-y: hidden;
+    height: 120px;
 
     .event-title {
       font-weight: bold;
     }
 
     p {
-      margin: 0;
+      margin: 0.3rem;
+      color: @col-grey;
     }
   }
 
   .nav {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 0;
     color: white;
     cursor: pointer;

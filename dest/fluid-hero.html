@@ -1,0 +1,18 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div class="pattern mod-hero {f:if(condition: '{heroType} == 1', then: 'dark', else: 'light')}">
+  <div class="main-content">
+    <div class="innerHeight">
+      <div class="bg">
+        <v:variable.set name="data" value="{uid:'{item.files.0.originalFile.uid}', type:'cover'}" />
+        <f:render partial="fluid-image" arguments="{_all}" />
+      </div>
+      <div class="gradient"></div>
+      <div class="content">
+        <h1 class="h1">{item.data.header}</h1>
+        <f:format.html>{item.data.bodytext}</f:format.html>
+      </div>
+    </div>
+  </div>
+</div>

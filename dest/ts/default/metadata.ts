@@ -16,8 +16,9 @@ page{
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
-        <!--[if gt IE 9]><!-->
+        <!--[if gte IE 9]><!-->
           <link rel="stylesheet" href="{$myConst.template.dir}screen.min.css"/>
+          <style type="text/css"> .gradient { filter: none; } </style>
         <!--<![endif]-->
         <!--[if lt IE 9]>
           <link rel="stylesheet" href="{$myConst.template.dir}screen-IE.min.css"/>
