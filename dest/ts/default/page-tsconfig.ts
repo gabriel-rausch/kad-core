@@ -15,7 +15,7 @@ TCEFORM.tt_content.layout.addItems.31 = Hero (dunkel)
 
 RTE.default {
     contentCSS = typo3conf/ext/ktempl/screen.min.css
-    showButtons = bold, italic, chMode, formatblock, textstyle, textstylelabel, unorderedlist, insertedtext, deletedtext, link, unlink, removeformat, undo, redo
+    showButtons = bold, italic, chMode, formatblock, textstyle, textstylelabel, unorderedlist, insertedtext, deletedtext, link, unlink, removeformat, undo, redo, left, right
     buttons.textstyle.showTagFreeClasses = 1
 
     buttons.textstyle.tags.span.allowedClasses (
@@ -30,7 +30,7 @@ RTE.default {
     proc {
         allowedClasses (
             external-link, external-link-new-window, internal-link,
-            internal-link-new-window, download, link-btn, link-arrow, text-grey
+            internal-link-new-window, download, link-btn, link-arrow, text-grey, align-right, align-left
         )
     }
 }

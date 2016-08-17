@@ -10,7 +10,7 @@ lib.mainnav {
       noBlur = 1
       expAll = 1
       NO {
-        wrapItemAndSub = <li class="li-1">|</li>
+        wrapItemAndSub = <li class="li-1 no-js">|</li>
         wrapItemAndSub.insertData = 1
         ATagTitle.field = title
         stdWrap.titleText = a

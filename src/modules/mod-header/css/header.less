@@ -29,18 +29,20 @@
       opacity: 1;
     }
     .search-btn {
-      opacity: 0;
-      left: 100px;
+      right: 50%;
+      color: @col-greenDark;
     }
     .search-input {
-      width: 60%;
-      padding: 0 0 0 3rem;
+      width: 40%;
       opacity: 1;
-      left: (@logo-width + 10);
+      left: 53%;
+    }
+    .lang-picker {
+      display: none;
     }
   }
 
-  .logo-img {
+  .logo {
     display: inline-block;
     width: @logo-width;
     height: @logo-height;
@@ -48,11 +50,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     -ms-behavior: url(/backgroundsize.min.htc);
-    transition: all .2s;
+    transition: all @speed-fast;
     margin: 16px 0 6px;
 
     .svg & {
       background-image: url('img/KADIA-logo.svg');
+      background: white;
     }
 
     &:hover {
@@ -63,13 +66,13 @@
 
   .search-input {
     position: absolute;
-    top: 21px;
+    top: 30px;
     left: 1000px;
-    font-size: 2rem;
+    font-size: 1rem;
     box-sizing: border-box;
     width: 0;
     padding: 0;
-    transition: all @speed-normal;
+    transition: all @speed-fast;
     opacity: 0;
     color: @col-antrazit;
     border: none;
@@ -80,14 +83,54 @@
 
   .search-btn, .search-close {
     position: absolute;
-    top: 29px;
+    top: 32px;
     right: 0;
-    transition: all @speed-normal;
+    transition: all @speed-fast;
     color: @col-antrazit;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: @col-greenDark;
+    }
   }
   .search-close {
     opacity: 0;
     right: -100px;
-    color: @col-green;
+  }
+
+  .lang-picker {
+    position: absolute;
+    right: 40px;
+    top: 31px;
+    margin: 0;
+
+    a {
+      font-style: normal;
+      font-weight: normal;
+      color: @col-antrazit;
+      opacity: 0.5;
+
+      &:hover {
+        color: @col-greenDark;
+      }
+    }
+
+    li {
+      position: relative;
+      list-style: none;
+
+      &:hover {
+        ul {
+          display: block;
+        }
+      }
+
+      ul {
+        position: absolute;
+        display: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }

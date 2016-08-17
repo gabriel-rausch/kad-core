@@ -1,4 +1,5 @@
 @import './src/css/vars.less';
+@import './src/css/elements-icons.less';
 
 .main-content {
   position: relative;
@@ -50,7 +51,7 @@
   display: inline-block;
   text-transform: uppercase;
   color: @col-green;
-  padding: 0.6rem 4rem;
+  padding: 0.6rem 3rem;
   border: 2px solid @col-green;
   font-style: normal;
   font-weight: normal;
@@ -76,13 +77,34 @@
 }
 
 .link-arrow {
+  position: relative;
+  top: 5px;
   display: inline-block;
   text-transform: uppercase;
   color: @col-green;
+
+  &:hover{
+    color: @col-greenDark;
+    opacity: 0.8;
+  }
+
+  &:before{
+    .icon();
+    .get-icon-arrow-next();
+    margin-right: 5px;
+  }
+
 }
 
 .pattern {
   margin-bottom: @margin-after;
+}
+
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
 }
 
 @media screen and (min-width:1500px) {

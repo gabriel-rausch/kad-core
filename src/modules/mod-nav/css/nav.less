@@ -3,11 +3,10 @@
 .mod-nav {
   float: right;
   height: 100%;
-  transition: all .6s;
-  margin-right: 20px;
+  transition: opacity .6s;
+  margin-right: 60px;
 
   .mod-header.search-active & {
-    right: 300px;
     opacity: 0;
   }
 
@@ -16,69 +15,68 @@
     height: 100%;
     font-size: 0;
 
-    li {
-      display: inline-block;
-      height: 100%;
-      list-style: none;
+    .icon {
+      position: relative;
+      top: 33px;
+    }
 
-      &.active  {
+    ul {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 0;
+
+      li {
+        height: auto;
+
         a {
-          color: @col-green;
-        }
-      }
-
-      &:hover {
-        margin-bottom: 100px;
-        a {
-          //background: @col-antrazit;
-          color: @col-green;
-        }
-        ul {
-          display: block;
-        }
-      }
-
-      a {
-        position: relative;
-        display: inline-block;
-        height: 100%;
-        padding: 0 12px;
-        text-decoration: none;
-        font-style: normal;
-        outline: none;
-        border: none;
-        color: @col-antrazit;
-        text-transform: uppercase;
-        vertical-align: middle;
-        font-size: 16px;
-        font-weight: 300;
-        transition: all .1s;
-
-        span {
-          position: relative;
-          top: 31px;
-        }
-      }
-
-      ul {
-        display: none;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        min-width: 100%;
-        height: 0;
-        padding: 0;
-        
-        li {
-          height: auto;
-
-          a {
-            padding: 12px 12px;
-            white-space: nowrap;
-          }
+          padding: 12px 12px;
+          white-space: nowrap;
         }
       }
     }
   }
 
+  li {
+    display: inline-block;
+    height: 100%;
+    list-style: none;
+
+    &.open, &.no-js:hover {
+      margin-bottom: 100px;
+      ul {
+        display: block;
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding: 0 12px;
+    text-decoration: none;
+    font-style: normal;
+    outline: none;
+    border: none;
+    color: @col-antrazit;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all .1s;
+
+    .span-1 {
+      position: relative;
+      top: 31px;
+    }
+
+    &:hover  {
+      opacity: .5;
+    }
+    &.active  {
+      color: @col-greenDark;
+    }
+  }
 }

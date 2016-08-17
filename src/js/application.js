@@ -13,6 +13,7 @@ goog.require('kstatic.modules.nav');
 goog.require('kstatic.modules.header');
 goog.require('kstatic.modules.image');
 goog.require('kstatic.modules.eventwidget');
+goog.require('kstatic.modules.superhero');
 
 /**
  * Initial class to handle the application and modules

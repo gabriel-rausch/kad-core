@@ -1,22 +1,20 @@
 <header class="mod mod-header">
     <div class="main-content">
-        <a href="/" class="logo-img"></a>
+        <a href="/" class="logo"></a>
 
-        <nav class="mod-nav">
-            <ul class="ul-1">
-              <f:cObject typoscriptObjectPath="lib.mainnav" />
+        <f:render partial="fluid-nav" arguments="{_all}" />
 
-              <li class="li-1">
-                <a href="#" class="a-1"><span class="span-1">DE</span></a>
-                <ul class="ul-2">
-                  <li class="li-2"><a href="#" class="a-1"><span class="span-1">EN</span></a></li>
-                </ul>
-              </li>
+        <ul class="lang-picker">
+          <li class="li-1 ">
+            <a href="#" class="a-1"><span class="span-1">DE</span></a>
+            <ul class="ul-2">
+              <li class="li-2"><a href="#" class="a-1"><span class="span-1">EN</span></a></li>
             </ul>
-        </nav>
+          </li>
+        </ul>
 
         <input class="search-input" type="text" placeholder="Suchen">
-        <a class="search-btn" href="#"><i class="fa fa-search"></i></a>
+        <a class="search-btn" href="#"><i class="icon icon-search"></i></a>
         <a class="search-close" href="#"><i class="fa fa-times"></i></a>
     </div>
 </header>

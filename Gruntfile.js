@@ -184,19 +184,19 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['./src/**/*.html', './src/**/*.php'],
-        tasks: ['copy']
+        tasks: ['copy', 'ftp_push:markupFiles']
       },
       scripts: {
         files: ['./src/**/*.js'],
-        tasks: ['scripts']
+        tasks: ['scripts', 'ftp_push:scriptFiles']
       },
       styles: {
         files: ['./src/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8']
+        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles']
       },
       ts: {
         files: ['./src/**/*.ts'],
-        tasks: ['copy']
+        tasks: ['copy', 'ftp_push:tsFiles']
       }
     },
 
