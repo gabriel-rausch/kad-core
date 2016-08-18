@@ -14,14 +14,19 @@ kstatic.module = function(id, node) {
   this.node = node;
 
   /**
-  	 * Viewport definitions for breakpoints
-  	 */
+   * Viewport definitions for breakpoints
+   */
   this.viewports = {
     'tablet': 768,
     'desktop': 1024,
     'large': 1440,
     'large1920': 1920
   };
+
+  /**
+   * Image sizes
+   */
+  this.imgSizes = [200, 380, 550, 750, 1000, 1400, 1920];
 };
 
 /**
@@ -34,9 +39,9 @@ kstatic.module.prototype.getRandom = function() {
 /**
  * Test if viewport is in desktop mode
  */
-kstatic.module.prototype.mqDesktop = function() {
+kstatic.module.prototype.mqMatch = function(viewport) {
   var self = this;
-  return goog.dom.getViewportSize().width >= self.viewports.desktop;
+  return goog.dom.getViewportSize().width >= self.viewports[viewport];
 };
 
 goog.exportSymbol('kstatic.module', kstatic.module);

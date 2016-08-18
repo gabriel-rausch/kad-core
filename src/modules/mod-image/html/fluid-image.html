@@ -2,10 +2,14 @@
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
 <div class="mod mod-image {data.type}" data-srcset="
-                  {f:uri.image(src:data.uid, width:500)},
-                  {f:uri.image(src:data.uid, width:700)},
-                  {f:uri.image(src:data.uid, width:1000)}">
+                  {f:uri.image(src:data.uid, width:'200c')},
+                  {f:uri.image(src:data.uid, width:'380c')},
+                  {f:uri.image(src:data.uid, width:'550c')},
+                  {f:uri.image(src:data.uid, width:'750c')},
+                  {f:uri.image(src:data.uid, width:'1000c')},
+                  {f:uri.image(src:data.uid, width:'1400c')},
+                  {f:uri.image(src:data.uid, width:'1920c')}">
       <noscript>
-          <f:image src="{data.uid}" width="1000" treatIdAsReference="1" />
+          <f:image src="{data.uid}" width="1000c" />
       </noscript>
 </div>

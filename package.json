@@ -19,6 +19,7 @@
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-focus": "^1.0.0",
     "grunt-ftp-push": "latest",
     "grunt-jscs": "latest",
     "grunt-php": "^1.5.1",

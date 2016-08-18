@@ -3,6 +3,7 @@ goog.provide('kstatic.modules.image');
 goog.require('goog.dom');
 goog.require('goog.dom.classlist');
 goog.require('goog.dom.dataset');
+goog.require('goog.style');
 goog.require('kstatic.module');
 
 /**
@@ -13,6 +14,7 @@ goog.require('kstatic.module');
  */
 kstatic.modules.image = function(id, node) {
   goog.base(this, id, node);
+  this.imgSrcs = [];
 };
 
 goog.inherits(kstatic.modules.image, kstatic.module);
@@ -32,7 +34,7 @@ kstatic.modules.image.prototype.start = function() {
 
 kstatic.modules.image.prototype.setData = function() {
   var self = this;
-  self.imgs = goog.dom.dataset.get(self.node, 'srcset').split(',');
+  self.imgSrcs = goog.dom.dataset.get(self.node, 'srcset').split(',');
 };
 
 kstatic.modules.image.prototype.setSize = function() {
@@ -54,5 +56,13 @@ kstatic.modules.image.prototype.createImgTag = function() {
 
 kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
   var self = this;
-  return self.imgs[self.screenSize];
+  var selfWidth = goog.style.getSize(self.node).width;
+  var key = 0;
+  for (var i = 0; i <= self.imgSizes.length; i++) {
+    if (self.imgSizes[i] < selfWidth) {
+      // set size + 1 to provide an image in better quality than current size.
+      key = i + 1;
+    }
+  }
+  return self.imgSrcs[key];
 };

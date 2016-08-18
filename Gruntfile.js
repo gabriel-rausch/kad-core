@@ -176,6 +176,14 @@ module.exports = function(grunt) {
         ]
       }
     },
+    focus: {
+      watch: {
+        include: ['statics', 'scripts', 'styles', 'ts']
+      },
+      watchAndPush: {
+        include: ['staticsAndPush', 'scriptsAndPush', 'stylesAndPush', 'tsAndPush']
+      }
+    },
 
     watch: {
       options: {
@@ -184,44 +192,62 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['./src/**/*.html', './src/**/*.php'],
-        tasks: ['copy']
+        tasks: ['copy'],
+        options: {
+          livereload: 35729
+        }
       },
       scripts: {
         files: ['./src/**/*.js'],
-        tasks: ['scripts']
+        tasks: ['scripts'],
+        options: {
+          livereload: 35730
+        }
       },
       styles: {
         files: ['./src/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8']
+        tasks: ['less', 'autoprefixer', 'ie8'],
+        options: {
+          livereload: 35731
+        }
       },
       ts: {
         files: ['./src/**/*.ts'],
-        tasks: ['copy']
+        tasks: ['copy'],
+        options: {
+          livereload: 35732
+        }
+      },
+
+      staticsAndPush: {
+        files: ['./src/**/*.html', './src/**/*.php'],
+        tasks: ['copy', 'ftp_push:markupFiles'],
+        options: {
+          livereload: 35726
+        }
+      },
+      scriptsAndPush: {
+        files: ['./src/**/*.js'],
+        tasks: ['scripts', 'ftp_push:scriptFiles'],
+        options: {
+          livereload: 35727
+        }
+      },
+      stylesAndPush: {
+        files: ['./src/**/*.less'],
+        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles'],
+        options: {
+          livereload: 35728
+        }
+      },
+      tsAndPush: {
+        files: ['./src/**/*.ts'],
+        tasks: ['copy', 'ftp_push:tsFiles'],
+        options: {
+          livereload: 35729
+        }
       }
     },
-    /*
-    watch: {
-      options: {
-        spawn: false,
-        livereload: true
-      },
-      statics: {
-        files: ['./src/!**!/!*.html', './src/!**!/!*.php'],
-        tasks: ['copy', 'ftp_push:markupFiles']
-      },
-      scripts: {
-        files: ['./src/!**!/!*.js'],
-        tasks: ['scripts', 'ftp_push:scriptFiles']
-      },
-      styles: {
-        files: ['./src/!**!/!*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles']
-      },
-      ts: {
-        files: ['./src/!**!/!*.ts'],
-        tasks: ['copy', 'ftp_push:tsFiles']
-      }
-    },*/
 
     clean: ['./dest/**']
   });
@@ -229,6 +255,8 @@ module.exports = function(grunt) {
   grunt.registerTask('ie8', ['pixrem']);
   grunt.registerTask('scripts', ['jshint', 'jscs', 'closure-compiler', 'uglify']);
   grunt.registerTask('push', ['ftp_push']);
+  grunt.registerTask('watchLocal', ['focus:watch']);
+  grunt.registerTask('watchAndPush', ['focus:watchAndPush']);
   grunt.registerTask('run', ['clean', 'scripts', 'less', 'ie8', 'autoprefixer', 'copy']);
-  grunt.registerTask('default', ['run', 'watch']);
+  grunt.registerTask('default', ['run', 'focus:watch']);
 };
