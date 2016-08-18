@@ -10,6 +10,8 @@
 <v:variable.set name="pageIdUnternehmen" value="1" />
 <v:variable.set name="pageIdImpressum" value="1" />
 
+<f:render partial="fluid-header" arguments="{_all}" />
+
 <div class="main-wrapper">
     <f:for each="{content}" as="item">
 
@@ -72,7 +74,6 @@
     </f:for>
 </div>
 
-<f:render partial="fluid-header" arguments="{_all}" />
 <f:render partial="fluid-footer" arguments="{_all}" />
 
 

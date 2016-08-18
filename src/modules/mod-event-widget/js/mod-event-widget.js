@@ -19,7 +19,6 @@ kstatic.modules.eventwidget = function(id, node) {
   this.dom = {
     navNext: false,
     navPrev: false,
-    eventsWrapper: false,
     eventsInner: false
   };
 };
@@ -31,7 +30,6 @@ kstatic.modules.eventwidget.prototype.start = function() {
   var self = this;
   self.dom.navNext = self.node.querySelector('.nav.next');
   self.dom.navPrev = self.node.querySelector('.nav.prev');
-  self.dom.eventsWrapper = self.node.querySelector('.events');
   self.dom.eventsInner = self.node.querySelector('.events-inner');
 
   self.attacheEvents();
@@ -42,16 +40,24 @@ kstatic.modules.eventwidget.prototype.attacheEvents = function() {
   var nextX = 0;
 
   goog.events.listen(self.dom.navNext, goog.events.EventType.CLICK, function() {
-    nextX = self.dom.eventsWrapper.scrollLeft + self.scrollLength;
-    self.scrollTo(self.dom.eventsWrapper, nextX, 500);
+    if (self.mqDesktop()) {
+      nextX = self.dom.eventsInner.scrollLeft + self.scrollLength;
+    } else {
+      nextX = self.dom.eventsInner.scrollLeft + goog.dom.getViewportSize().width;
+    }
+    self.scrollTo(self.dom.eventsInner, nextX, 500);
   });
 
   goog.events.listen(self.dom.navPrev, goog.events.EventType.CLICK, function() {
-    nextX = self.dom.eventsWrapper.scrollLeft - self.scrollLength;
+    if (self.mqDesktop()) {
+      nextX = self.dom.eventsInner.scrollLeft - self.scrollLength;
+    } else {
+      nextX = self.dom.eventsInner.scrollLeft - goog.dom.getViewportSize().width;
+    }
     if (nextX < 0) {
       nextX = 0;
     }
-    self.scrollTo(self.dom.eventsWrapper, nextX, 500);
+    self.scrollTo(self.dom.eventsInner, nextX, 500);
   });
 };
 

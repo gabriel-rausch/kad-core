@@ -17,7 +17,8 @@
 
   .event {
     display: inline-block;
-    margin: 45px 3%;
+    width: 100%;
+    margin: 45px 10%;
     color: white;
     overflow-y: hidden;
     height: 120px;
@@ -32,10 +33,17 @@
     }
   }
 
+  .events-inner {
+    overflow-x: hidden;
+    width: 90%;
+    margin: 0 5%;
+    box-sizing: border-box;
+  }
+
   .nav {
     position: absolute;
-    top: 30%;
-    left: 0;
+    top: 38%;
+    left: 40px;
     color: white;
     cursor: pointer;
 
@@ -50,11 +58,27 @@
 
     &.next {
       left: auto;
-      right: 0;
+      right: 40px;
 
       .fa {
         left: 40px;
       }
     }
   }
+
+
+  @media screen and @desktop {
+    .event {
+      margin: 45px 3%;
+      width: auto;
+    }
+    .nav {
+      left: 20px;
+
+      &.next {
+        right: 20px;
+      }
+    }
+  }
 }
+

@@ -16,34 +16,9 @@
   padding-top: @padding-v-large;
 }
 
-.col-left, .col-right {
-  position: relative;
-  width: 50%;
-  float: left;
-  
-  &.flex {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-  }
-}
-.col-right {
-  float: right;
-  
-  &.flex {
-    left: auto;
-    right: 0;
-  }
-}
-
 .clear {
   clear: both;
   float: none;
-}
-
-.text-grey {
-  color: @col-grey;
 }
 
 .link-btn {
@@ -107,8 +82,32 @@
   text-align: left;
 }
 
-@media screen and (min-width:1500px) {
+@media screen and @large1500 {
   .main-content {
     max-width: @bp-large1500;
+  }
+}
+
+
+@media screen and @desktop {
+  .col-left, .col-right {
+    position: relative;
+    width: 50%;
+    float: left;
+
+    &.flex {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+  }
+  .col-right {
+    float: right;
+
+    &.flex {
+      left: auto;
+      right: 0;
+    }
   }
 }

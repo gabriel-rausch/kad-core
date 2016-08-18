@@ -38,6 +38,10 @@ kstatic.modules.nav.prototype.attachListeners = function() {
   goog.array.forEach(self.node.querySelectorAll('.li-1'), function(li) {
     goog.dom.classlist.remove(li, 'no-js');
 
+    if (li.querySelector('.ul-2') !== null) {
+      goog.dom.classlist.add(li, 'subs');
+    }
+
     goog.events.listen(li, goog.events.EventType.MOUSEOVER, function() {
       if (!goog.dom.classlist.contains(li, 'open')) {
         self.removeOpenState();
@@ -53,6 +57,12 @@ kstatic.modules.nav.prototype.attachListeners = function() {
     self.removeOpenState();
   });
   goog.events.listen(document.querySelector('.mod.mod-header .logo'), goog.events.EventType.MOUSEOVER, function() {
+    self.removeOpenState();
+  });
+  goog.events.listen(document.querySelector('.mod.mod-header .lang-picker'), goog.events.EventType.MOUSEOVER, function() {
+    self.removeOpenState();
+  });
+  goog.events.listen(document.querySelector('.mod.mod-header .search-btn'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
   });
 };

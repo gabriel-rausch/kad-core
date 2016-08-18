@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           'js': ['src/**/*.js', 'node_modules/google-closure-library/**.js'],
           'entry_point': 'goog:kstatic.init',
           'js_output_file': 'dest/script.min.js',
-          'compilation_level': 'SIMPLE', // SIMPLE, ADVANCED, WHITESPACE
+          'compilation_level': 'WHITESPACE_ONLY', // SIMPLE, ADVANCED, WHITESPACE_ONLY
           'dependency_mode': 'STRICT',
           'language_in': 'ECMASCRIPT5_STRICT'
         }
@@ -184,21 +184,44 @@ module.exports = function(grunt) {
       },
       statics: {
         files: ['./src/**/*.html', './src/**/*.php'],
-        tasks: ['copy', 'ftp_push:markupFiles']
+        tasks: ['copy']
       },
       scripts: {
         files: ['./src/**/*.js'],
-        tasks: ['scripts', 'ftp_push:scriptFiles']
+        tasks: ['scripts']
       },
       styles: {
         files: ['./src/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles']
+        tasks: ['less', 'autoprefixer', 'ie8']
       },
       ts: {
         files: ['./src/**/*.ts'],
-        tasks: ['copy', 'ftp_push:tsFiles']
+        tasks: ['copy']
       }
     },
+    /*
+    watch: {
+      options: {
+        spawn: false,
+        livereload: true
+      },
+      statics: {
+        files: ['./src/!**!/!*.html', './src/!**!/!*.php'],
+        tasks: ['copy', 'ftp_push:markupFiles']
+      },
+      scripts: {
+        files: ['./src/!**!/!*.js'],
+        tasks: ['scripts', 'ftp_push:scriptFiles']
+      },
+      styles: {
+        files: ['./src/!**!/!*.less'],
+        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles']
+      },
+      ts: {
+        files: ['./src/!**!/!*.ts'],
+        tasks: ['copy', 'ftp_push:tsFiles']
+      }
+    },*/
 
     clean: ['./dest/**']
   });

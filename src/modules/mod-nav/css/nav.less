@@ -1,10 +1,11 @@
 @import "./src/css/vars.less";
+@import "./src/css/elements-icons.less";
 
 .mod-nav {
   float: right;
   height: 100%;
   transition: opacity .6s;
-  margin-right: 60px;
+  margin-right: 120px;
 
   .mod-header.search-active & {
     opacity: 0;
@@ -23,7 +24,7 @@
     ul {
       display: none;
       position: absolute;
-      top: 60px;
+      top: 90px;
       left: 0;
       padding: 0;
 
@@ -42,20 +43,31 @@
     display: inline-block;
     height: 100%;
     list-style: none;
+  }
 
+  .li-1 {
     &.open, &.no-js:hover {
-      margin-bottom: 100px;
+      margin-bottom: 130px;
       ul {
         display: block;
       }
     }
   }
 
+  .li-1.subs .a-1:before{
+    position: absolute;
+    top: 38px;
+    right: 2px;
+    font-size: 0.4rem;
+    .icon();
+    .get-icon-dropdown();
+  }
+
   a {
     position: relative;
     display: inline-block;
     height: 100%;
-    padding: 0 12px;
+    padding: 0 18px;
     text-decoration: none;
     font-style: normal;
     outline: none;

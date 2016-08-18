@@ -19,10 +19,10 @@ RTE.default {
     buttons.textstyle.showTagFreeClasses = 1
 
     buttons.textstyle.tags.span.allowedClasses (
-        link-btn, link-arrow, text-grey
+        link-btn, link-arrow
     )
     buttons.textstyle.tags.a.allowedClasses (
-        link-btn, link-arrow, text-grey
+        link-btn, link-arrow
     )
     buttons.image.properties.class.allowedClasses (
         rte_image
@@ -30,7 +30,7 @@ RTE.default {
     proc {
         allowedClasses (
             external-link, external-link-new-window, internal-link,
-            internal-link-new-window, download, link-btn, link-arrow, text-grey, align-right, align-left
+            internal-link-new-window, download, link-btn, link-arrow, align-right, align-left
         )
     }
 }
