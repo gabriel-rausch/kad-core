@@ -15,8 +15,8 @@ goog.require('kstatic.module');
  * @constructor
  * @extends {kstatic.module}
  */
-kstatic.modules.superhero = function(id, node) {
-  goog.base(this, id, node);
+kstatic.modules.superhero = function(id, node, pubsub) {
+  goog.base(this, id, node, pubsub);
 };
 
 goog.inherits(kstatic.modules.superhero, kstatic.module);
@@ -25,12 +25,12 @@ goog.exportSymbol('kstatic.modules.superhero', kstatic.modules.superhero);
 kstatic.modules.superhero.prototype.start = function() {
   var self = this;
 
-  self.setHeight();
-
-  // listen to window resize
-  goog.events.listen(window, goog.events.EventType.RESIZE, function() {
+  self.pubsub.subscribe('window:resize', function() {
     self.setHeight();
   });
+
+  // initial calculation
+  self.setHeight();
 };
 
 /**

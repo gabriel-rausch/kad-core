@@ -12,9 +12,10 @@ goog.require('kstatic.module');
  * @constructor
  * @extends {kstatic.module}
  */
-kstatic.modules.image = function(id, node) {
-  goog.base(this, id, node);
+kstatic.modules.image = function(id, node, pubsub) {
+  goog.base(this, id, node, pubsub);
   this.imgSrcs = [];
+  this.type = 'cover';
 };
 
 goog.inherits(kstatic.modules.image, kstatic.module);
@@ -22,44 +23,35 @@ goog.exportSymbol('kstatic.modules.image', kstatic.modules.image);
 
 kstatic.modules.image.prototype.start = function() {
   var self = this;
-  self.setData();
-  self.setSize();
-
-  if (goog.dom.classlist.contains(self.node, 'cover')) {
-    self.createBackgroundImg();
-  } else {
-    self.createImgTag();
-  }
+  self.setImgSrcs();
+  self.attachEvents();
+  self.setImage();
 };
 
-kstatic.modules.image.prototype.setData = function() {
+kstatic.modules.image.prototype.setImgSrcs = function() {
   var self = this;
   self.imgSrcs = goog.dom.dataset.get(self.node, 'srcset').split(',');
 };
 
-kstatic.modules.image.prototype.setSize = function() {
+kstatic.modules.image.prototype.attachEvents = function() {
   var self = this;
-  self.screenSize = 0;
+
+  self.pubsub.subscribe('window:resize', function() {
+    self.setImage();
+  });
 };
 
-kstatic.modules.image.prototype.createBackgroundImg = function() {
+kstatic.modules.image.prototype.setImage = function() {
   var self = this;
   self.node.style.backgroundImage = 'url(' + self.getResponsiveImgUrl() + ')';
 };
 
-kstatic.modules.image.prototype.createImgTag = function() {
-  var self = this;
-  var img = document.createElement('img');
-  img.src = self.getResponsiveImgUrl();
-  self.node.appendChild(img);
-};
-
 kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
   var self = this;
-  var selfWidth = goog.style.getSize(self.node).width;
+  var selfHeight = goog.style.getSize(self.node).height;
   var key = 0;
   for (var i = 0; i <= self.imgSizes.length; i++) {
-    if (self.imgSizes[i] < selfWidth) {
+    if (self.imgSizes[i] < selfHeight) {
       // set size + 1 to provide an image in better quality than current size.
       key = i + 1;
     }

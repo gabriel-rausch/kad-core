@@ -74,6 +74,15 @@
   }
 
 
+  .no-cssgradients & {
+    &.dark, &.light {
+      .gradient {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
 @media screen and @desktop {
   .innerHeight {
     padding-top: 56.25%;

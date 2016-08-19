@@ -9,9 +9,10 @@ goog.require('goog.events');
  * Basic class for modules
  * @constructor
  */
-kstatic.module = function(id, node) {
+kstatic.module = function(id, node, pubsub) {
   this.id = id;
   this.node = node;
+  this.pubsub = pubsub;
 
   /**
    * Viewport definitions for breakpoints
@@ -42,6 +43,23 @@ kstatic.module.prototype.getRandom = function() {
 kstatic.module.prototype.mqMatch = function(viewport) {
   var self = this;
   return goog.dom.getViewportSize().width >= self.viewports[viewport];
+};
+
+/**
+ * Get Window Scroll Top
+ */
+kstatic.module.prototype.getWindowScrollTop = function() {
+  return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+};
+
+/**
+ * Get Window Height
+ */
+kstatic.module.prototype.getWindowHeight = function() {
+  var body = document.body,
+      html = document.documentElement;
+
+  return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 };
 
 goog.exportSymbol('kstatic.module', kstatic.module);
