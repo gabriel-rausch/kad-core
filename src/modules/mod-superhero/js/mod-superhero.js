@@ -44,5 +44,7 @@ kstatic.modules.superhero.prototype.setHeight = function() {
     var heightHeader = goog.style.getSize(document.querySelector('.mod-header')).height;
     var viewportHeight = goog.dom.getViewportSize().height;
     self.node.style.height = (viewportHeight - heightHeader) + 'px';
+  } else {
+    self.node.style.height = '';
   }
 };

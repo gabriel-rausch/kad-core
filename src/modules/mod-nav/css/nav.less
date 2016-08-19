@@ -2,23 +2,116 @@
 @import "./src/css/elements-icons.less";
 
 .mod-nav {
-  float: right;
-  height: 100%;
+  display: none;
+  background-color: @col-greylight;
   transition: opacity .6s;
-  margin-right: 120px;
+  padding: 40px 0 20px;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.4) inset;
+
+  &.open {
+    display: block;
+  }
 
   .mod-header.search-active & {
     opacity: 0;
   }
 
   ul {
+    padding: 0;
     margin: 0;
-    height: 100%;
     font-size: 0;
 
     .icon {
       position: relative;
       top: 33px;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  li {
+    display: block;
+    list-style: none;
+  }
+
+  .li-1.active {
+    .a-1 {
+      display: none;
+    }
+
+    ul {
+      display: block;
+    }
+
+    & ~ .li-1 {
+      display: none;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 30px;
+    text-decoration: none;
+    font-style: normal;
+    outline: none;
+    border: none;
+    color: @col-antrazit;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all .1s;
+
+    .span-1 {
+    }
+
+    &:hover  {
+      opacity: .5;
+    }
+    &.active  {
+      color: @col-greenDark;
+    }
+  }
+
+@media screen and @desktop {
+  display: block;
+  background: none;
+  float: right;
+  margin-right: 120px;
+  box-shadow: none;
+  padding: 30px 0 20px;
+
+  li {
+    display: inline-block;
+    height: 100%;
+  }
+
+  .li-1.subs .a-1:before{
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    font-size: 0.4rem;
+    .icon();
+    .get-icon-dropdown();
+  }
+
+  .li-1, .li-1.active {
+    &.open, &.no-js:hover {
+      margin-bottom: 80px;
+      ul {
+        display: block;
+      }
+    }
+
+    .a-1 {
+      display: inline-block;
+    }
+
+    & ~ .li-1 {
+      display: inline-block;
     }
 
     ul {
@@ -39,56 +132,8 @@
     }
   }
 
-  li {
-    display: inline-block;
-    height: 100%;
-    list-style: none;
-  }
-
-  .li-1 {
-    &.open, &.no-js:hover {
-      margin-bottom: 130px;
-      ul {
-        display: block;
-      }
-    }
-  }
-
-  .li-1.subs .a-1:before{
-    position: absolute;
-    top: 38px;
-    right: 2px;
-    font-size: 0.4rem;
-    .icon();
-    .get-icon-dropdown();
-  }
-
   a {
-    position: relative;
-    display: inline-block;
-    height: 100%;
     padding: 0 18px;
-    text-decoration: none;
-    font-style: normal;
-    outline: none;
-    border: none;
-    color: @col-antrazit;
-    text-transform: uppercase;
-    vertical-align: middle;
-    font-size: 16px;
-    font-weight: 300;
-    transition: all .1s;
-
-    .span-1 {
-      position: relative;
-      top: 31px;
-    }
-
-    &:hover  {
-      opacity: .5;
-    }
-    &.active  {
-      color: @col-greenDark;
-    }
   }
+}
 }

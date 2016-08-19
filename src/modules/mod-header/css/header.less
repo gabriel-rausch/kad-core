@@ -6,31 +6,37 @@
 @logo-height: 53px;
 
 .mod-header {
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 20px;
   background: white;
   box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+  text-align: center;
+  overflow-x: hidden;
   
   &.search-active {
     .search-close {
-      right: 0;
+      right: 20px;
       opacity: 1;
     }
     .search-btn {
-      right: 47%;
+      right: 90%;
       color: @col-greenDark;
     }
     .search-input {
-      width: 37%;
+      width: 75%;
       opacity: 1;
-      left: 55%;
+      left: 15%;
     }
     .lang-picker {
+      display: none;
+    }
+    .logo {
+      opacity: 0;
+    }
+    .mobile-nav {
       display: none;
     }
   }
@@ -48,7 +54,7 @@
 
     .svg & {
       background-image: url('img/KADIA-logo.svg');
-      background: white;
+      //background: white;
     }
 
     &:hover {
@@ -76,7 +82,7 @@
   .search-btn, .search-close {
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 20px;
     transition: all @speed-fast;
     color: @col-antrazit;
     font-size: 1.3rem;
@@ -93,8 +99,8 @@
 
   .lang-picker {
     position: absolute;
-    right: 70px;
-    top: 31px;
+    right: 50px;
+    top: 30px;
     margin: 0;
 
     a {
@@ -126,4 +132,38 @@
       }
     }
   }
+
+  .mobile-nav {
+    position: absolute;
+    left: 20px;
+    top: 31px;
+  }
+
+
+@media screen and @desktop {
+  position: fixed;
+  padding: 0 20px;
+  text-align: left;
+
+  &.search-active {
+    .search-btn {
+      right: 47%;
+    }
+    .search-input {
+      width: 37%;
+      left: 55%;
+    }
+    .logo {
+      display: inline-block;
+    }
+  }
+
+  .lang-picker {
+    right: 70px;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
 }

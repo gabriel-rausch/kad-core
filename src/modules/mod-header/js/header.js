@@ -42,6 +42,12 @@ kstatic.modules.header.prototype.start = function() {
     goog.dom.forms.setValue(self.node.querySelector('.search-input'), '');
     self.toggleSearchbar();
   });
+
+  // mobile nav
+  goog.events.listen(this.node.querySelector('.mobile-nav'), 'click', function(e) {
+    e.preventDefault();
+    goog.dom.classlist.toggle(document.querySelector('.mod.mod-nav'), 'open');
+  });
 };
 
 kstatic.modules.header.prototype.toggleSearchbar = function(show) {

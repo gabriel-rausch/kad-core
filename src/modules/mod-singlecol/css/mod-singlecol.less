@@ -4,9 +4,17 @@
   background: @col-greylight;
 
   .inner {
-    border-left: 13px solid @col-green;
+    border-left: 9px solid @col-green;
     padding: 0 2rem;
     box-sizing: border-box;
+    margin: @padding-v-small 0;
+  }
+
+
+@media screen and @desktop {
+  .inner {
+    border-left: 13px solid @col-green;
     margin: @padding-v-medium 20%;
   }
+}
 }
