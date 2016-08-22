@@ -2,35 +2,44 @@
 
 .mod-eventwidget {
     background: @col-antrazit;
-  
+
+  .main-content {
+    padding: 0;
+  }
+
   .widget-title {
     background: @col-antrazitLight;
     text-align: center;
     color: white;
     padding: 1rem;
+    margin: 0;
   }
 
   .events {
-    width: 100%;
+    padding: @padding-h-30;
     white-space: nowrap;
   }
 
   .events-inner {
     position: relative;
     overflow-x: hidden;
-    width: 90%;
-    margin: 0 5%;
-    box-sizing: border-box;
+    width: 100%;
   }
 
   .event {
     display: inline-block;
-    width: 80%;
-    margin: 45px 10%;
+    width: 100%;
     color: white;
     overflow: hidden;
     height: 120px;
     box-sizing: border-box;
+
+    .event-title, p {
+      text-overflow: ellipsis;
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
 
     .event-title {
       font-weight: bold;
@@ -45,7 +54,7 @@
   .nav {
     position: absolute;
     top: 38%;
-    left: 5%;
+    left: 5px;
     color: white;
     cursor: pointer;
 
@@ -55,22 +64,30 @@
 
     &.next {
       left: auto;
-      right: 5%;
+      right: 5px;
     }
   }
 
+  @media screen and @tablet {
+    .event {
+      padding: 0 30px;
+      width: 50%;
+    }
+  }
 
   @media screen and @desktop {
+    .events {
+      padding: @padding-v-60 @padding-h-40;
+    }
+    .event {
+      width: 33.333%;
+    }
+  }
+
+  @media screen and @large1500 {
     .event {
       margin: 45px 3%;
       width: auto;
-    }
-    .nav {
-      left: 20px;
-
-      &.next {
-        right: 20px;
-      }
     }
   }
 }

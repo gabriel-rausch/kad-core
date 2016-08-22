@@ -10,7 +10,7 @@ goog.require('goog.array');
 goog.require('kstatic.module');
 
 /**
- * Full image with paralax effect
+ * Full image with parallax effect
  * @version 0.0.1
  * @constructor
  * @extends {kstatic.module}
@@ -27,7 +27,7 @@ kstatic.modules.fullimageparallax.prototype.start = function() {
 
   self.pubsub.subscribe('window:scroll', function(scrollPosition) {
     var winHeight = self.getWindowHeight();
-    var delta = 100 * scrollPosition.y / (this.scrollWidth - this.clientWidth);
+    var delta = 100 * scrollPosition.y / winHeight;
     self.node.querySelector('.mod.mod-image').style.backgroundPositionY = delta + '%';
   });
 };

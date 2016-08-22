@@ -11,16 +11,21 @@
   width: 100%;
   max-width: @bp-large;
   margin: auto;
+  box-sizing: border-box;
+}
+
+.main-content-inner {
+  position: relative;
+  width: 100%;
 }
 
 .content {
   box-sizing: border-box;
-  padding-left: @padding-h-small;
-  padding-right: @padding-h-small;
+  padding-left: @padding-h-30;
+  padding-right: @padding-h-30;
   padding-bottom: @padding-v-small;
   padding-top: @padding-v-small;
 }
-
 
 .col-left, .col-right {
   position: relative;
@@ -39,15 +44,15 @@
   position: relative;
   display: inline-block;
   text-transform: uppercase;
-  color: @col-green;
+  color: @col-greenDark;
   padding: 0.6rem 3rem;
-  border: 2px solid @col-green;
+  border: 2px solid @col-greenDark;
   font-style: normal;
   font-weight: normal;
   transition: all @speed-fast;
 
   &:hover {
-    background: @col-green;
+    background: @col-greenDark;
     color: white;
 
     &:before {
@@ -61,16 +66,17 @@
     top: 48%;
     left: -2px;
     width: 12px;
-    border-top: 2px solid @col-green;
+    border-top: 2px solid @col-greenDark;
   }
 }
 
-.link-arrow {
+.link-arrow, .link-video, .link-document {
   position: relative;
   top: 5px;
   display: inline-block;
   text-transform: uppercase;
-  color: @col-green;
+  color: @col-greenDark;
+  margin-right: 20px;
 
   &:hover{
     color: @col-greenDark;
@@ -85,17 +91,21 @@
 
 }
 
+.link-video:before {
+  .icon();
+  .get-icon-video();
+}
+
+.link-document:before {
+  .icon();
+  .get-icon-doc();
+}
+
 .align-right {
   text-align: right;
 }
 .align-left {
   text-align: left;
-}
-
-@media screen and @large1500 {
-  .main-content {
-    max-width: @bp-large1500;
-  }
 }
 
 
@@ -112,6 +122,10 @@
     padding-top: @padding-v-large;
   }
 
+  .main-content {
+    padding: 0 @padding-h-40;
+  }
+
   .col-left, .col-right {
     width: 50%;
     float: left;
@@ -122,6 +136,7 @@
       top: 0;
       height: 100%;
       padding-top: 0;
+      background: white;
     }
   }
   .col-right {
@@ -131,5 +146,11 @@
       left: auto;
       right: 0;
     }
+  }
+}
+
+@media screen and @large1500 {
+  .main-content {
+    max-width: @bp-large1500;
   }
 }

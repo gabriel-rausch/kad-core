@@ -37,13 +37,18 @@
             </f:case>
 
             <f:case value="3">
-                <v:variable.set name="textImgReversed" value="0" />
-                <f:render partial="fluid-twocol-textimg" arguments="{_all}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:0,slideshow:0}" />
             </f:case>
 
             <f:case value="4">
-                <v:variable.set name="textImgReversed" value="1" />
-                <f:render partial="fluid-twocol-textimg" arguments="{_all}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,slideshow:0}" />
+            </f:case>
+
+            <f:case value="62">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:0,slideshow:1}" />
+            </f:case>
+            <f:case value="63">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,slideshow:1}" />
             </f:case>
             
             <f:case value="5">
@@ -61,6 +66,14 @@
             <f:case value="31">
                 <v:variable.set name="heroType" value="1" />
                 <f:render partial="fluid-hero" arguments="{_all}" />
+            </f:case>
+
+            <f:case value="50">
+                <f:render partial="fluid-heromachines" arguments="{_all}" />
+            </f:case>
+
+            <f:case value="70">
+                <f:render partial="fluid-fullimageparallax" arguments="{_all}" />
             </f:case>
 
             <f:case default="TRUE">

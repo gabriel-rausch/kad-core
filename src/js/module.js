@@ -27,7 +27,7 @@ kstatic.module = function(id, node, pubsub) {
   /**
    * Image sizes
    */
-  this.imgSizes = [200, 380, 550, 750, 1000, 1400, 1920];
+  this.imgSizes = [380, 750, 1000, 1400, 1920];
 };
 
 /**

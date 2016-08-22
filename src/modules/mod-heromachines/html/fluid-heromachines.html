@@ -1,0 +1,27 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div class="pattern mod-heromachines">
+  <div class="main-content">
+    <div class="main-content-inner">
+
+      <div class="big-view">
+        <div class="big-img">
+          <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'contain'}}" />
+        </div>
+        <div class="txt">
+          <a href="#" class="link-arrow">Mehr</a>
+        </div>
+      </div>
+
+      <f:for each="{item.files}" as="thumb">
+        <div class="thumbnail">
+          <div class="thumb-img">
+            <f:render partial="fluid-image" arguments="{data: {uid:'{thumb.originalFile.uid}', type:'contain'}}" />
+          </div>
+          <a href="" class="link"><span>{thumb.alternative}</span></a>
+        </div>
+      </f:for>
+    </div>
+  </div>
+</div>

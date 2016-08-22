@@ -1,10 +1,10 @@
 @import "./src/css/vars.less";
 @import "./src/css/elements-icons.less";
 
-.mod-nav {
+.mod-nav, .mod-mobile-subnav {
   display: none;
   background-color: @col-greylight;
-  transition: opacity .6s;
+  transition: opacity @speed-fast;
   padding: 40px 0 20px;
   box-shadow: 0px 0px 1px rgba(0,0,0,0.4) inset;
 
@@ -34,20 +34,6 @@
   li {
     display: block;
     list-style: none;
-  }
-
-  .li-1.active {
-    .a-1 {
-      display: none;
-    }
-
-    ul {
-      display: block;
-    }
-
-    & ~ .li-1 {
-      display: none;
-    }
   }
 
   a {
@@ -106,14 +92,6 @@
       }
     }
 
-    .a-1 {
-      display: inline-block;
-    }
-
-    & ~ .li-1 {
-      display: inline-block;
-    }
-
     ul {
       display: none;
       position: absolute;
@@ -136,4 +114,13 @@
     padding: 0 18px;
   }
 }
+}
+
+.mod-mobile-subnav {
+  display: block;
+  text-align: center;
+
+  @media screen and @desktop {
+    display: none;
+  }
 }

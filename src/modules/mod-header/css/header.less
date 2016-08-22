@@ -6,29 +6,32 @@
 @logo-height: 53px;
 
 .mod-header {
+  position: relative;
   top: 0;
   left: 0;
   z-index: 1;
   box-sizing: border-box;
   width: 100%;
   background: white;
-  box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
   text-align: center;
   overflow-x: hidden;
+  padding: 0 @padding-h-30;
   
   &.search-active {
     .search-close {
-      right: 20px;
+      right: 0;
       opacity: 1;
     }
     .search-btn {
-      right: 90%;
+      right: auto;
+      left: 0;
       color: @col-greenDark;
     }
     .search-input {
-      width: 75%;
+      width: 80%;
       opacity: 1;
-      left: 15%;
+      left: 10%;
     }
     .lang-picker {
       display: none;
@@ -82,7 +85,7 @@
   .search-btn, .search-close {
     position: absolute;
     top: 30px;
-    right: 20px;
+    right: 0;
     transition: all @speed-fast;
     color: @col-antrazit;
     font-size: 1.3rem;
@@ -99,7 +102,7 @@
 
   .lang-picker {
     position: absolute;
-    right: 50px;
+    right: 31px;
     top: 30px;
     margin: 0;
 
@@ -135,19 +138,20 @@
 
   .mobile-nav {
     position: absolute;
-    left: 20px;
+    left: 0;
     top: 31px;
   }
 
 
 @media screen and @desktop {
   position: fixed;
-  padding: 0 20px;
   text-align: left;
+  padding: 0;
 
   &.search-active {
     .search-btn {
       right: 47%;
+      left: auto;
     }
     .search-input {
       width: 37%;

@@ -56,5 +56,8 @@ kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
       key = i + 1;
     }
   }
+  if (key >= self.imgSizes.length) {
+    key = self.imgSizes.length - 1;
+  }
   return self.imgSrcs[key];
 };

@@ -61,6 +61,34 @@ lib.mainnav {
     }
 }
 
+
+lib.subnav = HMENU
+lib.subnav {
+    entryLevel = 1
+    stdWrap.wrap = <nav class="mod-mobile-subnav"><ul class=" ul-1">|</ul></nav>
+    stdWrap.required = 1
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        NO {
+            wrapItemAndSub = <li class="li-1 no-js">|</li>
+            wrapItemAndSub.insertData = 1
+            ATagTitle.field = title
+            stdWrap.titleText = a
+            stdWrap.dataWrap = <span class="span-1">|</span>
+            ATagParams = class="a-1"
+        }
+        ACT = 1
+        ACT {
+            wrapItemAndSub = <li class="active li-1 cat{field:uid}">|</li>
+            wrapItemAndSub.insertData = 1
+            stdWrap.dataWrap = <span class="span-1">|</span>
+            ATagParams = class="active a-1"
+        }
+    }
+}
+
 page = PAGE
 page.10 = FLUIDTEMPLATE
 page.10 {

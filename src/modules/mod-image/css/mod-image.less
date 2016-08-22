@@ -3,7 +3,7 @@
 .mod-image {
   background-repeat: no-repeat;
 
-  &.cover {
+  &.cover, &.contain {
     position: absolute;
     left: 0;
     top: 0;
@@ -12,5 +12,9 @@
     background-size: cover;
     -ms-behavior: url(/backgroundsize.min.htc);
     background-position: center center;
+  }
+
+  &.contain {
+    background-size: contain;
   }
 }

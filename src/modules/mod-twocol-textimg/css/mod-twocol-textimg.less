@@ -1,9 +1,59 @@
 @import "./src/css/vars.less";
 
-.mod-twocol-textimg {
+.mod-twocoltextimg {
 
   .content {
     background: white;
+
+    table {
+      width: 100%;
+      color: lighten(@col-antrazit, 35%);
+      border-spacing: 0;
+      border-collapse: separate;
+      margin-bottom: 40px;
+
+      td {
+        &:first-child {
+          padding-right: 10px;
+        }
+        &:last-child {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  &.slideshow {
+    background: white;
+    margin: 0;
+
+    .flex {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    .slideshow-inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .nav {
+      position: absolute;
+      top: 48%;
+      left: 25px;
+      color: @col-antrazit;
+      cursor: pointer;
+
+      &:hover {
+        color: @col-antrazitDark;
+      }
+
+      &.next {
+        left: auto;
+        right: 25px;
+      }
+    }
   }
 
 }

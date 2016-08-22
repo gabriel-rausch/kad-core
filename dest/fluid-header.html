@@ -1,22 +1,27 @@
 <header class="mod mod-header">
     <div class="main-content">
-        <a href="/" class="logo"></a>
+        <div class="main-content-inner">
+            <a href="/" class="logo"></a>
 
-        <a href="#" class="mobile-nav"><i class="icon icon-hamburger"></i></a>
+            <a href="#" class="mobile-nav"><i class="icon icon-hamburger"></i></a>
 
-        <f:render partial="fluid-nav" arguments="{_all}" />
+            <f:render partial="fluid-nav" arguments="{_all}" />
 
-        <ul class="lang-picker">
-          <li class="li-1 ">
-            <a href="#" class="a-1"><span class="span-1">DE</span></a>
-            <ul class="ul-2">
-              <li class="li-2"><a href="#" class="a-1"><span class="span-1">EN</span></a></li>
+            <ul class="lang-picker">
+              <li class="li-1 ">
+                <a href="#" class="a-1"><span class="span-1">DE</span></a>
+                <ul class="ul-2">
+                  <li class="li-2"><a href="#" class="a-1"><span class="span-1">EN</span></a></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
 
-        <input class="search-input" type="text" placeholder="Suchbegriff eingeben">
-        <a class="search-btn" href="#"><i class="icon icon-search"></i></a>
-        <a class="search-close" href="#"><i class="icon icon-hamburger-close"></i></a>
+            <input class="search-input" type="text" placeholder="Suchbegriff eingeben">
+            <a class="search-btn" href="#"><i class="icon icon-search"></i></a>
+            <a class="search-close" href="#"><i class="icon icon-hamburger-close"></i></a>
+        </div>
     </div>
 </header>
+
+<f:cObject typoscriptObjectPath="lib.subnav" />
+
