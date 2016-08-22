@@ -5,14 +5,12 @@
   background: white;
 
   .big-view {;
-    margin-bottom: 70px;
+    padding: @padding-v-30 @padding-h-30 @padding-v-60 @padding-h-30;
 
     .big-img {
       position: relative;
       width: 100%;
       height: 400px;
-
-      margin-top: 30px;
     }
 
     .txt {
@@ -21,13 +19,16 @@
     }
   }
 
+  .thumbnails {
+    display: table;
+    width: 100%;
+  }
+
   .thumbnail {
-    display: inline-block;
-    width: 16%;
+    display: table-cell;
 
     .thumb-img{
-      position: relative;
-      height: 100px;
+      display: none;
     }
     .link {
       display: block;
@@ -44,6 +45,12 @@
   }
 
 @media screen and @desktop {
-
+  .thumbnail {
+    .thumb-img{
+      display: block;
+      position: relative;
+      height: 100px;
+    }
+  }
 }
 }

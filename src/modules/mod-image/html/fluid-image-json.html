@@ -1,13 +1,14 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 [
-<f:for each="{imgs}" as="img">
-{
-{f:uri.image(src:img.originalFile.uid, height:'380c')},
-{f:uri.image(src:img.originalFile.uid, height:'550c')},
-{f:uri.image(src:img.originalFile.uid, height:'1000c')},
-{f:uri.image(src:img.originalFile.uid, height:'1400c')},
-{f:uri.image(src:img.originalFile.uid, height:'1920c')}
-},
+<f:for each="{imgs}" as="img" key="i">
+[
+    '{f:uri.image(src:img.originalFile.uid,height:'380c')}',
+    '{f:uri.image(src:img.originalFile.uid,height:'550c')}',
+    '{f:uri.image(src:img.originalFile.uid,height:'1000c')}',
+    '{f:uri.image(src:img.originalFile.uid,height:'1400c')}',
+    '{f:uri.image(src:img.originalFile.uid,height:'1920c')}'
+]
+<f:if condition="{i} < {v:math.subtract(a: '{f:count(subject: imgs)}', fail: 1, b: 1)}"><f:then>,</f:then></f:if>
 </f:for>
 ]

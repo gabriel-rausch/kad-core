@@ -39,6 +39,11 @@ kstatic.modules.image.prototype.attachEvents = function() {
   self.pubsub.subscribe('window:resize', function() {
     self.setImage();
   });
+
+  self.pubsub.subscribe('image:refreshSrcset', function() {
+    self.setImgSrcs();
+    self.setImage();
+  });
 };
 
 kstatic.modules.image.prototype.setImage = function() {

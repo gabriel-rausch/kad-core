@@ -19,6 +19,12 @@
         &:last-child {
           padding-left: 10px;
         }
+
+        img {
+          max-width: 100%;
+          width:100%;
+          height: auto;
+        }
       }
     }
   }
@@ -36,6 +42,7 @@
       position: relative;
       height: 100%;
       width: 100%;
+      padding-top: 80%;
     }
 
     .nav {
@@ -56,4 +63,12 @@
     }
   }
 
+
+@media screen and @desktop {
+  &.slideshow {
+    .slideshow-inner {
+      padding: 0;
+    }
+  }
+}
 }

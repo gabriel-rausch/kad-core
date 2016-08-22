@@ -1,7 +1,7 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-<div class="pattern mod-heromachines">
+<div class="pattern mod mod-heromachines">
   <div class="main-content">
     <div class="main-content-inner">
 
@@ -14,14 +14,18 @@
         </div>
       </div>
 
-      <f:for each="{item.files}" as="thumb">
-        <div class="thumbnail">
-          <div class="thumb-img">
-            <f:render partial="fluid-image" arguments="{data: {uid:'{thumb.originalFile.uid}', type:'contain'}}" />
+      <div class="thumbnails">
+        <f:for each="{item.files}" as="thumb">
+          <div class="thumbnail">
+            <div class="thumb-img">
+              <f:render partial="fluid-image" arguments="{data: {uid:'{thumb.originalFile.uid}', type:'contain'}}" />
+            </div>
+            <v:iterator.explode content="{thumb.link}" glue="#" as="internallink">
+              <a href="#uid{internallink.1}" class="link"><span>{thumb.alternative}</span></a>
+            </v:iterator.explode>
           </div>
-          <a href="" class="link"><span>{thumb.alternative}</span></a>
-        </div>
-      </f:for>
+        </f:for>
+      </div>
     </div>
   </div>
 </div>
