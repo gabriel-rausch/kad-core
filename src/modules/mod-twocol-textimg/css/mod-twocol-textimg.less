@@ -32,6 +32,7 @@
 
   &.white {
     background: white;
+    margin: 0;
   }
 
   &.slideshow {
@@ -42,38 +43,10 @@
       padding: 40px 60px;
       box-sizing: border-box;
     }
-
-    .slideshow-inner {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      padding-top: 80%;
-    }
-
-    .nav {
-      position: absolute;
-      top: 48%;
-      left: 25px;
-      color: @col-antrazit;
-      cursor: pointer;
-
-      &:hover {
-        color: @col-antrazitDark;
-      }
-
-      &.next {
-        left: auto;
-        right: 25px;
-      }
-    }
   }
 
 
 @media screen and @desktop {
-  &.slideshow {
-    .slideshow-inner {
-      padding: 0;
-    }
-  }
+
 }
 }

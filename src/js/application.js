@@ -9,10 +9,14 @@ goog.require('goog.module.ModuleLoader');
 goog.require('goog.module.ModuleManager');
 goog.require('goog.pubsub.PubSub');
 
+// Code Modules
 goog.require('kstatic.module');
 goog.require('kstatic.modules.nav');
 goog.require('kstatic.modules.header');
 goog.require('kstatic.modules.image');
+goog.require('kstatic.modules.slideshow');
+
+// Patterns
 goog.require('kstatic.modules.eventwidget');
 goog.require('kstatic.modules.superhero');
 goog.require('kstatic.modules.fullimageparallax');
