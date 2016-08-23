@@ -37,18 +37,22 @@
             </f:case>
 
             <f:case value="3">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:0,slideshow:0}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item}" />
             </f:case>
-
             <f:case value="4">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,slideshow:0}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1}" />
             </f:case>
-
             <f:case value="62">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:0,slideshow:1}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,slideshow:1}" />
             </f:case>
             <f:case value="63">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,slideshow:1}" />
+            </f:case>
+            <f:case value="64">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,white:1}" />
+            </f:case>
+            <f:case value="65">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,white:1}" />
             </f:case>
             
             <f:case value="5">

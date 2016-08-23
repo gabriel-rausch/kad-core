@@ -1,7 +1,8 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-<div class="pattern mod mod-twocoltextimg {f:if(condition: '{slideshow} == 1', then: ' slideshow', else: '')}" id="uid{item.data.uid}">
+<div class="pattern mod mod-twocoltextimg {f:if(condition: '{slideshow} == 1', then: 'slideshow', else: '')} {f:if(condition: '{white} == 1', then: 'white', else: '')}"
+     id="uid{item.data.uid}">
   <div class="main-content">
     <div class="main-content-inner">
       <div class="{f:if(condition: '{textImgReversed} == 1', then: 'col-right', else: 'col-left')}">
@@ -22,7 +23,7 @@
             <div class="nav prev"><span class="icon icon-arrow-prev"></span></div>
           </f:then>
           <f:else>
-            <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'cover'}}" />
+            <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'{f:if(condition: \'{white} == 1\', then: \'contain\', else: \'cover\')}'}}" />
           </f:else>
         </f:if>
       </div>

@@ -28,6 +28,7 @@ kstatic.modules.fullimageparallax.prototype.start = function() {
   self.pubsub.subscribe('window:scroll', function(scrollPosition) {
     var winHeight = self.getWindowHeight();
     var delta = 100 * scrollPosition.y / winHeight;
-    self.node.querySelector('.mod.mod-image').style.backgroundPositionY = delta + '%';
+    console.log(delta);
+    //self.node.querySelector('.mod.mod-image').style.backgroundPositionY = '0%';
   });
 };

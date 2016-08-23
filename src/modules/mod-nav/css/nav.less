@@ -10,6 +10,9 @@
 
   &.open {
     display: block;
+    position: relative;
+    left: -@padding-h-30;
+    width: calc(100% + 60px);
   }
 
   .mod-header.search-active & {
@@ -28,6 +31,14 @@
 
     ul {
       display: none;
+
+      a {
+        opacity: .5;
+
+        &:hover, &.active {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -59,6 +70,10 @@
     }
     &.active  {
       color: @col-greenDark;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -119,6 +134,7 @@
 .mod-mobile-subnav {
   display: block;
   text-align: center;
+  background-color: white;
 
   @media screen and @desktop {
     display: none;

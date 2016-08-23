@@ -35,11 +35,19 @@ kstatic.modules.heromachines.prototype.start = function() {
   self.dom.bigImg = self.dom.bigView.querySelector('.mod.mod-image');
 
   goog.array.forEach(self.node.querySelectorAll('.thumbnail'), function(thumbnail) {
+
+    // hover: change big view
     goog.events.listen(thumbnail, goog.events.EventType.MOUSEOVER, function() {
       var txt = thumbnail.querySelector('.link span').innerHTML;
       var srcset = goog.dom.dataset.get(thumbnail.querySelector('.mod.mod-image'), 'srcset');
-      var href = goog.dom.dataset.get(thumbnail.querySelector('.link'), 'href');
+      var href = thumbnail.querySelector('.link').getAttribute('href');
       self.setBigContent(txt, srcset, href);
+    });
+
+    // click: follow link in a-tag
+    goog.events.listen(thumbnail, goog.events.EventType.CLICK, function(e) {
+      e.preventDefault();
+      window.location.href = thumbnail.querySelector('.link').getAttribute('href');
     });
   });
 };

@@ -10,7 +10,10 @@
           <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'contain'}}" />
         </div>
         <div class="txt">
-          <a href="#" class="link-arrow">Mehr</a>
+
+          <v:iterator.explode content="{item.files.0.link}" glue="#" as="internallink">
+            <a href="#uid{internallink.1}"class="link-arrow">Mehr</a>
+          </v:iterator.explode>
         </div>
       </div>
 

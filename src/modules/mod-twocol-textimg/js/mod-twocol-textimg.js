@@ -36,6 +36,8 @@ kstatic.modules.twocoltextimg.prototype.start = function() {
 
   if (goog.dom.classlist.contains(self.node, 'slideshow')) {
     self.initSlideshow();
+  } else if (goog.dom.classlist.contains(self.node, 'info')) {
+    self.initInfo();
   }
 };
 
@@ -79,4 +81,20 @@ kstatic.modules.twocoltextimg.prototype.slideshowSetImage = function(imgKey) {
   var newSrcset = self.slideshowImgs[imgKey].join(',');
   goog.dom.dataset.set(self.dom.slideshowImg, 'srcset', newSrcset);
   self.pubsub.publish('image:refreshSrcset');
+};
+
+/**
+ * Init info
+ */
+kstatic.modules.twocoltextimg.prototype.initInfo = function() {
+  var self = this;
+
+  goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo) {
+
+    // click: show thumbnail
+    goog.events.listen(linkinfo, goog.events.EventType.CLICK, function(e) {
+      e.preventDefault();
+      console.log('okok');
+    });
+  });
 };

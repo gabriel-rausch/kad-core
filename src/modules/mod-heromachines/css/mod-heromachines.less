@@ -26,6 +26,14 @@
 
   .thumbnail {
     display: table-cell;
+    cursor: pointer;
+
+    &:hover {
+      .link span{
+        color: @col-antrazit;
+        border-bottom: 2px solid @col-green;
+      }
+    }
 
     .thumb-img{
       display: none;
@@ -37,19 +45,26 @@
       span{
         font-weight: normal;
         font-style: normal;
-        color: @col-antrazit;
-        border-bottom: 2px solid @col-green;
+        color: @col-grey;
+        border-bottom: 2px solid transparent;
         padding: 4px;
       }
     }
   }
 
 @media screen and @desktop {
+
+  .big-view {
+    .big-img {
+      height: 530px;
+    }
+  }
+
   .thumbnail {
     .thumb-img{
       display: block;
       position: relative;
-      height: 100px;
+      height: 120px;
     }
   }
 }
