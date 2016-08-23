@@ -33,7 +33,10 @@
             </f:case>
 
             <f:case value="2">
-                <f:render partial="fluid-singlecol" arguments="{_all}" />
+                <f:render partial="fluid-singlecol" arguments="{item:item,border:1}" />
+            </f:case>
+            <f:case value="21">
+                <f:render partial="fluid-singlecol" arguments="{item:item}" />
             </f:case>
 
             <f:case value="3">

@@ -3,8 +3,13 @@
 .mod-singlecol {
   background: @col-greylight;
 
+  &.border {
+    .inner {
+      border-left: 9px solid @col-green;
+    }
+  }
+
   .inner {
-    border-left: 9px solid @col-green;
     padding: 0 2rem;
     box-sizing: border-box;
     margin: @padding-v-small 0;
@@ -12,8 +17,12 @@
 
 
 @media screen and @desktop {
+  &.border {
+    .inner {
+      border-left: 13px solid @col-green;
+    }
+  }
   .inner {
-    border-left: 13px solid @col-green;
     margin: @padding-v-medium 20%;
   }
 }

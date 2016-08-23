@@ -1,7 +1,7 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-<div class="pattern mod-singlecol">
+<div class="pattern mod-singlecol {f:if(condition: '{border} == 1', then: 'border', else: '')}">
   <div class="main-content">
     <div class="main-content-inner">
       <div class="inner">
