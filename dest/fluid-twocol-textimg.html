@@ -1,7 +1,7 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}"
+<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{info} == 1', then: ' info')}"
      id="uid{item.data.uid}">
   <div class="main-content">
     <div class="main-content-inner">
@@ -23,6 +23,12 @@
           </f:else>
         </f:if>
       </div>
+
+      <f:if condition="{info} == 1">
+        <f:then>
+          <div class="data" data-srcsets="{f:render(partial: 'fluid-image-json', arguments: {imgs:'{item.files}'})}"></div>
+        </f:then>
+      </f:if>
 
       <div class="clear"></div>
     </div>

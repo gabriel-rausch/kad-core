@@ -18,6 +18,10 @@ goog.require('kstatic.module');
  */
 kstatic.modules.twocoltextimg = function(id, node, pubsub) {
   goog.base(this, id, node, pubsub);
+  this.infoImgs = false;
+  this.dom = {
+    img: false
+  };
 };
 
 goog.inherits(kstatic.modules.twocoltextimg, kstatic.module);
@@ -37,12 +41,21 @@ kstatic.modules.twocoltextimg.prototype.start = function() {
 kstatic.modules.twocoltextimg.prototype.initInfo = function() {
   var self = this;
 
-  goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo) {
+  self.infoImgs = goog.json.unsafeParse(goog.dom.dataset.get(self.node.querySelector('.data'), 'srcsets'));
+  self.dom.img = self.node.querySelector('.mod-image');
+
+  goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo, index) {
 
     // click: show thumbnail
     goog.events.listen(linkinfo, goog.events.EventType.CLICK, function(e) {
       e.preventDefault();
-      console.log('okok');
+
+      if (self.infoImgs[index]) {
+        var newSrcset = self.infoImgs[index].join(',');
+        goog.dom.dataset.set(self.dom.img, 'srcset', newSrcset);
+        self.pubsub.publish('image:refreshSrcset');
+        console.log('okok');
+      }
     });
   });
 };
