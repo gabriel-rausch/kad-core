@@ -54,7 +54,6 @@ kstatic.modules.twocoltextimg.prototype.initInfo = function() {
         var newSrcset = self.infoImgs[index].join(',');
         goog.dom.dataset.set(self.dom.img, 'srcset', newSrcset);
         self.pubsub.publish('image:refreshSrcset');
-        console.log('okok');
       }
     });
   });

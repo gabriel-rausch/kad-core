@@ -11,11 +11,11 @@
 <v:variable.set name="pageIdImpressum" value="1" />
 
 
+
 <f:render partial="fluid-header" arguments="{_all}" />
 
 <div class="main-wrapper">
     <f:for each="{content}" as="item">
-
 
         <f:switch expression="{item.data.layout}">
 
@@ -52,26 +52,31 @@
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item}" />
             </f:case>
             <f:case value="4">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1}" />
             </f:case>
             <f:case value="62">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,slideshow:1}" />
             </f:case>
             <f:case value="63">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,slideshow:1}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1,slideshow:1}" />
             </f:case>
             <f:case value="64">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,white:1}" />
             </f:case>
             <f:case value="65">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,textImgReversed:1,white:1}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1,white:1}" />
             </f:case>
             <f:case value="66">
-                <!--<iframe src="http://10.21.40.210:9000/pages/05-videoextern/article-video-extern-eplayer.page.html" width="100%" height="700px"></iframe>-->
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,info:1,white:1}" />
             </f:case>
             <f:case value="67">
-                <f:render partial="fluid-twocol-textimg" arguments="{item:item,info:1,textImgReversed:1,white:1}" />
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,info:1,order:1,white:1}" />
+            </f:case>
+            <f:case value="68">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,imgoverlay:1}" />
+            </f:case>
+            <f:case value="69">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,imgoverlay:1,order:1}" />
             </f:case>
             
             <f:case value="5">
@@ -106,7 +111,7 @@
                 <f:render partial="fluid-singlecol" arguments="{item:item,facts:1,white:1}" />
             </f:case>
 
-            <f:case value="#23">
+            <f:case value="23">
                 <f:render partial="fluid-singlecol" arguments="{item:item,columns:1}" />
             </f:case>
 

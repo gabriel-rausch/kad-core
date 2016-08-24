@@ -1,18 +1,25 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
-
-<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{info} == 1', then: ' info')}"
+<f:comment>
+  Variants:
+    slideshow
+    white
+    info
+    imgoverlay
+    order
+</f:comment>
+<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{info} == 1', then: ' info')}{f:if(condition: '{imgoverlay} == 1', then: ' imgoverlay')}"
      id="uid{item.data.uid}">
   <div class="main-content">
     <div class="main-content-inner">
-      <div class="{f:if(condition: '{textImgReversed} == 1', then: 'col-right', else: 'col-left')}">
+      <div class="{f:if(condition: '{order} == 1', then: 'col-right', else: 'col-left')}">
         <div class="content">
           <h2>{item.data.header}</h2>
           <f:format.html>{item.data.bodytext}</f:format.html>
         </div>
       </div>
 
-      <div class="{f:if(condition: '{textImgReversed} == 1', then: 'col-left flex', else: 'col-right flex')}">
+      <div class="{f:if(condition: '{order} == 1', then: 'col-left flex', else: 'col-right flex')}">
 
         <f:if condition="{slideshow} == 1">
           <f:then>
@@ -21,6 +28,22 @@
           <f:else>
             <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'{f:if(condition: \'{white} == 1\', then: \'contain\', else: \'cover\')}'}}" />
           </f:else>
+        </f:if>
+
+        <f:if condition="{imgoverlay} == 1">
+          <f:then>
+            <div class="imgoverlay-wrap">
+              <div class="imgo-bg"></div>
+              <div class="imgo-content">
+                <div class="tl"></div>
+                <div class="tr"></div>
+                <div class="bl"></div>
+                <div class="br"></div>
+                <div class="m"></div>
+                <div class="imgo-txt h3">Lorem Ipsum</div>
+              </div>
+            </div>
+          </f:then>
         </f:if>
       </div>
 
