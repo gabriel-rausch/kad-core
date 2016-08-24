@@ -28,11 +28,13 @@
 
   .event {
     display: inline-block;
-    width: 100%;
+    width: auto;
     color: white;
     overflow: hidden;
     height: 120px;
     box-sizing: border-box;
+    padding: 0 30px;
+    margin: 45px 4%;
 
     .event-title, p {
       text-overflow: ellipsis;
@@ -48,6 +50,10 @@
     p {
       margin: .3rem 0;
       color: @col-grey;
+    }
+
+    b {
+      line-height: 3;
     }
   }
 
@@ -69,25 +75,32 @@
   }
 
   @media screen and @tablet {
+    .nav {
+      left: 25px;
+
+      &.next {
+        right: 25px;
+      }
+    }
+    .events {
+      padding: @padding-v-60 100px;
+    }
     .event {
       padding: 0 30px;
-      width: 50%;
+      margin: 45px 7%;
+      width: auto;
     }
   }
 
   @media screen and @desktop {
-    .events {
-      padding: @padding-v-60 @padding-h-40;
-    }
     .event {
-      width: 33.333%;
+      margin: 45px 3%;
     }
   }
 
   @media screen and @large1500 {
     .event {
-      margin: 45px 3%;
-      width: auto;
+      margin: 45px 4%;
     }
   }
 }

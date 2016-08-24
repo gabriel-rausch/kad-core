@@ -2,6 +2,7 @@
 @import "./src/css/elements-text.less";
 
 .mod-hero {
+  position: relative;
 
   .innerHeight {
     position: relative;
@@ -30,9 +31,14 @@
     .h1 {
       .h2();
     }
+
+    h3 {
+      font-weight: normal;
+    }
   }
 
   &.light {
+    background: white;
     .content {
       .h1, h1 {
         color: @col-antrazitDark;

@@ -17,6 +17,7 @@
 .main-content-inner {
   position: relative;
   width: 100%;
+  display: inline-block;
 }
 
 .content {
@@ -52,8 +53,9 @@
   transition: all @speed-fast;
 
   &:hover {
-    background: @col-greenDark;
+    background: @col-green;
     color: white;
+    border: 2px solid @col-green;
 
     &:before {
       border-top-color: white;
@@ -66,7 +68,7 @@
     top: 48%;
     left: -2px;
     width: 12px;
-    border-top: 2px solid @col-greenDark;
+    border-top: 2px solid @col-green;
   }
 }
 
@@ -161,5 +163,9 @@
 @media screen and @large1500 {
   .main-content {
     max-width: @bp-large1500;
+  }
+
+  .text-definition {
+    margin-right: 20px;
   }
 }

@@ -16,7 +16,7 @@
 
   &.slideshow {
     .inner {
-      padding: 0 2rem;
+      padding: 2rem 2rem;
       box-sizing: border-box;
       height: 400px;
       margin: 0;
@@ -29,6 +29,28 @@
     margin: @padding-v-small 0;
   }
 
+  table {
+    margin: 20px 0;
+    td {
+      vertical-align: top;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+  }
+
+
+@media screen and @tablet {
+
+  &.slideshow {
+    .inner {
+      padding: 4rem 2rem;
+      height: 600px;
+    }
+  }
+}
 
 @media screen and @desktop {
   &.border {
@@ -36,8 +58,22 @@
       border-left: 13px solid @col-green;
     }
   }
+
+  &.slideshow {
+    .inner {
+      padding: 4rem 2rem;
+      height: 650px;
+    }
+  }
+
   .inner {
     margin: @padding-v-medium 20%;
+  }
+
+  table {
+    td {
+      min-width: 160px;
+    }
   }
 }
 }

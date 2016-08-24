@@ -42,11 +42,23 @@
     .flex {
       padding: 40px 60px;
       box-sizing: border-box;
+      height: 300px;
     }
   }
 
 
+@media screen and @phone {
+  &.slideshow {
+    .flex {
+      height: 500px;
+    }
+  }
+}
 @media screen and @desktop {
-
+  &.slideshow {
+    .flex {
+      height: 100%;
+    }
+  }
 }
 }

@@ -26,6 +26,8 @@ kstatic.modules.nav.prototype.start = function() {
   var self = this;
 
   self.attachListeners();
+
+  self.markIfCurrentHasSubs();
 };
 
 /**
@@ -42,11 +44,16 @@ kstatic.modules.nav.prototype.attachListeners = function() {
       goog.dom.classlist.add(li, 'subs');
     }
 
+    self.openCurrentSubs();
+
     goog.events.listen(li, goog.events.EventType.MOUSEOVER, function() {
       if (!goog.dom.classlist.contains(li, 'open')) {
         self.removeOpenState();
         if (li.querySelector('.ul-2') !== null) {
           goog.dom.classlist.add(li, 'open');
+        }
+        if (!goog.dom.classlist.contains(li, 'subs')) {
+          self.openCurrentSubs();
         }
       }
     });
@@ -55,15 +62,19 @@ kstatic.modules.nav.prototype.attachListeners = function() {
   // close subnav on leave header or hover on logo
   goog.events.listen(document.querySelector('.mod.mod-header'), goog.events.EventType.MOUSELEAVE, function() {
     self.removeOpenState();
+    self.openCurrentSubs();
   });
   goog.events.listen(document.querySelector('.mod.mod-header .logo'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
+    self.openCurrentSubs();
   });
   goog.events.listen(document.querySelector('.mod.mod-header .lang-picker'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
+    self.openCurrentSubs();
   });
   goog.events.listen(document.querySelector('.mod.mod-header .search-btn'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
+    self.openCurrentSubs();
   });
 };
 
@@ -75,4 +86,24 @@ kstatic.modules.nav.prototype.removeOpenState = function() {
   goog.array.forEach(self.node.querySelectorAll('.li-1'), function(li) {
     goog.dom.classlist.remove(li, 'open');
   });
+};
+
+/**
+ * Open sub navi of current active main category
+ */
+kstatic.modules.nav.prototype.openCurrentSubs = function() {
+  var self = this;
+  if (self.node.querySelector('.li-1.active.subs') !== null) {
+    goog.dom.classlist.add(self.node.querySelector('.li-1.active.subs'), 'open');
+  }
+};
+
+/**
+ * Set class to body if current active category has subs
+ */
+kstatic.modules.nav.prototype.markIfCurrentHasSubs = function() {
+  var self = this;
+  if (self.node.querySelector('.li-1.active.subs') !== null) {
+    goog.dom.classlist.add(document.body, 'subnav');
+  }
 };
