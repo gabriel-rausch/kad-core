@@ -1,0 +1,59 @@
+@import "./src/css/vars.less";
+@import "./src/css/elements.less";
+@import "./src/css/elements-text.less";
+
+.mod-singlecol.graphic {
+
+  h3 {
+    color: @col-greenDark;
+  }
+
+  td {
+    display: block;
+    vertical-align: bottom;
+
+    &:nth-child(2) {
+      text-align: center;
+      vertical-align: middle;
+      &:before {
+        .icon();
+        .get-icon-arrow-next();
+        display: inline-block;
+        transform: rotate(90deg);
+      }
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+@media screen and @phone {
+
+}
+
+@media screen and @desktop {
+
+  h3 {
+    .h2();
+    color: @col-greenDark;
+  }
+
+  td {
+    display: table-cell;
+    padding: 0 1rem;
+
+    &:nth-child(2) {
+      &:before {
+        transform: rotate(0);
+      }
+    }
+
+    img {
+    }
+  }
+}
+}
+

@@ -1,0 +1,38 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<div class="pattern mod-tooltip {type}">
+  <div class="main-content">
+    <div class="main-content-inner">
+
+
+
+      <f:if condition="{type} == 'tooltip-1'">
+        <div class="tooltip-left">
+          <div class="tooltip-bg">
+            <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'contain'}}" />
+          </div>
+        </div>
+        <div class="tooltip-right">
+          <div class="tooltip-bg">
+            <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.1.originalFile.uid}', type:'contain'}}" />
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="tooltip-textdata">
+          <f:format.html>{item.data.bodytext}</f:format.html>
+        </div>
+      </f:if>
+
+
+
+      <f:if condition="{type} == 'tooltip-2'">
+        Tooltip 2
+      </f:if>
+
+      <f:if condition="{type} == 'tooltip-3'">
+        Tooltip 3
+      </f:if>
+    </div>
+  </div>
+</div>

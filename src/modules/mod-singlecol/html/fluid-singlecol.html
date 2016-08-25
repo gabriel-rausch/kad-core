@@ -1,23 +1,26 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 
-<div class="pattern mod-singlecol{f:if(condition: '{columns} == 1', then: ' columns')}{f:if(condition: '{border} == 1', then: ' border')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{facts} == 1', then: ' facts')}">
+<div class="pattern mod-singlecol{f:if(condition: '{graphic} == 1', then: ' graphic')}{f:if(condition: '{impression} == 1', then: ' impression')}{f:if(condition: '{columns} == 1', then: ' columns')}{f:if(condition: '{border} == 1', then: ' border')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{facts} == 1', then: ' facts')}">
   <div class="main-content">
     <div class="main-content-inner">
 
       <f:if condition="{impression} == 1">
         <f:then>
-          impression
+          <f:render partial="fluid-singlecol-impression" arguments="{_all}" />
         </f:then>
 
         <f:else>
 
           <f:if condition="{graphic} == 1">
             <f:then>
-              graphic
+              <div class="content">
+                <f:format.html>{item.data.bodytext}</f:format.html>
+              </div>
             </f:then>
 
             <f:else>
+
               <f:if condition="{columns} == 1">
                 <f:then>
                   <div class="content">
