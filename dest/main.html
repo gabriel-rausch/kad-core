@@ -44,6 +44,18 @@
             <f:case value="22">
                 <f:render partial="fluid-singlecol" arguments="{item:item}" />
             </f:case>
+            <f:case value="23">
+                <f:render partial="fluid-singlecol" arguments="{item:item,columns:1}" />
+            </f:case>
+            <f:case value="24">
+                <f:render partial="fluid-singlecol" arguments="{item:item,columns:1,white:1}" />
+            </f:case>
+            <f:case value="25">
+                <f:render partial="fluid-singlecol" arguments="{item:item,impression:1}" />
+            </f:case>
+            <f:case value="26">
+                <f:render partial="fluid-singlecol" arguments="{item:item,graphic:1}" />
+            </f:case>
             <f:case value="80">
                 <f:render partial="fluid-singlecol" arguments="{item:item,slideshow:1}" />
             </f:case>
@@ -53,6 +65,12 @@
             </f:case>
             <f:case value="4">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1}" />
+            </f:case>
+            <f:case value="60">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1}" />
+            </f:case>
+            <f:case value="61">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1,order:1}" />
             </f:case>
             <f:case value="62">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,slideshow:1}" />
@@ -109,10 +127,6 @@
             </f:case>
             <f:case value="101">
                 <f:render partial="fluid-singlecol" arguments="{item:item,facts:1,white:1}" />
-            </f:case>
-
-            <f:case value="23">
-                <f:render partial="fluid-singlecol" arguments="{item:item,columns:1}" />
             </f:case>
 
             <f:case default="TRUE">

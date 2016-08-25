@@ -3,7 +3,7 @@
 
 
 .pattern {
-  margin-bottom: 0;
+  padding-top: 0;
 }
 
 .main-content {
@@ -130,17 +130,18 @@
 @media screen and @desktop {
 
   .pattern {
-    margin-bottom: @margin-after;
+    padding-top: @margin-after;
   }
 
   .content {
     padding-left: @padding-h;
     padding-right: @padding-h;
     padding-bottom: @padding-v-large;
-    padding-top: @padding-v-large;
+    padding-top: 120px;
   }
 
   .main-content {
+    max-width: @bp-desktop;
     padding: 0 @padding-h-40;
   }
 
@@ -167,12 +168,18 @@
   }
 }
 
-@media screen and @large1500 {
+@media screen and @desktop {
   .main-content {
-    max-width: @bp-large1500;
+    max-width: @bp-large;
   }
 
   .text-definition {
     margin-right: 20px;
+  }
+}
+
+@media screen and @large1500 {
+  .main-content {
+    max-width: @bp-large1500;
   }
 }

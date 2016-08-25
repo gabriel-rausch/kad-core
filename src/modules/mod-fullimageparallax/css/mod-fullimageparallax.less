@@ -1,7 +1,7 @@
 @import "./src/css/vars.less";
 
 .mod-fullimageparallax {
-  margin: 0;
+  padding: 0;
 
   .bg {
     position: relative;
@@ -12,6 +12,10 @@
       //background-position-y: 0;
       //background-repeat: repeat-y;
     }
+  }
+
+  &:last-child{
+    margin-bottom: -40px;
   }
 
 @media screen and @tablet {

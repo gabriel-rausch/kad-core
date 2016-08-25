@@ -1,7 +1,7 @@
 @import "./src/css/vars.less";
 
 .mod-twocoltextimg {
-
+  
   .content {
     background: white;
 
@@ -29,10 +29,15 @@
       }
     }
   }
+  
+  &.transparent {
+    .content {
+      background: none;
+    }
+  }
 
   &.white {
     background: white;
-    margin: 0;
 
     .flex {
       margin: 0 2rem;
@@ -41,7 +46,6 @@
 
   &.slideshow {
     background: white;
-    margin: 0;
 
     .flex {
       padding: 40px 60px;
@@ -64,9 +68,12 @@
     }
   }
 }
+
 @media screen and @desktop {
+
   &.slideshow {
     .flex {
+      padding: 170px 60px;
       height: 100%;
     }
   }
@@ -74,6 +81,14 @@
   &.white {
     .flex {
       margin: 0;
+    }
+  }
+}
+
+@media screen and @desktop and (min-height: 800px) {
+  &.slideshow {
+    .flex {
+      padding: 40px 60px;
     }
   }
 }

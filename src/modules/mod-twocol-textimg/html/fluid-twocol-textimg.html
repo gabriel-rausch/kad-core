@@ -4,11 +4,12 @@
   Variants:
     slideshow
     white
+    transparent
     info
     imgoverlay
     order
 </f:comment>
-<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{info} == 1', then: ' info')}{f:if(condition: '{imgoverlay} == 1', then: ' imgoverlay')}"
+<div class="pattern mod mod-twocoltextimg{f:if(condition: '{slideshow} == 1', then: ' slideshow')}{f:if(condition: '{white} == 1', then: ' white')}{f:if(condition: '{info} == 1', then: ' info')}{f:if(condition: '{imgoverlay} == 1', then: ' imgoverlay')}{f:if(condition: '{transparent} == 1', then: ' transparent')}"
      id="uid{item.data.uid}">
   <div class="main-content">
     <div class="main-content-inner">
@@ -40,7 +41,7 @@
                 <div class="bl"></div>
                 <div class="br"></div>
                 <div class="m"></div>
-                <div class="imgo-txt h3">Lorem Ipsum</div>
+                <div class="imgo-txt h2">{item.files.0.alternative}</div>
               </div>
             </div>
           </f:then>

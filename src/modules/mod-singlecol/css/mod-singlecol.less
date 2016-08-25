@@ -12,7 +12,10 @@
 
   &.white, &.slideshow {
     background: white;
-    margin: 0;
+
+    &:last-child{
+      margin-bottom: -40px;
+    }
   }
 
   &.slideshow {
@@ -47,7 +50,6 @@
 
   ul {
     margin: 0;
-
   }
 
 
@@ -65,9 +67,9 @@
       td {
         display: table-cell;
         width: 50%;
-        padding: 0 0 0 1rem;
+        padding: 0 0 0 4rem;
         &:first-child {
-          padding: 0 1rem 0 0;
+          padding: 0 4rem 0 0;
         }
       }
     }
@@ -89,7 +91,7 @@
   }
 
   .inner {
-    margin: @padding-v-medium 20%;
+    margin: 80px 20% @padding-v-medium;
   }
 
   table {
