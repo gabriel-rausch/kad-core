@@ -1,21 +1,145 @@
 @import "./src/css/vars.less";
+@import "./src/css/elements-icons.less";
 @import "./src/css/elements-text.less";
 
 .mod-tooltip {
   background: white;
 
+  .data {
+    display: none;
+  }
+
   .tooltip-bg {
     position: relative;
     width: 100%;
     height: 550px;
+    display: inline-block;
   }
 
   .tooltip-left, .tooltip-right {
+    position: relative;
     width: 50%;
     float: left;
+    text-align: center;
   }
   .tooltip-right {
     float: right;
+  }
+
+  .tip{
+    position: absolute;
+
+    &:before{
+      .icon();
+      .get-icon-video();
+      background: @col-green;
+      border-radius: 100%;
+      padding: 5px;
+      display: block;
+      border: 2px solid @col-greenDark;
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    &.open {
+      &:before {
+        .get-icon-arrow-next();
+      }
+    }
+
+    &.tl {
+      .tip-content {
+        right: 110px;
+        top: 17px;
+        &:before {
+          top: 0;
+          right: -35px;
+          transform: rotate(270deg);
+        }
+      }
+    }
+
+    &.tr {
+      .tip-content {
+        left: 110px;
+        top: 17px;
+        &:before {
+          top: 0;
+          left: -35px;
+        }
+      }
+    }
+
+    &.bl {
+      .tip-content {
+        right: 110px;
+        bottom: 17px;
+        &:before {
+          bottom: 0;
+          right: -35px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &.br {
+      .tip-content {
+        left: 110px;
+        bottom: 17px;
+        &:before {
+          bottom: 0;
+          left: -35px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .tip-content {
+    position: absolute;
+    z-index: 1;
+    background: @col-antrazit;
+    color: white;
+    width: 290px;
+    padding: 1.5rem 1.5rem;
+    text-align: left;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      border-style: solid;
+      border-width: 0 40px 40px 0;
+      border-color: transparent #4a4e4e transparent transparent;
+    }
+
+    p, ul {
+      color: white;
+    }
+  }
+
+
+  &.tooltip-1 {
+    .tooltip-bg {
+      width: 208px;
+      height: 550px;
+    }
+    .tip-1 {
+      left: 50%;
+      top: 50px;
+    }
+    .tip-2 {
+      left: 55%;
+      bottom: 80px;
+    }
+    .tip-3 {
+      left: 47%;
+      top: 50px;
+    }
+    .tip-4 {
+      left: 52%;
+      bottom: 50px;
+    }
   }
 
 @media screen and @desktop {

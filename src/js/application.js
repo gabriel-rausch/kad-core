@@ -22,6 +22,7 @@ goog.require('kstatic.modules.superhero');
 goog.require('kstatic.modules.fullimageparallax');
 goog.require('kstatic.modules.twocoltextimg');
 goog.require('kstatic.modules.heromachines');
+goog.require('kstatic.modules.tooltip');
 
 /**
  * Initial class to handle the application and modules
