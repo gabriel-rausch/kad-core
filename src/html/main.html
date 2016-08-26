@@ -133,6 +133,21 @@
                 <f:render partial="fluid-tooltip" arguments="{item:item,type:'tooltip-1'}" />
             </f:case>
 
+            <f:case value="140">
+                <f:render partial="fluid-title" arguments="{item:item,white:1}" />
+            </f:case>
+            <f:case value="141">
+                <f:render partial="fluid-title" arguments="{item:item}" />
+            </f:case>
+
+            <f:case value="150">
+                <f:render partial="fluid-form" arguments="{item:item}" />
+            </f:case>
+
+            <f:case value="160">
+                <f:render partial="fluid-address" arguments="{item:item}" />
+            </f:case>
+
             <f:case default="TRUE">
             </f:case>
         </f:switch>

@@ -32,11 +32,16 @@ TCEFORM.tt_content.layout.addItems.68 = 2-spaltig Text/Bild mit Bildoverlay
 TCEFORM.tt_content.layout.addItems.69 = 2-spaltig Bild/Text mit Bildoverlay
 TCEFORM.tt_content.layout.addItems.70 = Zierbild
 TCEFORM.tt_content.layout.addItems.80 = Full-Image Slideshow
+TCEFORM.tt_content.layout.addItems.81 = Full-Image mit Zitat
 TCEFORM.tt_content.layout.addItems.100 = Zahlen & Fakten
 TCEFORM.tt_content.layout.addItems.101 = Zahlen & Fakten (weiß)
 TCEFORM.tt_content.layout.addItems.120 = Tooltip 1
 TCEFORM.tt_content.layout.addItems.121 = Tooltip 2
 TCEFORM.tt_content.layout.addItems.122 = Tooltip 3
+TCEFORM.tt_content.layout.addItems.140 = Titel (weiß)
+TCEFORM.tt_content.layout.addItems.141 = Titel (grau)
+TCEFORM.tt_content.layout.addItems.150 = Form
+TCEFORM.tt_content.layout.addItems.160 = Map & Adresse
 
 
 RTE.default {

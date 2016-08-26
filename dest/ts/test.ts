@@ -89,6 +89,17 @@ lib.subnav {
     }
 }
 
+lib.form = CONTENT
+lib.form {
+    table = tt_content
+    select {
+        orderBy = sorting
+        where = colPos = 0
+        languageField = sys_language_uid
+        andWhere = CType = 'mailform'
+    }
+}
+
 page = PAGE
 page.10 = FLUIDTEMPLATE
 page.10 {
@@ -96,6 +107,7 @@ page.10 {
     file = typo3conf/ext/ktempl/main.html
     partialRootPath = typo3conf/ext/ktempl/
     layoutRootPath = typo3conf/ext/ktempl/
+
     dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
@@ -105,6 +117,18 @@ page.10 {
             dataProcessing {
                 10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
                 10 {
+                    references.fieldName = assets
+                }
+            }
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tt_content
+            orderBy = sorting
+            as = content
+            dataProcessing {
+                20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                20 {
                     references.fieldName = assets
                 }
             }

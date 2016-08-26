@@ -1,3 +1,6 @@
+@import './src/css/vars.less';
+@import './src/css/elements-icons.less';
+
 .font-face(@fontname, @filename, @fontweight: normal, @fontstyle: normal) {
   @font-face {
     font-family: "@{fontname}";
@@ -11,4 +14,9 @@
 .mainFont() {
   font-family: 'TheSans', sans-serif;
   font-weight: 300;
+}
+
+.disableSpacing() {
+  margin-top: -@margin-after;
+  margin-bottom: 0;
 }
