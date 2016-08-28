@@ -50,11 +50,11 @@ kstatic.modules.tooltip.prototype.attachEvents = function() {
 
     goog.events.listen(tip, goog.events.EventType.MOUSEOVER, function() {
       goog.dom.classlist.add(tip, 'open');
-      tip.innerHTML = '<div class="tip-content">' + self.tooltips[index] + '</div>';
+      tip.querySelector('.tip-content').innerHTML = self.tooltips[index];
     });
     goog.events.listen(tip, goog.events.EventType.MOUSEOUT, function() {
       goog.dom.classlist.remove(tip, 'open');
-      tip.innerHTML = '';
+      tip.querySelector('.tip-content').innerHTML = '';
     });
   });
 };

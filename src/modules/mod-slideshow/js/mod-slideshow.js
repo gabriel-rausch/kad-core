@@ -24,7 +24,7 @@ kstatic.modules.slideshow = function(id, node, pubsub) {
     slideshowInner: false,
     slideshowImg: false
   };
-  this.slideshowImgs = [];
+  this.data = {};
   this.slideshowItemKey = 0;
 };
 
@@ -38,23 +38,25 @@ kstatic.modules.slideshow.prototype.start = function() {
   self.dom.navPrev = self.node.querySelector('.nav.prev');
   self.dom.slideshowInner = self.node.querySelector('.slideshow-inner');
   self.dom.slideshowImg = self.dom.slideshowInner.querySelector('.mod-image');
-  self.slideshowImgs = goog.json.unsafeParse(goog.dom.dataset.get(self.node, 'srcsets'));
+  self.data = goog.json.unsafeParse(goog.dom.dataset.get(self.node, 'srcsets'));
 
   // attach event listeners
   goog.events.listen(self.dom.navNext, goog.events.EventType.CLICK, function() {
     self.slideshowItemKey++;
-    if (self.slideshowItemKey >= self.slideshowImgs.length) {
+    if (self.slideshowItemKey >= Object.keys(self.data).length) {
       self.slideshowItemKey = 0;
     }
     self.setImage(self.slideshowItemKey);
+    self.setQuote(self.slideshowItemKey);
   });
 
   goog.events.listen(self.dom.navPrev, goog.events.EventType.CLICK, function() {
     self.slideshowItemKey--;
     if (self.slideshowItemKey < 0) {
-      self.slideshowItemKey = self.slideshowImgs.length - 1;
+      self.slideshowItemKey = Object.keys(self.data).length - 1;
     }
     self.setImage(self.slideshowItemKey);
+    self.setQuote(self.slideshowItemKey);
   });
 };
 
@@ -65,7 +67,25 @@ kstatic.modules.slideshow.prototype.start = function() {
 kstatic.modules.slideshow.prototype.setImage = function(imgKey) {
   var self = this;
 
-  var newSrcset = self.slideshowImgs[imgKey].join(',');
+  var newSrcset = self.data['item' + imgKey].urls.join(',');
   goog.dom.dataset.set(self.dom.slideshowImg, 'srcset', newSrcset);
   self.pubsub.publish('image:refreshSrcset');
+};
+
+/**
+ * Set new cite
+ * @param imgKey
+ */
+kstatic.modules.slideshow.prototype.setQuote = function(imgKey) {
+  var self = this;
+  try {
+    var alternative = self.data['item' + imgKey].alternative;
+    var description = self.data['item' + imgKey].description;
+    if (alternative && alternative !== '' && description && description !== '') {
+      self.node.parentNode.parentNode.querySelector('.quote .description').innerHTML = description;
+      self.node.parentNode.parentNode.querySelector('.quote .cite').innerHTML = alternative;
+    }
+  } catch (e) {
+    console.log(e);
+  }
 };

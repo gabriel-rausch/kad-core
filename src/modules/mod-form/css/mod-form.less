@@ -11,8 +11,23 @@
     margin: @padding-v-small 0;
   }
 
+  h2, p {
+    text-align: center;
+  }
+
   label {
-    display: none;
+    position: relative;
+    top: 112px;
+    left: 6px;
+    color: transparent;
+    em {
+      display: none;
+    }
+    strong {
+      position: absolute;
+      top: 0;
+      left:0;
+    }
   }
 
   ol {
@@ -24,6 +39,8 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      overflow: visible !important;
+      width: 100%;
     }
   }
 
@@ -38,16 +55,10 @@
         padding: 0;
         margin: 0;
         display: block;
-        width: 49%;
+        width: 100%;
         float: left;
-
-        &:first-child {
-          margin-right: 2%;
-        }
       }
     }
-
-
   }
 
   input, select, textarea {
@@ -57,9 +68,14 @@
     outline: none;
     border: none;
     border-bottom: 1px solid @col-grey;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 0.7rem 0.4rem;
     box-sizing: border-box;
+    color: @col-antrazit;
+
+    &:focus {
+      border-bottom: 1px solid @col-greenDark;
+    }
   }
 
   textarea {
@@ -67,15 +83,52 @@
     height: 400px;
   }
 
-  li .csc-form-element-button, input[type=button] {
-    .link-btn();
-    width: auto;
+  select {
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 1px;
+      background: red;
+      .icon();
+      .get-icon-dropdown();
+    }
   }
 
-@media screen and @desktop {
+  .csc-form-element-submit {
+    label {
+      display: none;
+    }
+    input[type=submit] {
+      .link-btn();
+      width: auto;
+
+    }
+  }
+
+@media screen and @tablet {
 
   .inner {
     margin: @padding-v-medium 20%;
+  }
+
+  input, select, textarea {
+    margin-top: 40px;
+  }
+
+  fieldset, .csc-mailform fieldset {
+    ol {
+      li {
+        width: 49%;
+
+        &:first-child {
+          margin-right: 2%;
+        }
+      }
+    }
   }
 }
 }

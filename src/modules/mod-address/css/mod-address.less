@@ -8,15 +8,29 @@
   background: white;
 
   .col-left.flex {
-    background-color: grey;
-  }
+    width: 100%;
+    padding: 0;
+    height: 400px;
 
-  .col-right {
-    p {
-      color: white !important;
+    iframe {
+      border: none;
     }
   }
 
+  .col-right {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
 @media screen and @desktop {
+  .col-left.flex {
+    width: 60%;
+    height: 100%;
+  }
+
+  .col-right {
+    width: 40%;
+  }
 }
 }
+

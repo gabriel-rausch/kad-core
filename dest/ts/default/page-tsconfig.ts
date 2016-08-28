@@ -14,12 +14,12 @@ TCEFORM.tt_content.layout.addItems.21 = 1-spaltig ohne Balken (weiß)
 TCEFORM.tt_content.layout.addItems.22 = 1-spaltig ohne Balken (grau)
 TCEFORM.tt_content.layout.addItems.23 = Text 2-spaltig (grau)
 TCEFORM.tt_content.layout.addItems.24 = Text 2-spaltig (weiß)
-TCEFORM.tt_content.layout.addItems.25 = 1-spaltig Impression
 TCEFORM.tt_content.layout.addItems.26 = 1-spaltig Grafik
 TCEFORM.tt_content.layout.addItems.30 = Hero (hell)
 TCEFORM.tt_content.layout.addItems.31 = Hero (dunkel)
 TCEFORM.tt_content.layout.addItems.50 = Hero Maschinen
 
+TCEFORM.tt_content.layout.addItems.59 = 2-spaltig Bild/Text (weiß) versetzt
 TCEFORM.tt_content.layout.addItems.60 = 2-spaltig Text/Bild (grau)
 TCEFORM.tt_content.layout.addItems.61 = 2-spaltig Bild/Text (grau)
 TCEFORM.tt_content.layout.addItems.62 = 2-spaltig Text/Slideshow
@@ -33,6 +33,9 @@ TCEFORM.tt_content.layout.addItems.69 = 2-spaltig Bild/Text mit Bildoverlay
 TCEFORM.tt_content.layout.addItems.70 = Zierbild
 TCEFORM.tt_content.layout.addItems.80 = Full-Image Slideshow
 TCEFORM.tt_content.layout.addItems.81 = Full-Image mit Zitat
+TCEFORM.tt_content.layout.addItems.82 = Full-Image Slidesow mit Zitat
+TCEFORM.tt_content.layout.addItems.90 = Impression (zwei Bilder)
+TCEFORM.tt_content.layout.addItems.91 = Impression (acht Bilder)
 TCEFORM.tt_content.layout.addItems.100 = Zahlen & Fakten
 TCEFORM.tt_content.layout.addItems.101 = Zahlen & Fakten (weiß)
 TCEFORM.tt_content.layout.addItems.120 = Tooltip 1
@@ -42,6 +45,8 @@ TCEFORM.tt_content.layout.addItems.140 = Titel (weiß)
 TCEFORM.tt_content.layout.addItems.141 = Titel (grau)
 TCEFORM.tt_content.layout.addItems.150 = Form
 TCEFORM.tt_content.layout.addItems.160 = Map & Adresse
+TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
+
 
 
 RTE.default {
