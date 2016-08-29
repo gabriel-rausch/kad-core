@@ -46,7 +46,6 @@ kstatic.application.prototype.start = function() {
   var self = this;
   self.registerModules();
   self.attachEvents();
-  self.adjustSpacing();
 };
 
 /**
@@ -99,37 +98,4 @@ kstatic.application.prototype.attachEvents = function() {
  */
 kstatic.application.prototype.getWindowScrollTop = function() {
   return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-};
-
-/**
- * Adjust spacing between patterns
- */
-kstatic.application.prototype.adjustSpacing = function() {
-  var patterns = document.querySelectorAll('.main-wrapper .pattern');
-
-  for (var i = 0; i < patterns.length; i++) {
-    var pattern = patterns[i];
-    var patternClass = pattern.getAttribute('class');
-    var patternBefore = pattern[i - 1];
-    //var patternAfter = pattern[i + 1];
-    console.log(pattern.getAttribute('class'));
-
-    if (patternClass.indexOf('mod-fullimageparallax') > -1 ||
-        patternClass.indexOf('mod-singlecol') > -1) {
-      goog.dom.classlist.add(pattern, 'spacing-disable-both');
-
-      if (patternBefore) {
-        var patternClassBefore = patternBefore.getAttribute('class');
-        if (patternClassBefore.indexOf('mod-twocoltextimg') > -1) {
-          goog.dom.classlist.remove(pattern, 'spacing-disable-both');
-          goog.dom.classlist.add(pattern, 'spacing-disable-bottom');
-        }
-      }
-
-      // last pattern
-      if (i === patterns.length - 1 && patternClass.indexOf('mod-fullimageparallax') > -1) {
-        goog.dom.classlist.add(pattern, 'spacing-disable-last-bottom');
-      }
-    }
-  }
 };
