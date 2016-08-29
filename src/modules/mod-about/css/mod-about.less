@@ -1,0 +1,27 @@
+@import "./src/css/vars.less";
+@import "./src/css/elements-text.less";
+@import "./src/css/mixins.less";
+
+.mod-about {
+  position: relative;
+
+  .col-left {
+    width: 100%;
+  }
+
+  .col-right {
+    width: 100%;
+    box-sizing: border-box;
+    background: #E6E6E6;
+  }
+
+  @media screen and @desktop {
+    .col-left {
+      width: 60%;
+    }
+
+    .col-right {
+      width: 40%;
+    }
+  }
+}

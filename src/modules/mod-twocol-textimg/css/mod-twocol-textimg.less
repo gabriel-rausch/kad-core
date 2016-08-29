@@ -45,6 +45,14 @@
     }
   }
 
+  &.transparent {
+    background: transparent;
+
+    .flex {
+      background: transparent;
+    }
+  }
+
   &.slideshow {
     background: white;
 
@@ -70,6 +78,7 @@
   }
 }
 
+
 @media screen and @desktop {
 
   &.slideshow {
@@ -82,6 +91,14 @@
   &.white {
     .flex {
       margin: 0;
+    }
+  }
+
+  &.shifted {
+    background: #F1F1F1;
+    .main-content{
+      top: 60px;
+      z-index: 1;
     }
   }
 }

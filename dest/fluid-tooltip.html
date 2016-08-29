@@ -31,7 +31,16 @@
 
 
       <f:if condition="{type} == 'tooltip-2'">
-        Tooltip 2
+        <div class="tooltip-bg">
+          <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'contain'}}" />
+          <div class="tip tip-1 bl"><div class="tip-content"></div><i></i></div>
+          <div class="tip tip-2 bl"><div class="tip-content"></div><i></i></div>
+          <div class="tip tip-3 br"><div class="tip-content"></div><i></i></div>
+        </div>
+
+        <div class="data">
+          <f:format.html>{item.data.bodytext}</f:format.html>
+        </div>
       </f:if>
 
       <f:if condition="{type} == 'tooltip-3'">

@@ -8,7 +8,8 @@
 <v:variable.set name="pageIdEvents" value="5" />
 <v:variable.set name="pageIdNews" value="4" />
 <v:variable.set name="pageIdUnternehmen" value="1" />
-<v:variable.set name="pageIdImpressum" value="1" />
+<v:variable.set name="pageIdImpressum" value="23" />
+<v:variable.set name="pageIdAGB" value="24" />
 <v:variable.set name="pageIdStellenmarkt" value="22" />
 
 
@@ -69,6 +70,12 @@
             </f:case>
             <f:case value="4">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1}" />
+            </f:case>
+            <f:case value="58">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1,white:1}" />
+            </f:case>
+            <f:case value="59">
+                <f:render partial="fluid-twocol-textimg" arguments="{item:item,white:1,shifted:1}" />
             </f:case>
             <f:case value="60">
                 <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1}" />
@@ -143,6 +150,9 @@
             <f:case value="120">
                 <f:render partial="fluid-tooltip" arguments="{item:item,type:'tooltip-1'}" />
             </f:case>
+            <f:case value="121">
+                <f:render partial="fluid-tooltip" arguments="{item:item,type:'tooltip-2'}" />
+            </f:case>
 
             <f:case value="140">
                 <f:render partial="fluid-title" arguments="{item:item,white:1}" />
@@ -161,6 +171,10 @@
 
             <f:case value="170">
                 <f:render partial="fluid-stellenmarkt" arguments="{item:item,pageIdStellenmarkt:pageIdStellenmarkt}" />
+            </f:case>
+
+            <f:case value="180">
+                <f:render partial="fluid-about" arguments="{item:item}" />
             </f:case>
 
             <f:case default="TRUE">

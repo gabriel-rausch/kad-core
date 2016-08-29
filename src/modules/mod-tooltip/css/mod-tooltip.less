@@ -3,7 +3,12 @@
 @import "./src/css/elements-text.less";
 
 .mod-tooltip {
-  background: white;
+  text-align: center;
+
+  .main-content-inner {
+    padding-bottom: @padding-v-small;
+    padding-top: @padding-v-small;
+  }
 
   .data {
     display: none;
@@ -11,8 +16,6 @@
 
   .tooltip-bg {
     position: relative;
-    width: 178px;
-    height: 450px;
     display: inline-block;
   }
 
@@ -138,6 +141,8 @@
 
 
   &.tooltip-1 {
+    background: white;
+
     .tooltip-bg {
       width: 178px;
       height: 450px;
@@ -157,6 +162,30 @@
     .tip-4 {
       left: 52%;
       bottom: 50px;
+    }
+  }
+
+  &.tooltip-2 {
+
+    .main-content-inner {
+      padding-top: 0;
+
+    }
+    .tooltip-bg {
+      width: 300px;
+      height: 377px;
+    }
+    .tip-1 {
+      left: 55%;
+      top: 43%;
+    }
+    .tip-2 {
+      left: 57%;
+      bottom: 27%;
+    }
+    .tip-3 {
+      left: 25%;
+      bottom: 22%;
     }
   }
 
@@ -198,15 +227,26 @@
   }
 
   &.tooltip-1 {
-
     .tooltip-bg {
       width: 208px;
       height: 550px;
     }
   }
+
+  &.tooltip-2 {
+    .tooltip-bg {
+      width: 600px;
+      height: 710px;
+    }
+  }
 }
 
 @media screen and @tablet {
+
+  .main-content-inner {
+    padding-bottom: @padding-v-large;
+    padding-top: @padding-v-large;
+  }
 
   .tooltip-left, .tooltip-right {
     width: 50%;

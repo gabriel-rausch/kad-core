@@ -19,6 +19,7 @@ TCEFORM.tt_content.layout.addItems.30 = Hero (hell)
 TCEFORM.tt_content.layout.addItems.31 = Hero (dunkel)
 TCEFORM.tt_content.layout.addItems.50 = Hero Maschinen
 
+TCEFORM.tt_content.layout.addItems.58 = 2-spaltig Text/Bild (grau, contain)
 TCEFORM.tt_content.layout.addItems.59 = 2-spaltig Bild/Text (weiß) versetzt
 TCEFORM.tt_content.layout.addItems.60 = 2-spaltig Text/Bild (grau)
 TCEFORM.tt_content.layout.addItems.61 = 2-spaltig Bild/Text (grau)
@@ -46,6 +47,7 @@ TCEFORM.tt_content.layout.addItems.141 = Titel (grau)
 TCEFORM.tt_content.layout.addItems.150 = Form
 TCEFORM.tt_content.layout.addItems.160 = Map & Adresse
 TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
+TCEFORM.tt_content.layout.addItems.180 = Impressum
 
 
 
