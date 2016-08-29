@@ -131,6 +131,20 @@
 
   .pattern {
     margin-bottom: @margin-after;
+
+    &.spacing-disable-both {
+      margin-top: -@margin-after;
+      margin-bottom: 0;
+    }
+    &.spacing-disable-top {
+      margin-top: -@margin-after;
+    }
+    &.spacing-disable-bottom {
+      margin-top: 0;
+    }
+    &.spacing-disable-last-bottom {
+      margin-bottom: -@margin-after;
+    }
   }
 
   .content {
