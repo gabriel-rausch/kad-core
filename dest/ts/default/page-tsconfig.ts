@@ -47,7 +47,8 @@ TCEFORM.tt_content.layout.addItems.141 = Titel (grau)
 TCEFORM.tt_content.layout.addItems.150 = Form
 TCEFORM.tt_content.layout.addItems.160 = Map & Adresse
 TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
-TCEFORM.tt_content.layout.addItems.180 = Impressum
+TCEFORM.tt_content.layout.addItems.180 = Impressum (linke Spalte)
+TCEFORM.tt_content.layout.addItems.181 = Impressum (rechte Spalte)
 
 
 

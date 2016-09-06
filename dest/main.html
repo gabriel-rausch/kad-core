@@ -174,7 +174,10 @@
             </f:case>
 
             <f:case value="180">
-                <f:render partial="fluid-about" arguments="{item:item}" />
+                <f:render partial="fluid-about-left" arguments="{item:item}" />
+            </f:case>
+            <f:case value="181">
+                <f:render partial="fluid-about-right" arguments="{item:item}" />
             </f:case>
 
             <f:case default="TRUE">
