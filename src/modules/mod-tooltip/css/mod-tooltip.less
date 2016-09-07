@@ -6,8 +6,8 @@
   text-align: center;
 
   .main-content-inner {
-    padding-bottom: @padding-v-small;
-    padding-top: @padding-v-small;
+    padding-bottom: 40px;
+    padding-top: 40px;
   }
 
   .data {
@@ -24,10 +24,12 @@
     width: 100%;
     float: left;
     text-align: left;
+    z-index: 1;
   }
   .tooltip-right {
     float: right;
     text-align: right;
+    z-index: 0;
   }
 
   .tip{
@@ -70,7 +72,7 @@
 
     &.tl {
       .tip-content {
-        right: 40px;
+        right: 0px;
         top: 17px;
         &:before {
           top: 0;
@@ -82,7 +84,7 @@
 
     &.tr {
       .tip-content {
-        left: 40px;
+        left: 0px;
         top: 17px;
         &:before {
           top: 0;
@@ -93,7 +95,7 @@
 
     &.bl {
       .tip-content {
-        right: 40px;
+        right: 20px;
         bottom: 17px;
         &:before {
           bottom: 0;
@@ -148,20 +150,12 @@
       height: 450px;
     }
     .tip-1 {
-      left: 50%;
-      top: 50px;
+      left: 84%;
+      top: 11%;
     }
     .tip-2 {
-      left: 55%;
-      bottom: 80px;
-    }
-    .tip-3 {
-      left: 47%;
-      top: 50px;
-    }
-    .tip-4 {
-      left: 52%;
-      bottom: 50px;
+      right: 81%;
+      top: 13%;
     }
   }
 
@@ -169,7 +163,6 @@
 
     .main-content-inner {
       padding-top: 0;
-
     }
     .tooltip-bg {
       width: 300px;
@@ -190,6 +183,10 @@
   }
 
 @media screen and @phone {
+
+  .tooltip-left, .tooltip-right {
+    z-index: inherit;
+  }
 
   .tip {
 
@@ -244,8 +241,8 @@
 @media screen and @tablet {
 
   .main-content-inner {
-    padding-bottom: @padding-v-large;
-    padding-top: @padding-v-large;
+    padding-bottom: 80px;
+    padding-top: 80px;
   }
 
   .tooltip-left, .tooltip-right {
