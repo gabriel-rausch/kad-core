@@ -1,9 +1,19 @@
-RewriteEngine On
-RewriteRule ^sitemap\.xml$ /index.php?id=25 [L]
+AuthName "beliebig" 
+AuthType Basic 
+AuthUserFile /kunden/homepages/26/d18762614/htdocs/kadiade2016/.htpasswd 
+require valid-user
 
+RewriteEngine On
+RewriteBase /
+
+# rewrite for sitemap.xml
+RewriteRule ^sitemap\.xml$ index.php?id=25 [R=301,L]
+
+# typo3 backend path should be untouched
 RewriteRule ^typo3$ - [L]
 RewriteRule ^typo3/.*$ - [L]
 
+# rewrite rules for speaking urls
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l

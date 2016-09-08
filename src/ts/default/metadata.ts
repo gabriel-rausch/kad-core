@@ -3,10 +3,45 @@ page{
   headerData{
     
     10 = TEXT
-    10.field = subtitle // title
-    10.wrap = <title>|&nbsp;- KADIA</title>
-    
-      
+    10.field = title // nav_title
+    10.wrap = <title>|</title>
+
+    22 = HMENU
+    22 {
+      special = language
+      #Sprach IDs eintragen
+      special.value = 0,2
+      1 = TMENU
+      1 {
+        NO = 1
+        NO {
+          stdWrap.cObject = TEXT
+          stdWrap.cObject {
+            value = de || en
+          }
+          linkWrap = <link rel="alternate" hreflang="|
+          doNotLinkIt = 1
+          after.cObject = TEXT
+          after.cObject {
+            stdWrap {
+              wrap = " href="|" />
+              typolink {
+                parameter.data = page:uid
+                additionalParams = &L=0 || &L=2
+                returnLast = url
+                forceAbsoluteUrl = 1
+                addQueryString = 1
+              }
+            }
+          }
+        }
+        CUR = 1
+        CUR {
+          doNotShowLink = 1
+        }
+      }
+    }
+
     50 = TEXT 
     50.value (
         <meta name="viewport" content="width=device-width, user-scalable=no" />

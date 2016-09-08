@@ -100,10 +100,12 @@ lib.form {
     }
 }
 
+
 page = PAGE
 page.10 = FLUIDTEMPLATE
 page.10 {
     format = html
+    languageField = sys_language_uid
     file = typo3conf/ext/ktempl/main.html
     partialRootPath = typo3conf/ext/ktempl/
     layoutRootPath = typo3conf/ext/ktempl/
@@ -113,22 +115,12 @@ page.10 {
         10 {
             table = tt_content
             orderBy = sorting
+            languageField = sys_language_uid
             as = content
             dataProcessing {
                 10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
                 10 {
-                    references.fieldName = assets
-                }
-            }
-        }
-        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-        20 {
-            table = tt_content
-            orderBy = sorting
-            as = content
-            dataProcessing {
-                20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                20 {
+                    languageField = sys_language_uid
                     references.fieldName = assets
                 }
             }

@@ -5,11 +5,7 @@ config {
 
   #kein Typo3 generiertes CSS einbinden
   inlineStyle2TempFile=0
-  language = de
   linkVars = L, owner
-  htmlTag_langKey = de_DE
-  sys_language_uid = 0
-  locale_all = de_DE
 
   #sys_language_mode = content_fallback
   #sys_language_overlay = hideNonTranslated
@@ -17,19 +13,23 @@ config {
   ### real url ###
   simulateStaticDocuments = 0
   tx_realurl_enable = 1
-  absRefPrefix = /
-  # baseURL = http://localhost/
+  baseURL = http://autodiscover.kadia.de/
+  # absRefPrefix = /
   # prefixLocalAnchors = all
-  # uniqueLinkVars = 1
+  uniqueLinkVars = 1
   # typolinkCheckRootline = 1
 
-
   noPageTitle = 2
-
 
   # index search #
   index_enable = 1
 
+
+  ## language ##
+  sys_language_uid = 0
+  language = de
+  locale_all = de_DE
+  htmlTag_langKey = de_DE
 }
 
 # [hostname = sub2.localhost.tld]
@@ -40,9 +40,9 @@ config {
 # [global]
 
 
-[globalVar = GP:L = 1]
+[globalVar = GP:L = 2]
   config{
-    sys_language_uid = 1
+    sys_language_uid = 2
     language = en
     locale_all = en_UK
     htmlTag_langKey = en_UK

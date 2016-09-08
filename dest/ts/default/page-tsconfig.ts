@@ -50,6 +50,7 @@ TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
 TCEFORM.tt_content.layout.addItems.180 = Impressum (linke Spalte)
 TCEFORM.tt_content.layout.addItems.181 = Impressum (rechte Spalte)
 
+mod.SHARED.defaultLanguageFlag = de
 
 
 RTE.default {

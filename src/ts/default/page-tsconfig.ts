@@ -9,6 +9,7 @@ TCEFORM.tt_content.layout.altLabels.3 = 2-spaltig Text/Bild (weiß innen)
 TCEFORM.tt_content.layout.addItems.4 = 2-spaltig Bild/Text (weiß innen)
 TCEFORM.tt_content.layout.addItems.5 = Event Widget
 TCEFORM.tt_content.layout.addItems.6 = News Widget
+TCEFORM.tt_content.layout.addItems.6 = News Widget
 TCEFORM.tt_content.layout.addItems.20 = 1-spaltig mit Balken (grau)
 TCEFORM.tt_content.layout.addItems.21 = 1-spaltig ohne Balken (weiß)
 TCEFORM.tt_content.layout.addItems.22 = 1-spaltig ohne Balken (grau)
@@ -50,6 +51,7 @@ TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
 TCEFORM.tt_content.layout.addItems.180 = Impressum (linke Spalte)
 TCEFORM.tt_content.layout.addItems.181 = Impressum (rechte Spalte)
 
+mod.SHARED.defaultLanguageFlag = de
 
 
 RTE.default {
