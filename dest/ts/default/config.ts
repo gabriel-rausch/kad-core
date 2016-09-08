@@ -5,7 +5,7 @@ config {
 
   #kein Typo3 generiertes CSS einbinden
   inlineStyle2TempFile=0
-  language = de 
+  language = de
   linkVars = L, owner
   htmlTag_langKey = de_DE
   sys_language_uid = 0
@@ -14,18 +14,18 @@ config {
   #sys_language_mode = content_fallback
   #sys_language_overlay = hideNonTranslated
 
-  # real url #
-   # typolinkCheckRootline = 1
-   simulateStaticDocuments = 0
-   absRefPrefix = /
-   #baseURL = http://localhost/
-   tx_realurl_enable = 1
-   # prefixLocalAnchors = all
-   # uniqueLinkVars = 1
-  # real url #
+  ### real url ###
+  simulateStaticDocuments = 0
+  tx_realurl_enable = 1
+  absRefPrefix = /
+  # baseURL = http://localhost/
+  # prefixLocalAnchors = all
+  # uniqueLinkVars = 1
+  # typolinkCheckRootline = 1
 
 
   noPageTitle = 2
+
 
   # index search #
   index_enable = 1

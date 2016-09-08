@@ -1,2 +1,10 @@
 RewriteEngine On
 RewriteRule ^sitemap\.xml$ /index.php?id=25 [L]
+
+RewriteRule ^typo3$ - [L]
+RewriteRule ^typo3/.*$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule .* index.php
