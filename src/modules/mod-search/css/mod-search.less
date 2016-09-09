@@ -1,0 +1,56 @@
+@import "./src/css/vars.less";
+@import "./src/css/elements-text.less";
+@import "./src/css/mixins.less";
+
+.mod-search {
+  position: relative;
+  margin-bottom: -40px;
+  background: white;
+
+  td {
+    display: block;
+  }
+
+  .tx-indexedsearch-rules, .tx-indexedsearch-whatis, .tx-indexedsearch-browsebox, .tx-indexedsearch-icon, .tx-indexedsearch-result-number, .tx-indexedsearch-percent, .tx-indexedsearch-info, .tx-indexedsearch-path {
+    display: none;
+  }
+
+  .col-left {
+    width: 100%;
+    box-sizing: border-box;
+    background: @col-greylight;
+
+    .tx-indexedsearch > .tx-indexedsearch-searchbox {
+      display: none;
+    }
+
+    .tx-indexedsearch > .tx-indexedsearch-res {
+      table {
+        width: 100%;
+      }
+    }
+  }
+
+  .col-right {
+    width: 100%;
+    box-sizing: border-box;
+
+    .tx-indexedsearch > .tx-indexedsearch-res {
+      display: none;
+    }
+
+    .tx-indexedsearch > .tx-indexedsearch-searchbox {
+      display: block;
+    }
+  }
+
+@media screen and @desktop {
+  .col-left {
+    width: 60%;
+  }
+
+  .col-right {
+    width: 40%;
+  }
+}
+}

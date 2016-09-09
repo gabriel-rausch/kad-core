@@ -1,5 +1,7 @@
 config {
-  no_cache = 1
+
+  # ! disable cache if search engine should crawl
+  # no_cache = 1
   doctype = html5
  
 
@@ -32,9 +34,11 @@ config {
   htmlTag_langKey = de_DE
 }
 
-# [hostname = sub2.localhost.tld]
-#   config.baseURL = sub2.localhost.tld/
-# [global]
+
+
+ [hostname = localhost]
+   config.baseURL = http://localhost
+ [global]
 # [globalString = ENV:HTTP_HOST=sub1.localhost.tld]
 #   config.baseURL = sub1.localhost.tld/
 # [global]
@@ -65,8 +69,6 @@ RTE.default.FE {
   showButtons < RTE.default.showButtons
 }
 
-
-plugin.tx_indexedsearch.search.rootPidList = 1
-
-
+page.config.index_enable = 1
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 

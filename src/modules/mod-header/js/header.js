@@ -29,10 +29,10 @@ kstatic.modules.header.prototype.start = function() {
   var self = this;
 
   goog.events.listen(self.dom.searchBtn, 'click', function(e) {
-    e.preventDefault();
     if (goog.dom.classlist.contains(self.node, self.searchActiveState)) {
-      window.location.href = '/';
+      //window.location.href = '/';
     } else {
+      e.preventDefault();
       self.toggleSearchbar(true);
     }
   });

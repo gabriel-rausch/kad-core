@@ -16,8 +16,11 @@
               </li>
             </ul>
 
-            <input class="search-input" type="text" placeholder="Suchbegriff eingeben">
-            <a class="search-btn" href="#"><i class="icon icon-search"></i></a>
+            <form action="suche/" method="post">
+                <input class="search-input" type="text" placeholder="Suchbegriff eingeben" name="tx_indexedsearch[sword]">
+                <label for="search-btn" class="search-btn"><i class="icon icon-search"></i></label>
+                <input id="search-btn" type="submit" name="tx_indexedsearch[submit_button]"></input>
+            </form>
             <a class="search-close" href="#"><i class="icon icon-hamburger-close"></i></a>
         </div>
     </div>
