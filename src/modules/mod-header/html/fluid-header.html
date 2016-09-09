@@ -16,8 +16,8 @@
               </li>
             </ul>
 
-            <form action="suche/" method="post">
-                <input class="search-input" type="text" placeholder="Suchbegriff eingeben" name="tx_indexedsearch[sword]">
+            <form action="{f:uri.page(pageUid: pageSearch)}" method="post">
+                <input class="search-input" type="text" placeholder="Suchbegriff eingeben" autocomplete="off" name="tx_indexedsearch[sword]">
                 <label for="search-btn" class="search-btn"><i class="icon icon-search"></i></label>
                 <input id="search-btn" type="submit" name="tx_indexedsearch[submit_button]"></input>
             </form>

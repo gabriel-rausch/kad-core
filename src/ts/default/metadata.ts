@@ -42,10 +42,42 @@ page{
       }
     }
 
+    25 = TEXT
+    25 {
+      typolink.parameter.data = TSFE:id
+      typolink.returnLast = url
+      typolink.forceAbsoluteUrl = 1
+      typolink.addQueryString = 1
+      typolink.addQueryString.method = GET
+      wrap = <link rel="canonical" href="|" />
+    }
+
+
     50 = TEXT 
     50.value (
         <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="apple-touch-icon" href="favicons/icon-57x57.png" sizes="57x57" />
+        <link rel="apple-touch-icon" href="favicons/icon-60x60.png" sizes="60x60" />
+        <link rel="apple-touch-icon" href="favicons/icon-72x72.png" sizes="72x72" />
+        <link rel="apple-touch-icon" href="favicons/icon-76x76.png" sizes="76x76" />
+        <link rel="apple-touch-icon" href="favicons/icon-114x114.png" sizes="114x114" />
+        <link rel="apple-touch-icon" href="favicons/icon-120x120.png" sizes="120x120" />
+        <link rel="apple-touch-icon" href="favicons/icon-144x144.png" sizes="144x144" />
+        <link rel="apple-touch-icon" href="favicons/icon-152x152.png" sizes="152x152" />
+        <link rel="icon" type="image/png" href="favicons/icon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicons/icon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicons/icon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="favicons/icon-160x160.png" sizes="160x160" />
+        <link rel="icon" type="image/png" href="favicons/icon-196x196.png" sizes="196x196" />
+        <meta name="application-name" content="" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-square70x70logo" content="favicons/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="favicons/mstile-150x150.png" />
+        <meta name="msapplication-square310x310logo" content="favicons/mstile-310x310.png" />
+        <meta name="msapplication-wide310x150logo" content="favicons/mstile-310x150.png" />
+        <meta name="msapplication-TileImage" content="favicons/mstile-150x150.png" />
+        <link rel="shortcut icon" href="icon.ico" />
 
         <!--[if gte IE 9]><!-->
           <link rel="stylesheet" href="{$myConst.template.dir}screen.min.css"/>

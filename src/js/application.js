@@ -23,6 +23,7 @@ goog.require('kstatic.modules.fullimageparallax');
 goog.require('kstatic.modules.twocoltextimg');
 goog.require('kstatic.modules.heromachines');
 goog.require('kstatic.modules.tooltip');
+goog.require('kstatic.modules.search');
 
 /**
  * Initial class to handle the application and modules

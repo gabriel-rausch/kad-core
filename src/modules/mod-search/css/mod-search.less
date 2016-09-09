@@ -5,7 +5,6 @@
 .mod-search {
   position: relative;
   margin-bottom: -40px;
-  background: white;
 
   td {
     display: block;
@@ -14,11 +13,11 @@
   .tx-indexedsearch-rules, .tx-indexedsearch-whatis, .tx-indexedsearch-browsebox, .tx-indexedsearch-icon, .tx-indexedsearch-result-number, .tx-indexedsearch-percent, .tx-indexedsearch-info, .tx-indexedsearch-path {
     display: none;
   }
-
+  
   .col-left {
+    background: white;
     width: 100%;
     box-sizing: border-box;
-    background: @col-greylight;
 
     .tx-indexedsearch > .tx-indexedsearch-searchbox {
       display: none;
@@ -35,22 +34,92 @@
     width: 100%;
     box-sizing: border-box;
 
-    .tx-indexedsearch > .tx-indexedsearch-res {
-      display: none;
-    }
+    form {
+      position: relative;
 
-    .tx-indexedsearch > .tx-indexedsearch-searchbox {
-      display: block;
+      .search-input {
+        background: #EDEDED;
+        border: none;
+        padding: 1.5rem 1rem;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 30px;
+        top: 26px;
+        color: @col-green;
+        cursor: pointer;
+      }
+      #search-btn {
+        display: none;
+      }
+    }
+  }
+
+  .h1 {
+    opacity: .2;
+    margin-bottom: 70px;
+  }
+
+  .tx-indexedsearch-title a {
+    .h2();
+    font-style: normal;
+  }
+
+  .tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr {
+    .h3();
+    font-style: normal;
+
+    .tx-indexedsearch-redMarkup {
+      color: @col-antrazitLight;
     }
   }
 
 @media screen and @desktop {
-  .col-left {
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 60%;
+    height: 100%;
+    background: white;
+  }
+
+  .col-left {
+    background: none;
+    width: 60%;
+
+    .content {
+      padding-left: 0;
+    }
   }
 
   .col-right {
     width: 40%;
+
+    .content {
+      padding-right: 0;
+    }
   }
 }
+  @media screen and @large1500 {
+    .col-left {
+      width: 60%;
+    }
+    .col-right {
+      width: 35%;
+    }
+  }
+  @media screen and @large2000 {
+    .col-left {
+      width: 60%;
+    }
+    .col-right {
+      width: 25%;
+    }
+  }
 }
