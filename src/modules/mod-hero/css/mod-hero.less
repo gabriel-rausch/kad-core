@@ -28,6 +28,7 @@
   .content {
     position: relative;
     padding-top: 155px;
+    padding-bottom: 60px;
 
     .h1 {
       .h2();
@@ -86,7 +87,7 @@
 
 @media screen and @phone {
   .innerHeight {
-    padding-top: 56.25%;
+    padding-top: 55%;
   }
 
   .content {
@@ -97,6 +98,7 @@
 
     .h1 {
       .h1();
+      line-height:3.875rem;
     }
 
     h3 {
@@ -124,5 +126,27 @@
     }
   }
 
+  &.hero-honen {
+    .mod-image {
+      background-size: auto 100%;
+    }
+  }
+
 }
+  @media screen and @tablet {
+    .innerHeight {
+      padding-top: 46%;
+    }
+  }
+  @media screen and @desktop {
+    .innerHeight {
+      padding-top: 48%;
+    }
+  }
+  @media screen and @large1500 {
+    .innerHeight {
+      padding-top: 56.25%;
+    }
+  }
+
 }

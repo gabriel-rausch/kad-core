@@ -25,6 +25,7 @@
   padding-right: @padding-h-30;
   padding-bottom: @padding-v-small;
   padding-top: @padding-v-small;
+  overflow: hidden;
 }
 
 .col-left, .col-right {
@@ -113,9 +114,22 @@
   }
 }
 
+.text-green {
+  color: @col-greenDark;
+}
+
 .text-definition {
   color: @col-greenDark;
   text-transform: uppercase;
+}
+
+.text-ausbildung {
+  cursor: pointer;
+  color: @col-greenDark;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .align-right {

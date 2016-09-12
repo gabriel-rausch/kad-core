@@ -53,11 +53,14 @@ kstatic.modules.image.prototype.setImage = function() {
 
 kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
   var self = this;
-  var selfHeight = goog.style.getSize(self.node).height;
+  var selfSize = goog.style.getSize(self.node).height;
+  if (goog.dom.classlist.contains(self.node, 'width')) {
+    selfSize = goog.style.getSize(self.node).width;
+  }
   var key = 0;
   for (var i = 0; i <= self.imgSizes.length; i++) {
-    if (self.imgSizes[i] < selfHeight) {
-      // set size + 1 to provide an image in better quality than current size.
+    if (self.imgSizes[i] < selfSize) {
+      // set size - 1 to provide an image in better quality than current size.
       key = i + 1;
     }
   }

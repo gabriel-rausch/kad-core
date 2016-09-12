@@ -55,18 +55,27 @@
 
   table {
     max-width: 100%;
+
+    tr {
+      white-space: nowrap;
+    }
   }
 
   h3 {
     .h2();
     color: @col-greenDark;
+    white-space: nowrap;
   }
 
   td {
-    display: table-cell;
-    padding: 0 1rem;
+    display: inline-block;
+    width: 140px;
+    padding: 0;
 
     &:nth-child(2) {
+      display: table-cell;
+      width: 50px;
+
       &:before {
         transform: rotate(0);
         position: static;
@@ -74,8 +83,28 @@
     }
 
     img {
+      height: 140px;
     }
   }
 }
+
+  @media screen and @large {
+
+    td {
+      width: 250px;
+      img {
+        height: 250px;
+      }
+    }
+  }
+  @media screen and @large1500 {
+
+    td {
+      width: 300px;
+      img {
+        height: 300px;
+      }
+    }
+  }
 }
 

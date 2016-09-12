@@ -18,7 +18,7 @@ goog.require('kstatic.module');
  */
 kstatic.modules.twocoltextimg = function(id, node, pubsub) {
   goog.base(this, id, node, pubsub);
-  this.infoImgs = false;
+  this.infoData = false;
   this.dom = {
     img: false
   };
@@ -41,7 +41,7 @@ kstatic.modules.twocoltextimg.prototype.start = function() {
 kstatic.modules.twocoltextimg.prototype.initInfo = function() {
   var self = this;
 
-  self.infoImgs = goog.json.unsafeParse(goog.dom.dataset.get(self.node.querySelector('.data'), 'srcsets'));
+  self.infoData = goog.json.unsafeParse(goog.dom.dataset.get(self.node.querySelector('.data'), 'srcsets'));
   self.dom.img = self.node.querySelector('.mod-image');
 
   goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo, index) {
@@ -50,8 +50,8 @@ kstatic.modules.twocoltextimg.prototype.initInfo = function() {
     goog.events.listen(linkinfo, goog.events.EventType.CLICK, function(e) {
       e.preventDefault();
 
-      if (self.infoImgs[index]) {
-        var newSrcset = self.infoImgs[index].join(',');
+      if (self.infoData['item' + index]) {
+        var newSrcset = self.infoData['item' + index].urls.join(',');
         goog.dom.dataset.set(self.dom.img, 'srcset', newSrcset);
         self.pubsub.publish('image:refreshSrcset');
       }

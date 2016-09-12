@@ -30,6 +30,14 @@ kstatic.modules.tooltip.prototype.start = function() {
   self.type = goog.dom.dataset.get(self.node, 'type');
   self.fetchData();
   self.attachEvents();
+
+  /*
+   * Init Tooltip 2
+   * (click and change images)
+   */
+  if (self.type === 'tooltip-2') {
+    self.initTooltip2();
+  }
 };
 
 /**
@@ -41,6 +49,7 @@ kstatic.modules.tooltip.prototype.fetchData = function() {
     self.tooltips.push(item.innerHTML);
   });
 };
+
 /**
  * Create tooltip anker
  */
@@ -57,4 +66,27 @@ kstatic.modules.tooltip.prototype.attachEvents = function() {
       tip.querySelector('.tip-content').innerHTML = '';
     });
   });
+};
+
+/**
+ * Init tooltip 2
+ */
+kstatic.modules.tooltip.prototype.initTooltip2 = function() {
+  var self = this;
+  goog.array.forEach(self.node.querySelectorAll('.tip'), function(tip, index) {
+    goog.events.listen(tip, goog.events.EventType.CLICK, function() {
+      self.tooltip2ShowImage(index);
+    });
+  });
+};
+
+/**
+ * Tooltip 2 show image and hide the rest
+ */
+kstatic.modules.tooltip.prototype.tooltip2ShowImage = function(index) {
+  var self = this;
+  goog.array.forEach(self.node.querySelectorAll('.tip-img'), function(img) {
+    img.style.display = 'none';
+  });
+  self.node.querySelector('.tip-img-' + index).style.display = 'block';
 };

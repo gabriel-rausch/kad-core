@@ -24,7 +24,10 @@ xmlSitemap {
             special = list
             special.value = 1
 
-            excludeDoktypes =
+            includeNotInMenu = 1
+
+            # exlude: suche, agbs
+            excludeUidList = 27, 24
 
             1 = TMENU
             1 {

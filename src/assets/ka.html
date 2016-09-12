@@ -23,6 +23,8 @@
     google.maps.event.addDomListener(window, 'load', init);
     function init() {
       var mapOptions = {
+        scrollwheel: false,
+        mapTypeControl: false,
         zoom: 13,
         center: new google.maps.LatLng(48.6425995,9.3535348),
         styles: [

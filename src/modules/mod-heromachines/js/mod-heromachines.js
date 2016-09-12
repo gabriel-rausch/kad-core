@@ -34,6 +34,12 @@ kstatic.modules.heromachines.prototype.start = function() {
   self.dom.bigLink = self.dom.bigView.querySelector('.txt a');
   self.dom.bigImg = self.dom.bigView.querySelector('.mod.mod-image');
 
+  // click: follow link in a-tag
+  goog.events.listen(self.dom.bigLink, goog.events.EventType.CLICK, function(e) {
+    e.preventDefault();
+    window.location.hash = self.dom.bigLink.getAttribute('href');
+  });
+
   goog.array.forEach(self.node.querySelectorAll('.thumbnail'), function(thumbnail) {
 
     // hover: change big view
@@ -47,7 +53,9 @@ kstatic.modules.heromachines.prototype.start = function() {
     // click: follow link in a-tag
     goog.events.listen(thumbnail, goog.events.EventType.CLICK, function(e) {
       e.preventDefault();
-      window.location.href = thumbnail.querySelector('.link').getAttribute('href');
+      if (goog.dom.getViewportSize().width >= self.viewports.desktop) {
+        window.location.hash = thumbnail.querySelector('.link').getAttribute('href');
+      }
     });
   });
 };

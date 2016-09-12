@@ -60,10 +60,13 @@ RTE.default {
     buttons.textstyle.showTagFreeClasses = 1
 
     buttons.textstyle.tags.span.allowedClasses (
-        link-btn, link-arrow, link-video, link-document, text-definition, link-info
+        link-btn, link-arrow, link-video, link-document, text-definition, link-info, text-green
     )
     buttons.textstyle.tags.a.allowedClasses (
-        link-btn, link-arrow, link-video, link-document, text-definition, link-info
+        link-btn, link-arrow, link-video, link-document, text-definition, link-info, text-green
+    )
+    buttons.textstyle.tags.p.allowedClasses (
+        link-btn, link-arrow, link-video, link-document, text-definition, link-info, text-green
     )
     buttons.image.properties.class.allowedClasses (
         rte_image

@@ -160,7 +160,6 @@
   }
 
   &.tooltip-2 {
-
     .main-content-inner {
       padding-top: 0;
     }
@@ -179,6 +178,35 @@
     .tip-3 {
       left: 25%;
       bottom: 22%;
+    }
+
+    .tip-img {
+      display: none;
+    }
+    .tip-img-default {
+      display: block;
+    }
+  }
+
+
+  &.tooltip-3 {
+    background: white;
+
+    .tooltip-bg {
+      width: 450px;
+      height: 380px;
+    }
+    .tip-1 {
+      left: 47%;
+      top: 8%;
+    }
+    .tip-2 {
+      right: 30%;
+      top: 20%;
+    }
+    .tip-3 {
+      left: 30%;
+      top: 16%;
     }
   }
 
@@ -284,6 +312,28 @@
     width: 290px;
     z-index: 1;
   }
+}
 
+@media screen and @desktop {
+
+  &.tooltip-3 {
+    .main-content-inner {
+      position: relative;
+    }
+    .part-1 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .part-2 {
+      margin-bottom: 30px;
+      margin-left: -10%;
+    }
+    .part-3 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
 }
 }
