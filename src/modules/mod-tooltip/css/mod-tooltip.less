@@ -6,8 +6,8 @@
   text-align: center;
 
   .main-content-inner {
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .data {
@@ -145,6 +145,10 @@
   &.tooltip-1 {
     background: white;
 
+    .main-content-inner {
+      padding-top: 40px;
+    }
+
     .tooltip-bg {
       width: 178px;
       height: 450px;
@@ -160,9 +164,6 @@
   }
 
   &.tooltip-2 {
-    .main-content-inner {
-      padding-top: 0;
-    }
     .tooltip-bg {
       width: 300px;
       height: 377px;
@@ -193,20 +194,20 @@
     background: white;
 
     .tooltip-bg {
-      width: 450px;
-      height: 380px;
+      width: 350px;
+      height: 340px;
     }
     .tip-1 {
-      left: 47%;
-      top: 8%;
+      left: 26%;
+      top: 5%;
     }
     .tip-2 {
-      right: 30%;
-      top: 20%;
+      right: 20%;
+      top: 30%;
     }
     .tip-3 {
-      left: 30%;
-      top: 16%;
+      left: 66%;
+      top: 44%;
     }
   }
 
@@ -268,11 +269,6 @@
 
 @media screen and @tablet {
 
-  .main-content-inner {
-    padding-bottom: 80px;
-    padding-top: 80px;
-  }
-
   .tooltip-left, .tooltip-right {
     width: 50%;
     text-align: center;
@@ -316,6 +312,12 @@
 
 @media screen and @desktop {
 
+  &.tooltip-1 {
+    .main-content-inner {
+      padding-top: 80px;
+    }
+  }
+
   &.tooltip-3 {
     .main-content-inner {
       position: relative;
@@ -333,6 +335,26 @@
       position: absolute;
       right: 0;
       bottom: 0;
+    }
+  }
+
+  &.tooltip-3 {
+
+    .tooltip-bg {
+      width: 450px;
+      height: 380px;
+    }
+    .tip-1 {
+      left: 47%;
+      top: 8%;
+    }
+    .tip-2 {
+      right: 30%;
+      top: 20%;
+    }
+    .tip-3 {
+      left: 30%;
+      top: 16%;
     }
   }
 }
