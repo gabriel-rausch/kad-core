@@ -1,7 +1,7 @@
 config {
 
   # ! disable cache if search engine should crawl
-  no_cache = 1
+  # no_cache = 1
   doctype = html5
  
 
@@ -15,7 +15,7 @@ config {
   ### real url ###
   simulateStaticDocuments = 0
   tx_realurl_enable = 1
-  baseURL = http://autodiscover.kadia.de/
+  baseURL = http://kadia.de/
   # absRefPrefix = /
   # prefixLocalAnchors = all
   uniqueLinkVars = 1

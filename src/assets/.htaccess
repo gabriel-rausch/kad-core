@@ -1,21 +1,67 @@
-AuthName "beliebig" 
-AuthType Basic 
-AuthUserFile /kunden/homepages/26/d18762614/htdocs/kadiade2016/.htpasswd 
-require valid-user
+# AuthName "beliebig"
+# AuthType Basic
+# AuthUserFile /kunden/homepages/26/d18762614/htdocs/kadiade2016/.htpasswd
+# require valid-user
 
 RewriteEngine On
 RewriteBase /
+
+# rewrite www to no www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # rewrite for sitemap.xml
 RewriteRule ^sitemap\.xml$ index.php?id=25 [R=301,L]
 
 # rewrite old kadia.de urls
 
-RewriteCond %{QUERY_STRING} ^(.*)cat_id=16|cat_id=20(.*)$
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(15|31|33|34)(.*)$
+RewriteRule ^(.*)$ /honen/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(16|32)(.*)$
 RewriteRule ^(.*)$ /entgraten/? [R=301,L]
 
-RewriteCond %{QUERY_STRING} ^(.*)cat_id=18(.*)$
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(20|22|23|70)(.*)$
+RewriteRule ^(.*)$ /entgraten/entgratmaschinen/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(25|48|49|65|66)(.*)$
+RewriteRule ^(.*)$ /entgraten/entgrattechnik/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(21|41|93)(.*)$
 RewriteRule ^(.*)$ /entgraten/prozessentwicklung-lohnentgraten/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(17|50|51|69)(.*)$
+RewriteRule ^(.*)$ /honen/honmaschinen/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(24|35|36|62|63|64|99)(.*)$
+RewriteRule ^(.*)$ /honen/hontechnologie/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(52|53|91)(.*)$
+RewriteRule ^(.*)$ /honen/honwerkzeuge/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(19|92)(.*)$
+RewriteRule ^(.*)$ /honen/prozessentwicklung-lohnhonen/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(18|54)(.*)$
+RewriteRule ^(.*)$ /honen/schneidmittel-honoele/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=60(.*)$
+RewriteRule ^(.*)$ /impressum/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(45|46|47|71)(.*)$
+RewriteRule ^(.*)$ /karriere/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(26|44)(.*)$
+RewriteRule ^(.*)$ /news/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(55|67|68)(.*)$
+RewriteRule ^(.*)$ /kontakt/? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(8|9|100|10|11|28|29|30|12|13|14|72|43|61|98)(.*)$
+RewriteRule ^(.*)$ /? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^(.*)cat_id=(4|5|7)(.*)$
+RewriteRule ^(.*)$ /unternehmen/? [R=301,L]
 
 # typo3 backend path should be untouched
 RewriteRule ^typo3$ - [L]

@@ -68,10 +68,10 @@ kstatic.modules.nav.prototype.attachListeners = function() {
     self.removeOpenState();
     self.openCurrentSubs();
   });
-  goog.events.listen(document.querySelector('.mod.mod-header .lang-picker'), goog.events.EventType.MOUSEOVER, function() {
+  /*goog.events.listen(document.querySelector('.mod.mod-header .lang-picker'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
     self.openCurrentSubs();
-  });
+  });*/
   goog.events.listen(document.querySelector('.mod.mod-header .search-btn'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
     self.openCurrentSubs();

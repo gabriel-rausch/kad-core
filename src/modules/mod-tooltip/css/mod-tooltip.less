@@ -136,8 +136,10 @@
       border-color: transparent #4a4e4e transparent transparent;
     }
 
-    p, ul {
+    p, ul, ol {
       color: white;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
 
@@ -165,16 +167,19 @@
 
   &.tooltip-2 {
     .tooltip-bg {
-      width: 300px;
+      width: 390px;
       height: 377px;
     }
+    .tip {
+      display: none;
+    }
     .tip-1 {
-      left: 55%;
-      top: 43%;
+      left: 56%;
+      top: 38%;
     }
     .tip-2 {
-      left: 57%;
-      bottom: 27%;
+      left: 30%;
+      bottom: 37%;
     }
     .tip-3 {
       left: 25%;
@@ -182,10 +187,10 @@
     }
 
     .tip-img {
-      display: none;
+      visibility: hidden;
     }
-    .tip-img-default {
-      display: block;
+    .tip-mobile {
+      visibility: visible;
     }
   }
 
@@ -257,12 +262,18 @@
       width: 208px;
       height: 550px;
     }
+    .tooltip-left {
+      .tooltip-bg {
+        height: 510px;
+        top: 40px;
+      }
+    }
   }
 
   &.tooltip-2 {
     .tooltip-bg {
-      width: 600px;
-      height: 710px;
+      width: 500px;
+      height: 500px;
     }
   }
 }
@@ -308,6 +319,54 @@
     width: 290px;
     z-index: 1;
   }
+
+  &.tooltip-2 {
+
+    .tip {
+      display: block;
+    }
+    .tip-img, .tip-mobile {
+      visibility: hidden;
+    }
+    .tip-img-default {
+      visibility: visible;
+    }
+
+    .tip-content {
+      width: 150px;
+    }
+
+    .tip-1 {
+      .tip-content {
+        right: auto;
+        left: 90px;
+        bottom: 17px;
+        &:before {
+          right: auto;
+          bottom: 0;
+          left: -35px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .tip-3, .tip-2 {
+      left: 18%;
+      .tip-content {
+        left: auto;
+        right: 90px;
+        bottom: 17px;
+        &:before {
+          left: auto;
+          bottom: 0;
+          right: -35px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .tip-2 {
+      left: 36%;
+    }
+  }
 }
 
 @media screen and @desktop {
@@ -315,6 +374,12 @@
   &.tooltip-1 {
     .main-content-inner {
       padding-top: 80px;
+    }
+  }
+
+  &.tooltip-2 {
+    .tip-content {
+      width: 280px;
     }
   }
 

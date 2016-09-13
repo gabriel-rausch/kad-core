@@ -74,8 +74,14 @@ kstatic.modules.tooltip.prototype.attachEvents = function() {
 kstatic.modules.tooltip.prototype.initTooltip2 = function() {
   var self = this;
   goog.array.forEach(self.node.querySelectorAll('.tip'), function(tip, index) {
-    goog.events.listen(tip, goog.events.EventType.CLICK, function() {
+    goog.events.listen(tip, goog.events.EventType.MOUSEOVER, function() {
       self.tooltip2ShowImage(index);
+    });
+    goog.events.listen(tip, goog.events.EventType.MOUSEOUT, function() {
+      goog.array.forEach(self.node.querySelectorAll('.tip-img'), function(img) {
+        img.style.visibility = 'hidden';
+      });
+      self.node.querySelector('.tip-img-default').style.visibility = 'visible';
     });
   });
 };
@@ -86,7 +92,7 @@ kstatic.modules.tooltip.prototype.initTooltip2 = function() {
 kstatic.modules.tooltip.prototype.tooltip2ShowImage = function(index) {
   var self = this;
   goog.array.forEach(self.node.querySelectorAll('.tip-img'), function(img) {
-    img.style.display = 'none';
+    img.style.visibility = 'hidden';
   });
-  self.node.querySelector('.tip-img-' + index).style.display = 'block';
+  self.node.querySelector('.tip-img-' + index).style.visibility = 'visible';
 };
