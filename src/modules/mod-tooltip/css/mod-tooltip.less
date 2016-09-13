@@ -136,8 +136,10 @@
       border-color: transparent #4a4e4e transparent transparent;
     }
 
-    p, ul {
+    p, ul, ol {
       color: white;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
 
@@ -172,12 +174,12 @@
       display: none;
     }
     .tip-1 {
-      left: 54%;
+      left: 56%;
       top: 38%;
     }
     .tip-2 {
       left: 30%;
-      bottom: 39%;
+      bottom: 37%;
     }
     .tip-3 {
       left: 25%;
@@ -259,6 +261,12 @@
     .tooltip-bg {
       width: 208px;
       height: 550px;
+    }
+    .tooltip-left {
+      .tooltip-bg {
+        height: 510px;
+        top: 40px;
+      }
     }
   }
 
@@ -356,7 +364,7 @@
       }
     }
     .tip-2 {
-      left: 30%;
+      left: 36%;
     }
   }
 }

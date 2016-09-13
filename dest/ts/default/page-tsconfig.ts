@@ -56,7 +56,7 @@ mod.SHARED.defaultLanguageFlag = de
 
 RTE.default {
     contentCSS = typo3conf/ext/ktempl/screen.min.css
-    showButtons = bold, italic, chMode, formatblock, textstyle, textstylelabel, unorderedlist, insertedtext, deletedtext, link, unlink, removeformat, undo, redo, left, right, table, image, toggleborders
+    showButtons = bold, italic, chMode, formatblock, textstyle, textstylelabel, orderedlist, unorderedlist, insertedtext, deletedtext, link, unlink, removeformat, undo, redo, left, right, table, image, toggleborders
     buttons.textstyle.showTagFreeClasses = 1
 
     buttons.textstyle.tags.span.allowedClasses (
