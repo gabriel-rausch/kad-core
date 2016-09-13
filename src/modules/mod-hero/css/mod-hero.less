@@ -86,15 +86,17 @@
   }
 
 @media screen and @phone {
+
   .innerHeight {
-    padding-top: 55%;
+    padding-top: 0;
+    height: 350px;
   }
 
   .content {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 50%;
+    width: 60%;
 
     .h1 {
       .h1();
@@ -113,6 +115,7 @@
       width: 60%;
       height: 100%;
       .gradient-horizontal(rgba(255,255,255,1), rgba(255,255,255,0));
+      background-image: linear-gradient(to right, #fff, rgba(255,255,255,0.9), rgba(255,255,255,0));
     }
   }
 
@@ -133,20 +136,47 @@
   }
 
 }
-  @media screen and @tablet {
-    .innerHeight {
-      padding-top: 46%;
-    }
+
+@media screen and @phone and (min-height:600px) {
+  .innerHeight {
+    height: 300px;
   }
-  @media screen and @desktop {
-    .innerHeight {
-      padding-top: 48%;
-    }
+}
+@media screen and @phone and (min-height:700px) {
+  .innerHeight {
+    height: 400px;
   }
-  @media screen and @large1500 {
-    .innerHeight {
-      padding-top: 56.25%;
-    }
+}
+@media screen and @phone and (min-height:800px) {
+  .innerHeight {
+    height: 500px;
   }
+}
+@media screen and @phone and (min-height:900px) {
+  .innerHeight {
+    height: 600px;
+  }
+}
+
+@media screen and @desktop and (min-height:600px) {
+  .innerHeight {
+    height: 500px;
+  }
+}
+@media screen and @desktop and (min-height:700px) {
+  .innerHeight {
+    height: 600px;
+  }
+}
+@media screen and @desktop and (min-height:800px) {
+  .innerHeight {
+    height: 700px;
+  }
+}
+@media screen and @desktop and (min-height:900px) {
+  .innerHeight {
+    height: 800px;
+  }
+}
 
 }

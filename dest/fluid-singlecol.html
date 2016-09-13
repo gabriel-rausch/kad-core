@@ -34,7 +34,13 @@
 
                   <f:else>
                     <h2>{item.data.header}</h2>
-                    <f:format.html>{item.data.bodytext}</f:format.html>
+
+                    <f:comment>
+                      Fix for bug in fluid html-renderer: if td>ul, then td>nbsp;+ul is generated
+                    </f:comment>
+                    <v:format.replace substring="<td>&nbsp;" replacement="<td>">
+                      <f:format.html>{item.data.bodytext}</f:format.html>
+                    </v:format.replace>
                   </f:else>
 
                 </f:if>

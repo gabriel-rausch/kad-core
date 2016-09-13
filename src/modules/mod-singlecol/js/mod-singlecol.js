@@ -31,10 +31,21 @@ kstatic.modules.singlecol.prototype.start = function() {
    * Find text-elements which open next table (e.g. in Karriere > Ausbildung)
    */
   goog.array.forEach(self.node.querySelectorAll('.text-ausbildung'), function(element, index) {
+
+    // show first item
+    goog.array.forEach(self.node.querySelectorAll('table table'), function(table, tableIndex) {
+      if (tableIndex === 0) {
+        goog.dom.classlist.add(table, 'show');
+      }
+    });
+
+    // attach listens on buttons
     goog.events.listen(element, goog.events.EventType.CLICK, function() {
       goog.array.forEach(self.node.querySelectorAll('table table'), function(table, tableIndex) {
-        if (tableIndex === index) {
-          goog.dom.classlist.toggle(table, 'show');
+        if (tableIndex === index && !goog.dom.classlist.contains(table, 'show')) {
+          goog.dom.classlist.add(table, 'show');
+        } else {
+          goog.dom.classlist.remove(table, 'show');
         }
       });
     });

@@ -4,6 +4,7 @@
 
 
 <v:variable.set name="pageIdHonen" value="8" />
+<v:variable.set name="pageIdHonmaschinen" value="12" />
 <v:variable.set name="pageIdEntgraten" value="9" />
 <v:variable.set name="pageIdEvents" value="5" />
 <v:variable.set name="pageIdNews" value="4" />
@@ -13,6 +14,7 @@
 <v:variable.set name="pageIdAGB" value="24" />
 <v:variable.set name="pageIdStellenmarkt" value="22" />
 <v:variable.set name="pageSearch" value="27" />
+<v:variable.set name="contentSchneidbelaege" value="106" />
 
 
 
@@ -87,16 +89,16 @@
                         <f:render partial="fluid-twocol-textimg" arguments="{item:item,white:1,order:1,shifted:1}" />
                     </f:case>
                     <f:case value="60">
-                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1}" />
+                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1,contentSchneidbelaege:contentSchneidbelaege}" />
                     </f:case>
                     <f:case value="61">
-                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1,order:1}" />
+                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,transparent:1,order:1,contentSchneidbelaege:contentSchneidbelaege}" />
                     </f:case>
                     <f:case value="62">
-                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,slideshow:1}" />
+                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,slideshow:1,pageIdHonmaschinen:pageIdHonmaschinen}" />
                     </f:case>
                     <f:case value="63">
-                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1,slideshow:1}" />
+                        <f:render partial="fluid-twocol-textimg" arguments="{item:item,order:1,slideshow:1,pageIdHonmaschinen:pageIdHonmaschinen}" />
                     </f:case>
                     <f:case value="64">
                         <f:render partial="fluid-twocol-textimg" arguments="{item:item,white:1}" />
