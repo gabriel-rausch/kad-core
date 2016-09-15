@@ -1,8 +1,8 @@
 
 
 [globalVar = GP:L = 2]
-lib.nofollow = TEXT
-lib.nofollow.value = <meta name=”robots” content=”nofollow” />
+lib.noindex = TEXT
+lib.noindex.value = <meta name=”robots” content=”noindex” />
 [global]
 
 page{
@@ -13,7 +13,7 @@ page{
     10.field = title // nav_title
     10.wrap = <title>|</title>
 
-    20 < lib.nofollow
+    20 < lib.noindex
 
     // 22 = HMENU
     // 22 {
