@@ -100,6 +100,10 @@ lib.form {
     }
 }
 
+[globalVar = GP:L = 2]
+lib.language = TEXT
+lib.language.value = EN
+[global]
 
 page = PAGE
 page.10 = FLUIDTEMPLATE

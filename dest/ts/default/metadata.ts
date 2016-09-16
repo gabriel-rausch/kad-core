@@ -1,5 +1,3 @@
-
-
 [globalVar = GP:L = 2]
 lib.noindex = TEXT
 lib.noindex.value = <meta name=”robots” content=”noindex” />
