@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           'js': ['src/**/*.js', 'node_modules/google-closure-library/**.js'],
           'entry_point': 'goog:kstatic.init',
           'js_output_file': 'dest/script.min.js',
-          'compilation_level': 'WHITESPACE_ONLY', // SIMPLE, ADVANCED, WHITESPACE_ONLY
+          'compilation_level': 'SIMPLE', // SIMPLE, ADVANCED, WHITESPACE_ONLY
           'dependency_mode': 'STRICT',
           'language_in': 'ECMASCRIPT5_STRICT'
         }

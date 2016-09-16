@@ -11,7 +11,7 @@ goog.require('goog.json');
 goog.require('kstatic.module');
 
 /**
- * Text / image combination with slideshow extention
+ * Text/image combination with slideshow extention
  * @version 0.0.1
  * @constructor
  * @extends {kstatic.module}
