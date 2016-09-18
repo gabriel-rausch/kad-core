@@ -22,7 +22,7 @@
 
               <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
                 <f:then>
-                  <input class="search-input" type="text" placeholder="Search" autocomplete="off" name="tx_indexedsearch[sword]">
+                  <input class="search-input" type="text" placeholder="Enter search term" autocomplete="off" name="tx_indexedsearch[sword]">
                 </f:then>
                 <f:else>
                   <input class="search-input" type="text" placeholder="Suchbegriff eingeben" autocomplete="off" name="tx_indexedsearch[sword]">
@@ -40,7 +40,7 @@
 
           <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
             <f:then>
-              <h1 class="h1">RESULTS</h1>
+              <h1 class="h1">SEARCH RESULTS</h1>
             </f:then>
             <f:else>
               <h1 class="h1">ERGEBNISSE</h1>
