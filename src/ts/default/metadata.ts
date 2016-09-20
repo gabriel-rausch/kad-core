@@ -1,8 +1,3 @@
-[globalVar = GP:L = 2]
-lib.noindex = TEXT
-lib.noindex.value = <meta name=”robots” content=”noindex” />
-[global]
-
 page{
 
   headerData{
@@ -11,43 +6,41 @@ page{
     10.field = title // nav_title
     10.wrap = <title>|</title>
 
-    20 < lib.noindex
-
-    // 22 = HMENU
-    // 22 {
-    //   special = language
-    //   #Sprach IDs eintragen
-    //   special.value = 0,2
-    //   1 = TMENU
-    //   1 {
-    //     NO = 1
-    //     NO {
-    //       stdWrap.cObject = TEXT
-    //       stdWrap.cObject {
-    //         value = de || en
-    //       }
-    //       linkWrap = <link rel="alternate" hreflang="|
-    //       doNotLinkIt = 1
-    //       after.cObject = TEXT
-    //       after.cObject {
-    //         stdWrap {
-    //           wrap = " href="|" />
-    //           typolink {
-    //             parameter.data = page:uid
-    //             additionalParams = &L=0 || &L=2
-    //             returnLast = url
-    //             forceAbsoluteUrl = 1
-    //             addQueryString = 1
-    //           }
-    //         }
-    //       }
-    //     }
-    //     CUR = 1
-    //     CUR {
-    //       doNotShowLink = 1
-    //     }
-    //   }
-    // }
+    22 = HMENU
+    22 {
+      special = language
+      #Sprach IDs eintragen
+      special.value = 0,2
+      1 = TMENU
+      1 {
+        NO = 1
+        NO {
+          stdWrap.cObject = TEXT
+          stdWrap.cObject {
+            value = de || en
+          }
+          linkWrap = <link rel="alternate" hreflang="|
+          doNotLinkIt = 1
+          after.cObject = TEXT
+          after.cObject {
+            stdWrap {
+              wrap = " href="|" />
+              typolink {
+                parameter.data = page:uid
+                additionalParams = &L=0 || &L=2
+                returnLast = url
+                forceAbsoluteUrl = 1
+                addQueryString = 1
+              }
+            }
+          }
+        }
+        CUR = 1
+        CUR {
+          doNotShowLink = 1
+        }
+      }
+    }
 
     25 = TEXT
     25 {

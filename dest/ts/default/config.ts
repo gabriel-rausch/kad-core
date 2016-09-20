@@ -68,6 +68,10 @@ RTE.default.FE {
   showButtons < RTE.default.showButtons
 }
 
+# indexed search
 page.config.index_enable = 1
 plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
+[globalVar = GP:L = 2]
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 2
+[global]

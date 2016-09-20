@@ -1,22 +1,27 @@
 <header class="mod mod-header">
     <div class="main-content">
         <div class="main-content-inner">
-            <a href="/" class="logo"></a>
+            <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+            <f:then>
+              <a href="/en/" class="logo"></a>
+            </f:then>
+            <f:else>
+              <a href="/" class="logo"></a>
+            </f:else>
+            </f:if>
 
             <a href="#" class="mobile-nav"><i class="icon icon-hamburger"></i></a>
 
             <f:render partial="fluid-nav" arguments="{_all}" />
 
-            <f:comment>
-                <<ul class="lang-picker">
-                  <li class="li-1 ">
-                    <a href="/" class="a-1"><span class="span-1">DE</span></a>
-                    <ul class="ul-2">
-                      <li class="li-2"><a href="/en/" class="a-1"><span class="span-1">EN</span></a></li>
-                    </ul>
-                  </li>
+            <ul class="lang-picker">
+              <li class="li-1 ">
+                <a href="/" class="a-1"><span class="span-1">DE</span></a>
+                <ul class="ul-2">
+                  <li class="li-2"><a href="/en/" class="a-1"><span class="span-1">EN</span></a></li>
                 </ul>
-            </f:comment>
+              </li>
+            </ul>
 
             <form action="{f:uri.page(pageUid: pageSearch)}" method="post">
                 <input class="search-input" type="text" placeholder="Suchbegriff eingeben" autocomplete="off" name="tx_indexedsearch[sword]">
