@@ -255,8 +255,10 @@ module.exports = function(grunt) {
   grunt.registerTask('ie8', ['pixrem']);
   grunt.registerTask('scripts', ['jshint', 'jscs', 'closure-compiler', 'uglify']);
   grunt.registerTask('push', ['ftp_push']);
+  grunt.registerTask('default', ['run', 'focus:watch']);
+
+  // most wanted task runner
   grunt.registerTask('watchLocal', ['focus:watch']);
   grunt.registerTask('watchAndPush', ['focus:watchAndPush']);
   grunt.registerTask('run', ['clean', 'scripts', 'less', 'ie8', 'autoprefixer', 'copy']);
-  grunt.registerTask('default', ['run', 'focus:watch']);
 };
