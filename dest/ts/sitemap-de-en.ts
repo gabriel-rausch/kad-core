@@ -21,127 +21,19 @@ xmlSitemap {
 
     10 = COA
     10 {
-        10 = HMENU
-        10 {
-            special = list
-            special.value = 1
+        10 = TEXT
+        10.value (
+            <url>
+                <loc>http://kadia.de/sitemap-de.xml</loc>
+                <lastmod>2016-09-30T09:53:46Z</lastmod>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>http://kadia.de/sitemap-en.xml</loc>
+                <lastmod>2016-09-30T09:53:46Z</lastmod>
+                <priority>1.0</priority>
+            </url>
+        )
+    }
 
-            includeNotInMenu = 1
-
-            # exlude: suche, agbs
-            excludeUidList = 27, 24
-
-            1 = TMENU
-            1 {
-                expAll = 1
-                NO {
-                    doNotLinkIt = 1
-                    stdWrap {
-                        cObject = COA
-                        cObject {
-                            wrap = <url>|</url>
-                            10 = TEXT
-                            10 {
-                                typolink {
-                                    parameter.field = uid
-                                    returnLast = url
-                                    forceAbsoluteUrl = 1
-                                }
-                                wrap = <loc>|</loc>
-                            }
-                            20 = TEXT
-                            20 {
-                                field = SYS_LASTCHANGED
-                                strftime = %Y-%m-%dT%H:%M:%SZ
-                                wrap = <lastmod>|</lastmod>
-                            }
-                            30 = TEXT
-                            30.value = <priority>1.0</priority>
-                            if.isFalse.field = shortcut
-                            30 = TEXT
-                            30.value = <priority>1.0</priority>
-                            if.isFalse.field = shortcut
-                        }
-                    }
-                }
-            }
-            2 < .1
-            2.NO.stdWrap.cObject.30.value = <priority>0.9</priority>
-                3 < .1
-            3.NO.stdWrap.cObject.30.value = <priority>0.8</priority>
-                4 < .1
-            4.NO.stdWrap.cObject.30.value = <priority>0.7</priority>
-                5 < .1
-            5.NO.stdWrap.cObject.30.value = <priority>0.6</priority>
-                6 < .1
-            6.NO.stdWrap.cObject.30.value = <priority>0.5</priority>
-                7 < .6
-            8 < .6
-            9 < .6
-            10 < .6
-        }
-
-
-        20 = COA
-        20 {
-            10 = HMENU
-            10 {
-                special = list
-                special.value = 1
-
-                includeNotInMenu = 1
-
-            # exlude: suche, agbs
-                excludeUidList = 27, 24
-
-                1 = TMENU
-                1 {
-                    expAll = 1
-                    NO {
-                        doNotLinkIt = 1
-                        stdWrap {
-                            cObject = COA
-                            cObject {
-                                wrap = <url>|</url>
-                                10 = TEXT
-                                10 {
-                                    typolink {
-                                        parameter.field = uid
-                                        additionalParams = &L=2
-                                        returnLast = url
-                                        forceAbsoluteUrl = 1
-                                    }
-                                    wrap = <loc>|</loc>
-                                }
-                                20 = TEXT
-                                20 {
-                                    field = SYS_LASTCHANGED
-                                    strftime = %Y-%m-%dT%H:%M:%SZ
-                                    wrap = <lastmod>|</lastmod>
-                                }
-                                30 = TEXT
-                                30.value = <priority>1.0</priority>
-                                if.isFalse.field = shortcut
-                                30 = TEXT
-                                30.value = <priority>1.0</priority>
-                                if.isFalse.field = shortcut
-                            }
-                        }
-                    }
-                }
-                2 < .1
-                2.NO.stdWrap.cObject.30.value = <priority>0.9</priority>
-                    3 < .1
-                3.NO.stdWrap.cObject.30.value = <priority>0.8</priority>
-                    4 < .1
-                4.NO.stdWrap.cObject.30.value = <priority>0.7</priority>
-                    5 < .1
-                5.NO.stdWrap.cObject.30.value = <priority>0.6</priority>
-                    6 < .1
-                6.NO.stdWrap.cObject.30.value = <priority>0.5</priority>
-                    7 < .6
-                8 < .6
-                9 < .6
-                10 < .6
-            }
     }
