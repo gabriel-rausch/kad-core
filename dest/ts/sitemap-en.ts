@@ -1,15 +1,20 @@
 
+config {
+    xhtml_cleaning = none
+    no_cache = 1
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-Type: text/xml; charset=utf-8
+    simulateStaticDocuments = 0
+    tx_realurl_enable = 1
+
+    sys_language_uid = 2
+    language = en
+    locale_all = en_UK
+    htmlTag_langKey = en_UK
+}
 
 xmlSitemap = PAGE
 xmlSitemap {
-    config {
-        xhtml_cleaning = none
-        no_cache = 1
-        disableAllHeaderCode = 1
-        additionalHeaders = Content-Type: text/xml; charset=utf-8
-        simulateStaticDocuments = 0
-        tx_realurl_enable = 1
-    }
     wrap (
         <?xml version="1.0" encoding="UTF-8"?>
     <urlset
@@ -44,6 +49,7 @@ xmlSitemap {
                             10 {
                                 typolink {
                                     parameter.field = uid
+                                    additionalParams = &L=2
                                     returnLast = url
                                     forceAbsoluteUrl = 1
                                 }

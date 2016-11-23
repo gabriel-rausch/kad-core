@@ -1,3 +1,5 @@
+
+
 xmlSitemap = PAGE
 xmlSitemap {
     config {

@@ -258,6 +258,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['run', 'focus:watch']);
 
   // most wanted task runner
+  // as well as: grunt watchLocal | watchAndPush
   grunt.registerTask('watchLocal', ['focus:watch']);
   grunt.registerTask('watchAndPush', ['focus:watchAndPush']);
   grunt.registerTask('run', ['clean', 'scripts', 'less', 'ie8', 'autoprefixer', 'copy']);
