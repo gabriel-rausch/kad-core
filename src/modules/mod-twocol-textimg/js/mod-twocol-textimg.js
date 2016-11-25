@@ -46,11 +46,25 @@ kstatic.modules.twocoltextimg.prototype.initInfo = function() {
 
   goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo, index) {
 
+    // set active state on first / default element
+    if (index === 0 && self.infoData['item' + index]) {
+      goog.dom.classlist.add(linkinfo, 'active-item');
+    }
+
     // click: show thumbnail
     goog.events.listen(linkinfo, goog.events.EventType.CLICK, function(e) {
       e.preventDefault();
 
       if (self.infoData['item' + index]) {
+        // set active state to text item
+
+        goog.array.forEach(self.node.querySelectorAll('.link-info'), function(linkinfo) {
+          goog.dom.classlist.remove(linkinfo, 'active-item');
+        });
+
+        goog.dom.classlist.add(e.target, 'active-item');
+
+        // set new image
         var newSrcset = self.infoData['item' + index].urls.join(',');
         goog.dom.dataset.set(self.dom.img, 'srcset', newSrcset);
         self.pubsub.publish('image:refreshSrcset');

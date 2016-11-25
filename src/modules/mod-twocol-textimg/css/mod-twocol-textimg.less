@@ -57,6 +57,10 @@
   &.slideshow {
     background: white;
 
+    &:last-child{
+      margin-bottom: -40px;
+    }
+
     .flex {
       padding: 40px 60px;
       box-sizing: border-box;
@@ -67,6 +71,11 @@
   &.info {
     p {
       margin: 0;
+    }
+    
+    .active-item {
+      font-weight: bold;
+      text-decoration: underline;
     }
   }
 

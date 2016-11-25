@@ -17,6 +17,8 @@
   </style>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC22Vefdnj0kZ1qqjCxeXMhV1BP_EoteQ"></script>
   <script type="text/javascript">
+    var map, marker0, marker1, marker2;
+
     google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
@@ -114,12 +116,33 @@
         }]
       };
       var mapElement = document.getElementById('map');
-      var map = new google.maps.Map(mapElement, mapOptions);
-      var marker = new google.maps.Marker({
+      map = new google.maps.Map(mapElement, mapOptions);
+
+      // KADIA NT
+      marker0 = new google.maps.Marker({
         position: new google.maps.LatLng(48.6425995, 9.3535348),
         map: map,
         icon: 'ka-pin.png'
       });
+
+      // KADIA Homburg
+      marker1 = new google.maps.Marker({
+        position: new google.maps.LatLng(49.347619, 7.350434),
+        map: map,
+        icon: 'ka-pin.png'
+      });
+
+      // KADIA USA
+      marker2 = new google.maps.Marker({
+        position: new google.maps.LatLng(42.495975, -83.688839),
+        map: map,
+        icon: 'ka-pin.png'
+      });
+
+    }
+
+    function changeLocation(num) {
+      map.setCenter(window['marker' + num].getPosition());
     }
   </script>
 </head>

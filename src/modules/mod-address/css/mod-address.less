@@ -23,6 +23,15 @@
     box-sizing: border-box;
   }
 
+  .selectable {
+    cursor: pointer;
+
+    &:hover {
+      color: @col-greenDark;
+      text-decoration: underline;
+    }
+  }
+
 @media screen and @desktop {
   .col-left.flex {
     width: 60%;
