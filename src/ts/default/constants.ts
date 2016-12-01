@@ -9,3 +9,8 @@ styles.content.imgtext.maxW = 2000
 styles.content.imgtext.maxWInText = 2000
 styles.content.imgtext.maxH = 2000
 styles.content.imgtext.maxHInText = 2000
+
+
+page.includeJSFooterlibs.powermailJQuery >
+page.includeJSFooterlibs.powermailJQueryUi >
+page.includeJSFooterlibs.powermailJQueryUiDatepicker >
