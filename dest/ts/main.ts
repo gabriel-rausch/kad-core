@@ -2,6 +2,8 @@
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/default/config.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/default/metadata.ts">
 
+<INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/powermail.ts">
+
 lib.mainnav = HMENU
 lib.mainnav {
     wrap = |
@@ -86,17 +88,6 @@ lib.subnav {
             stdWrap.dataWrap = <span class="span-1">|</span>
             ATagParams = class="active a-1"
         }
-    }
-}
-
-lib.form = CONTENT
-lib.form {
-    table = tt_content
-    select {
-        orderBy = sorting
-        where = colPos = 0
-        languageField = sys_language_uid
-        andWhere = CType = 'mailform'
     }
 }
 

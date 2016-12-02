@@ -3,6 +3,11 @@
 @import "./src/css/elements-text.less";
 @import "./src/css/mixins.less";
 
+/**
+ * Make sure the text elements in text labels are wrapped with span tags
+ * > Modification of powermail template necessary
+ */
+
 .mod-form {
 
   .inner {
@@ -13,21 +18,6 @@
 
   h2, p {
     text-align: center;
-  }
-
-  label {
-    position: relative;
-    top: 112px;
-    left: 6px;
-    color: transparent;
-    em {
-      display: none;
-    }
-    strong {
-      position: absolute;
-      top: 0;
-      left:0;
-    }
   }
 
   ol {
@@ -61,7 +51,7 @@
     }
   }
 
-  input, select, textarea {
+  input, select, textarea, label {
     width: 100%;
     display: inline-block;
     background: none;
@@ -75,12 +65,19 @@
     font-size: 1.25rem;
 
     &:focus {
+      color: @col-antrazit;
       border-bottom: 1px solid @col-greenDark;
     }
   }
 
+  label {
+    color: @col-antrazit;
+    display: none;
+    border: none;
+  }
+
   textarea {
-    border: 1px solid @col-grey;
+    border: 1px solid @col-antrazitLight20;
     height: 400px;
   }
 
@@ -99,37 +96,109 @@
     }
   }
 
-  .csc-form-element-submit {
-    label {
-      display: none;
-    }
-    input[type=submit] {
+  .powermail_fieldwrap_type_submit {
+    text-align: center;
+
+    .powermail_submit {
       .link-btn();
       width: auto;
-
     }
   }
 
-@media screen and @tablet {
+  h3, .powermail_legend {
+    display: none;
+  }
+
+  .powermail_fieldwrap_type_radio {
+    line-height: 0;
+
+    label {
+      display: block;
+    }
+
+    input {
+      display: none;
+    }
+
+    input:checked + span::before {
+      background-color: @col-green;
+      border: 1px solid @col-greenDark;
+    }
+
+    span {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+    }
+    span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid @col-antrazit;
+      border-radius: 100%;
+    }
+
+    .control-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .radio  {
+      width: 49%;
+      float: left;
+    }
+
+  }
+  
+  .checkbox label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    input:checked + span::before {
+      background-color: @col-green;
+      border: 1px solid @col-greenDark;
+    }
+    
+    span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid @col-antrazit;
+    }
+  }
+
+  @media screen and @tablet {
 
   .inner {
     margin: @padding-v-medium 20%;
   }
 
-  input, select, textarea {
+  input, select {
+    margin-top: 60px;
+  }
+
+  textarea {
     margin-top: 40px;
   }
 
-  fieldset, .csc-mailform fieldset {
-    ol {
-      li {
-        width: 49%;
-
-        &:first-child {
-          margin-right: 2%;
-        }
-      }
-    }
+  .powermail_fieldwrap_name, .powermail_fieldwrap_e_mail {
+    width: 49%;
+    float: left;
+  }
+  .powermail_fieldwrap_e_mail {
+    float: right;
   }
 }
 }
