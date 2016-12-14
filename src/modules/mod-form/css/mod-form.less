@@ -114,27 +114,34 @@
 
     label {
       display: block;
+      cursor: pointer;
     }
 
     input {
       display: none;
     }
 
-    input:checked + span::before {
-      background-color: @col-green;
+    input:checked + span .innerLabel {
       border: 2px solid @col-greenDark;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: @col-green;
+        border-radius: 100%;
+      }
     }
 
-    span {
+    .innerLabel {
       position: relative;
-      padding-left: 30px;
-      cursor: pointer;
-    }
-    span::before {
-      content: "";
-      position: absolute;
+      display: inline-block;
+      margin-right: 10px;
       left: 0;
-      top: 1px;
+      top: 5px;
       width: 20px;
       height: 20px;
       border: 2px solid @col-antrazit;
@@ -163,19 +170,29 @@
       display: none;
     }
 
-    input:checked + span::before {
-      background-color: @col-green;
-      border: 2px solid @col-greenDark;
-    }
-    
-    span::before {
-      content: "";
-      position: absolute;
+    .innerLabel {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
       left: 0;
-      top: 14px;
+      top: 5px;
       width: 20px;
       height: 20px;
       border: 2px solid @col-antrazit;
+    }
+
+    input:checked + span .innerLabel {
+      border: 2px solid @col-greenDark;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: @col-green;
+      }
     }
   }
 
