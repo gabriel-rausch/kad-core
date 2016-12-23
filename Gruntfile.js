@@ -60,6 +60,14 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+      },
+      less: {
+        src: ['src/**/*.less', 'src/**/*.css'],
+        dest: 'dest/screen.less'
+      },
+    },
     less: {
       options: {
         paths: ['less'],
@@ -68,7 +76,7 @@ module.exports = function(grunt) {
         strictUnits: true
       },
       dev: {
-        src: ['src/**/*.less', 'src/**/*.css'],
+        src: ['dest/screen.less'],
         dest: 'dest/screen.min.css'
       }
     },
@@ -206,7 +214,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: ['./src/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8'],
+        tasks: ['concat', 'less', 'autoprefixer', 'ie8'],
         options: {
           livereload: 35731
         }
@@ -235,7 +243,7 @@ module.exports = function(grunt) {
       },
       stylesAndPush: {
         files: ['./src/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles'],
+        tasks: ['concat', 'less', 'autoprefixer', 'ie8', 'ftp_push:cssFiles'],
         options: {
           livereload: 35728
         }
@@ -261,5 +269,5 @@ module.exports = function(grunt) {
   // as well as: grunt watchLocal | watchAndPush
   grunt.registerTask('watchLocal', ['focus:watch']);
   grunt.registerTask('watchAndPush', ['focus:watchAndPush']);
-  grunt.registerTask('run', ['clean', 'scripts', 'less', 'ie8', 'autoprefixer', 'copy']);
+  grunt.registerTask('run', ['clean', 'scripts', 'concat', 'less', 'ie8', 'autoprefixer', 'copy']);
 };

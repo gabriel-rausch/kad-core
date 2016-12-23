@@ -1,7 +1,7 @@
-@import "./src/css/vars.less";
-@import "./src/css/elements.less";
-@import "./src/css/elements-text.less";
-@import "./src/css/mixins.less";
+//@import (once) "./src/css/vars.less";
+//@import (once) "./src/css/elements.less";
+//@import (once) "./src/css/elements-text.less";
+//@import (once) "./src/css/mixins.less";
 
 .mod-address {
   position: relative;
@@ -32,7 +32,17 @@
     }
   }
 
+  h3 {
+    margin: -1rem 0 -0.5rem;
+  }
+
 @media screen and @desktop {
+
+  .content {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+
   .col-left.flex {
     width: 60%;
     height: 100%;
