@@ -131,7 +131,7 @@ module.exports = function(grunt) {
 
     'ftp_push': {
       options: {
-        host: 'kadia.de',
+        host: 'home18762614.1and1-data.host',
         username: 'u6864484',
         password: 'ho4you',
         dest: '/kadiade2016/typo3conf/ext/ktempl/',
