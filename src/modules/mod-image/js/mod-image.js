@@ -57,13 +57,23 @@ kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
   if (goog.dom.classlist.contains(self.node, 'width')) {
     selfSize = goog.style.getSize(self.node).width;
   }
+
+  // add pixel ratio
+  if (window.devicePixelRatio && window.devicePixelRatio > 1) {
+    selfSize = selfSize * window.devicePixelRatio;
+  }
+
+  // iterate through imgSizes
   var key = 0;
   for (var i = 0; i <= self.imgSizes.length; i++) {
     if (self.imgSizes[i] < selfSize) {
-      // set size - 1 to provide an image in better quality than current size.
+      // set size + 1 to provide an image in better quality than current size.
+      // example: selfSize(800px) is bigger than imageSize(750px) than set next imgSize as a key (1000px)
       key = i + 1;
     }
   }
+
+  // if key refers to high, than take biggest image in imgSizes list
   if (key >= self.imgSizes.length) {
     key = self.imgSizes.length - 1;
   }

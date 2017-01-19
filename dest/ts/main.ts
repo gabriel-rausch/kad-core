@@ -122,3 +122,12 @@ page.10 {
         }
     }
 }
+
+
+#[globalVar = TSFE:page|uid=4]
+#
+#page = PAGE
+#page.10 = TEXT
+#page.10.value = -_-_!
+#
+#[global]
