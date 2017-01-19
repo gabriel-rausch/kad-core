@@ -115,6 +115,8 @@
     label {
       display: block;
       cursor: pointer;
+      white-space: nowrap;
+      margin: 0;
     }
 
     input {
@@ -153,13 +155,8 @@
       margin-bottom: 10px;
     }
 
-    .radio  {
-      width: 49%;
-      float: left;
-    }
-
   }
-  
+
   .checkbox label {
     position: relative;
     display: block;
@@ -196,8 +193,19 @@
     }
   }
 
-  @media screen and @tablet {
+@media screen and @phone {
 
+  .powermail_fieldwrap_type_radio label {
+    margin-top: 20px;
+  }
+
+  .radio  {
+    width: 49%;
+    float: left;
+  }
+}
+
+@media screen and @tablet {
   .inner {
     margin: @padding-v-medium 20%;
   }

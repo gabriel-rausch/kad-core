@@ -40,24 +40,68 @@ kstatic.modules.slideshow.prototype.start = function() {
   self.dom.slideshowImg = self.dom.slideshowInner.querySelector('.mod-image');
   self.data = goog.json.unsafeParse(goog.dom.dataset.get(self.node, 'srcsets'));
 
-  // attach event listeners
+  self.attachEvents();
+};
+
+/**
+ * Attach listeners
+ * For click and touch input
+ */
+kstatic.modules.slideshow.prototype.attachEvents = function() {
+  var self = this;
+
+  // click to next
   goog.events.listen(self.dom.navNext, goog.events.EventType.CLICK, function() {
-    self.slideshowItemKey++;
-    if (self.slideshowItemKey >= Object.keys(self.data).length) {
-      self.slideshowItemKey = 0;
-    }
-    self.setImage(self.slideshowItemKey);
-    self.setQuote(self.slideshowItemKey);
+    self.moveNext();
   });
 
+  // click to previous
   goog.events.listen(self.dom.navPrev, goog.events.EventType.CLICK, function() {
-    self.slideshowItemKey--;
-    if (self.slideshowItemKey < 0) {
-      self.slideshowItemKey = Object.keys(self.data).length - 1;
-    }
-    self.setImage(self.slideshowItemKey);
-    self.setQuote(self.slideshowItemKey);
+    self.movePrev();
   });
+
+  // attach touch events
+  // with hammerjs
+  var touchTarget = new Hammer.Manager(self.dom.slideshowInner, {
+    'touchAction': 'auto'
+  });
+  touchTarget.add(new Hammer.Swipe());
+
+  // swipe to next
+  touchTarget.on('swipeleft', function() {
+    self.moveNext();
+  });
+
+  // swipe to previous
+  touchTarget.on('swiperight', function() {
+    self.movePrev();
+  });
+};
+
+/**
+ * Central method to go to next image
+ */
+kstatic.modules.slideshow.prototype.moveNext = function() {
+  var self = this;
+  self.slideshowItemKey++;
+  if (self.slideshowItemKey >= Object.keys(self.data).length) {
+    self.slideshowItemKey = 0;
+  }
+  self.setImage(self.slideshowItemKey);
+  self.setQuote(self.slideshowItemKey);
+};
+
+/**
+ * Central method to go to prev image
+ */
+kstatic.modules.slideshow.prototype.movePrev = function() {
+  var self = this;
+  self.slideshowItemKey--;
+  if (self.slideshowItemKey < 0) {
+    self.slideshowItemKey = Object.keys(self.data).length - 1;
+  }
+  self.setImage(self.slideshowItemKey);
+  self.setQuote(self.slideshowItemKey);
 };
 
 /**

@@ -11,12 +11,19 @@ module.exports = function(grunt) {
     'closure-compiler': {
       dev: {
         options: {
-          'js': ['src/**/*.js', 'node_modules/google-closure-library/**.js'],
+          'js': [
+            'src/**/*.js',
+            'node_modules/google-closure-library/**.js',
+            '!src/js/libs/**/*.js',
+            '!src/js/google-closure-library-externs/**/*.js'
+          ],
           'entry_point': 'goog:kstatic.init',
           'js_output_file': 'dest/script.min.js',
           'compilation_level': 'SIMPLE', // SIMPLE, ADVANCED, WHITESPACE_ONLY
           'dependency_mode': 'STRICT',
-          'language_in': 'ECMASCRIPT5_STRICT'
+          'language_in': 'ECMASCRIPT5_STRICT',
+          'externs': [
+          ]
         }
       }
     },
@@ -110,13 +117,16 @@ module.exports = function(grunt) {
         mangle: true
       },
       dev: {
-        src: ['src/js/libs/**/*.js', 'dest/script.min.js'],
+        src: [
+          'node_modules/hammerjs/hammer.min.js',
+          'src/js/libs/**/*.js',
+          'dest/script.min.js'],
         dest: 'dest/script.min.js'
       }
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'src/**/*.js', '!src/js/libs/**/*.js'],
+      all: ['Gruntfile.js', 'src/**/*.js', '!src/js/libs/**/*.js', '!src/js/google-closure-library-externs/**/*.js'],
       options: {
         jshintrc: true
       }

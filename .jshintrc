@@ -28,6 +28,7 @@
   "maxcomplexity": 50,
   "globals": {
     "kstatic": true,
-    "goog": true
+    "goog": true,
+    "Hammer": true
   }
 }

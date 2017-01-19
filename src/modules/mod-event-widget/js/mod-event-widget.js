@@ -39,29 +39,68 @@ kstatic.modules.eventwidget.prototype.start = function() {
 kstatic.modules.eventwidget.prototype.attacheEvents = function() {
   var self = this;
 
+  // click to next
   goog.events.listen(self.dom.navNext, goog.events.EventType.CLICK, function() {
-    if (self.mqMatch('desktop')) {
-      self.nextX += self.scrollLength;
-    } else {
-      self.nextX += goog.style.getSize(self.dom.eventsInner).width;
-      if (self.nextX > goog.style.getSize(self.dom.eventsInner).width * document.querySelectorAll('.event').length) {
-        self.nextX = goog.style.getSize(self.dom.eventsInner).width * document.querySelectorAll('.event').length;
-      }
-    }
-    self.scrollTo(self.dom.eventsInner, self.nextX, 500);
+    self.moveNext();
   });
 
+  // click to previous
   goog.events.listen(self.dom.navPrev, goog.events.EventType.CLICK, function() {
-    if (self.mqMatch('desktop')) {
-      self.nextX -= self.scrollLength;
-    } else {
-      self.nextX -= goog.style.getSize(self.dom.eventsInner).width;
-    }
-    if (self.nextX < 0) {
-      self.nextX = 0;
-    }
-    self.scrollTo(self.dom.eventsInner, self.nextX, 500);
+    self.movePrev();
   });
+
+  // attach touch events
+  // with hammerjs
+  var touchTarget = new Hammer.Manager(self.dom.eventsInner, {
+    'touchAction': 'auto',
+    'recognizers': [
+      [Hammer.Swipe, {'direction': Hammer.DIRECTION_HORIZONTAL}]
+    ]
+  });
+  touchTarget.add(new Hammer.Swipe());
+
+  // swipe to next
+  touchTarget.on('swipeleft', function() {
+    self.moveNext();
+  });
+
+  // swipe to previous
+  touchTarget.on('swiperight', function() {
+    self.movePrev();
+  });
+};
+
+/**
+ * Central method to move event list to show upcomming events
+ */
+kstatic.modules.eventwidget.prototype.moveNext = function() {
+  var self = this;
+  if (self.mqMatch('desktop')) {
+    console.info('desktop');
+    self.nextX += self.scrollLength;
+  } else {
+    self.nextX += goog.style.getSize(self.dom.eventsInner).width;
+    if (self.nextX > self.getMaxScrollWidth()) {
+      self.nextX = self.getMaxScrollWidth();
+    }
+  }
+  self.scrollTo(self.dom.eventsInner, self.nextX, 500);
+};
+
+/**
+ * Central method to move event list to show previous events
+ */
+kstatic.modules.eventwidget.prototype.movePrev = function() {
+  var self = this;
+  if (self.mqMatch('desktop')) {
+    self.nextX -= self.scrollLength;
+  } else {
+    self.nextX -= goog.style.getSize(self.dom.eventsInner).width;
+  }
+  if (self.nextX < 0) {
+    self.nextX = 0;
+  }
+  self.scrollTo(self.dom.eventsInner, self.nextX, 500);
 };
 
 kstatic.modules.eventwidget.prototype.scrollTo = function(element, to, duration) {
@@ -92,4 +131,9 @@ kstatic.modules.eventwidget.prototype.easeInOut = function(currentTime, start, c
   }
   currentTime -= 1;
   return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+};
+
+kstatic.modules.eventwidget.prototype.getMaxScrollWidth = function() {
+  var self = this;
+  return self.dom.eventsInner.scrollWidth - self.dom.eventsInner.clientWidth;
 };
