@@ -640,7 +640,17 @@ body {
       width: 100%;
       overflow: hidden;
       display: block;
+      color: white;
+      font-style: normal;
     }
+
+    .event-link {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
 
     .event-title {
       font-weight: bold;
@@ -682,7 +692,7 @@ body {
       }
     }
     .events {
-      padding: @padding-v-60 100px;
+      padding: 10px 100px;
     }
     .event {
       padding: 0 30px;
@@ -2966,15 +2976,15 @@ body {
     top: 20%;
     width: 60%;
     height: 60%;
-    border-left: 2px solid @col-green;
-    border-right: 2px solid @col-green;
+    border-left: 4px solid @col-green;
+    border-right: 4px solid @col-green;
   }
 
   .tl, .tr, .bl, .br, .m {
     position: absolute;
     width: 25%;
     height: 0;
-    border-top: 2px solid @col-green;
+    border-top: 4px solid @col-green;
   }
 
   .imgo-txt {

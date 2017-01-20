@@ -42,7 +42,17 @@
       width: 100%;
       overflow: hidden;
       display: block;
+      color: white;
+      font-style: normal;
     }
+
+    .event-link {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
 
     .event-title {
       font-weight: bold;
@@ -84,7 +94,7 @@
       }
     }
     .events {
-      padding: @padding-v-60 100px;
+      padding: 10px 100px;
     }
     .event {
       padding: 0 30px;

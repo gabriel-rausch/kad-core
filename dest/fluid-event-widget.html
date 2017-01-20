@@ -12,7 +12,16 @@
             <v:variable.set name="events" value="{v:content.get(column:'0', pageUid:'{pageIdEvents}', render:'FALSE')}" />
             <f:for each="{events}" as="event">
               <div class="event">
-                <span class="event-title">{event.header}</span>
+
+                <f:if condition="{event.header_link}">
+                  <f:then>
+                    <a class="event-title event-link" href="{event.header_link}">{event.header}</a>
+                  </f:then>
+                  <f:else>
+                    <span class="event-title">{event.header}</span>
+                  </f:else>
+                </f:if>
+
                 <f:format.html>{event.bodytext}</f:format.html>
               </div>
             </f:for>
