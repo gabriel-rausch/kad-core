@@ -50,7 +50,7 @@ kstatic.modules.totop.prototype.handleVisibility = function() {
   var self = this;
 
   // show arrow if scroll position is > 0
-  if (document.body.scrollTop > self.scrollMin) {
+  if (self.getWindowScrollTop() > self.scrollMin) {
     goog.dom.classlist.add(self.node, 'show');
   } else {
     goog.dom.classlist.remove(self.node, 'show');
