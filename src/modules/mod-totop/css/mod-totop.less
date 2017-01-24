@@ -1,0 +1,22 @@
+.mod-totop {
+  display: none;
+
+  @media screen and @desktop {
+    position: fixed;
+    z-index: 2;
+    right: 30px;
+    bottom: 30px;
+    background: white;
+
+    &.show {
+      display: block;
+    }
+
+    .icon {
+      transform: rotate(-90deg);
+      color: @col-green;
+      display: inline-block;
+      padding: 40px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
 <v:variable.set name="pageIdHonen" value="8" /><v:variable.set name="pageIdHonmaschinen" value="12" /><v:variable.set name="pageIdEntgraten" value="9" /><v:variable.set name="pageIdEvents" value="5" /><v:variable.set name="pageIdNews" value="4" /><v:variable.set name="pageIdKontakt" value="21" /><v:variable.set name="pageIdUnternehmen" value="1" /><v:variable.set name="pageIdImpressum" value="23" /><v:variable.set name="pageIdAGB" value="24" /><v:variable.set name="pageIdStellenmarkt" value="22" /><v:variable.set name="pageSearch" value="27" /><v:variable.set name="contentSchneidbelaege" value="106" />
 
+<div id="top"></div>
 <f:render partial="fluid-header" arguments="{_all}" />
 
 <!–TYPO3SEARCH_begin–>
@@ -169,6 +170,8 @@
 <!–TYPO3SEARCH_end–>
 
 <f:render partial="fluid-footer" arguments="{_all}" />
+
+<f:render partial="fluid-totop" arguments="{_all}" />
 
 
 <script>

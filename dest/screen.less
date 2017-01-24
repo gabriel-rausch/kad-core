@@ -576,6 +576,11 @@ body {
   h3 {
     margin: -1rem 0 -0.5rem;
   }
+  
+  a {
+    font-style: normal;
+    font-weight: normal;
+  }
 
 @media screen and @desktop {
 
@@ -2953,6 +2958,29 @@ body {
     }
   }
 }
+}
+
+.mod-totop {
+  display: none;
+
+  @media screen and @desktop {
+    position: fixed;
+    z-index: 2;
+    right: 30px;
+    bottom: 30px;
+    background: white;
+
+    &.show {
+      display: block;
+    }
+
+    .icon {
+      transform: rotate(-90deg);
+      color: @col-green;
+      display: inline-block;
+      padding: 40px;
+    }
+  }
 }
 
 //@import (once) "./src/css/vars.less";
