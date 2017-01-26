@@ -41,7 +41,7 @@ kstatic.modules.eventwidget.prototype.attacheEvents = function() {
   var self = this;
 
   // on resize
-  self.pubsub.subscribe('window:scroll', function() {
+  self.pubsub.subscribe('window:resize', function() {
     self.handleArrows();
   });
 
