@@ -12,8 +12,8 @@ goog.require('kstatic.module');
  * @constructor
  * @extends {kstatic.module}
  */
-kstatic.modules.eventwidget = function(id, node) {
-  goog.base(this, id, node);
+kstatic.modules.eventwidget = function(id, node, pubsub) {
+  goog.base(this, id, node, pubsub);
   this.scrollLength = 400;
   this.scrollTimeout = false;
   this.dom = {
@@ -34,10 +34,16 @@ kstatic.modules.eventwidget.prototype.start = function() {
   self.dom.eventsInner = self.node.querySelector('.events-inner');
 
   self.attacheEvents();
+  self.handleArrows();
 };
 
 kstatic.modules.eventwidget.prototype.attacheEvents = function() {
   var self = this;
+
+  // on resize
+  self.pubsub.subscribe('window:scroll', function() {
+    self.handleArrows();
+  });
 
   // click to next
   goog.events.listen(self.dom.navNext, goog.events.EventType.CLICK, function() {
@@ -76,13 +82,12 @@ kstatic.modules.eventwidget.prototype.attacheEvents = function() {
 kstatic.modules.eventwidget.prototype.moveNext = function() {
   var self = this;
   if (self.mqMatch('desktop')) {
-    console.info('desktop');
     self.nextX += self.scrollLength;
   } else {
     self.nextX += goog.style.getSize(self.dom.eventsInner).width;
-    if (self.nextX > self.getMaxScrollWidth()) {
-      self.nextX = self.getMaxScrollWidth();
-    }
+  }
+  if (self.nextX > self.getMaxScrollWidth()) {
+    self.nextX = self.getMaxScrollWidth();
   }
   self.scrollTo(self.dom.eventsInner, self.nextX, 500);
 };
@@ -103,6 +108,28 @@ kstatic.modules.eventwidget.prototype.movePrev = function() {
   self.scrollTo(self.dom.eventsInner, self.nextX, 500);
 };
 
+/**
+ * Handle arrows
+ * show or hide navi arrows if these nav elements are active/inactive
+ */
+kstatic.modules.eventwidget.prototype.handleArrows = function() {
+  var self = this;
+
+  // arrow next
+  if (self.dom.eventsInner.scrollLeft < self.getMaxScrollWidth()) {
+    self.dom.navNext.classList.add('active');
+  } else {
+    self.dom.navNext.classList.remove('active');
+  }
+
+  // arrow next
+  if (self.dom.eventsInner.scrollLeft > 0) {
+    self.dom.navPrev.classList.add('active');
+  } else {
+    self.dom.navPrev.classList.remove('active');
+  }
+};
+
 kstatic.modules.eventwidget.prototype.scrollTo = function(element, to, duration) {
   var self = this;
   var start = element.scrollLeft,
@@ -118,6 +145,8 @@ kstatic.modules.eventwidget.prototype.scrollTo = function(element, to, duration)
       self.scrollTimeout = setTimeout(function() {
         animateScroll(elapsedTime);
       }, increment);
+    } else {
+      self.handleArrows();
     }
   };
 

@@ -46,7 +46,7 @@ kstatic.modules.nav.prototype.attachListeners = function() {
 
     self.openCurrentSubs();
 
-    goog.events.listen(li, goog.events.EventType.MOUSEOVER, function() {
+    /*goog.events.listen(li, goog.events.EventType.MOUSEOVER, function() {
       if (!goog.dom.classlist.contains(li, 'open')) {
         self.removeOpenState();
         if (li.querySelector('.ul-2') !== null) {
@@ -56,7 +56,7 @@ kstatic.modules.nav.prototype.attachListeners = function() {
           self.openCurrentSubs();
         }
       }
-    });
+    });*/
   });
 
   // close subnav on leave header or hover on logo
@@ -64,18 +64,18 @@ kstatic.modules.nav.prototype.attachListeners = function() {
     self.removeOpenState();
     self.openCurrentSubs();
   });
-  goog.events.listen(document.querySelector('.mod.mod-header .logo'), goog.events.EventType.MOUSEOVER, function() {
+  /*goog.events.listen(document.querySelector('.mod.mod-header .logo'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
     self.openCurrentSubs();
-  });
+  });*/
   /*goog.events.listen(document.querySelector('.mod.mod-header .lang-picker'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
     self.openCurrentSubs();
   });*/
-  goog.events.listen(document.querySelector('.mod.mod-header .search-btn'), goog.events.EventType.MOUSEOVER, function() {
+  /*goog.events.listen(document.querySelector('.mod.mod-header .search-btn'), goog.events.EventType.MOUSEOVER, function() {
     self.removeOpenState();
     self.openCurrentSubs();
-  });
+  });*/
 };
 
 /**

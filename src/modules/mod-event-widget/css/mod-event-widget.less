@@ -74,7 +74,12 @@
     top: 46%;
     left: 5px;
     color: white;
-    cursor: pointer;
+    opacity: .3;
+
+    &.active {
+      cursor: pointer;
+      opacity: 1;
+    }
 
     &:hover {
     color: @col-grey;
