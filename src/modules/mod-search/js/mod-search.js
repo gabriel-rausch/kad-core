@@ -24,6 +24,12 @@ goog.exportSymbol('kstatic.modules.search', kstatic.modules.search);
 kstatic.modules.search.prototype.start = function() {
   var self = this;
 
+  self.extendResults();
+};
+
+kstatic.modules.search.prototype.extendResults = function() {
+  var self = this;
+
   goog.array.forEach(self.node.querySelectorAll('.tx-indexedsearch-res .tx-indexedsearch-res'), function(item) {
     var href = item.querySelector('.tx-indexedsearch-title a').getAttribute('href');
     var moreButton = document.createElement('div');
