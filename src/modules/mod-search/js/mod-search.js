@@ -25,6 +25,16 @@ kstatic.modules.search.prototype.start = function() {
   var self = this;
 
   self.extendResults();
+
+  self.copySearchtermToInputfield();
+};
+
+kstatic.modules.search.prototype.copySearchtermToInputfield = function() {
+  var self = this;
+  var searchterm = self.node.querySelector('.tx-indexedsearch-sw').innerHTML;
+  if (searchterm && searchterm !== '') {
+    self.node.querySelector('.search-input').setAttribute('value', searchterm);
+  }
 };
 
 kstatic.modules.search.prototype.extendResults = function() {
