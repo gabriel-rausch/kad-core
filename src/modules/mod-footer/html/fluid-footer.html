@@ -1,6 +1,40 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
 <footer class="mod-footer">
     <div class="main-content">
         <div class="main-content-inner">
+            <!--
+
+
+                 <f:link.page pageUid="{pageIdHonen}">{v:page.info(pageUid: pageIdHonen, field: 'nav_title')}</f:link.page>
+                <f:if condition="{data.pid} == {pageIdHonen}">
+                    <f:then>
+                <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviHoning')}" glue="," as="footerNaviHoning">
+                     <f:for each="{footerNaviHoning}" as="pageUID" key="key">
+                         <f:link.page pageUid="{pageUID}">
+                             {v:page.info(pageUid: pageUID, field: 'nav_title')}
+                         </f:link.page>
+                     </f:for>
+                </v:iterator.explode>
+                    </f:then>
+                </f:if>
+
+                ####
+
+                 <f:link.page pageUid="{pageIdEntgraten}">{v:page.info(pageUid: pageIdEntgraten, field: 'nav_title')}</f:link.page>
+                <f:if condition="data.pid == pageIdEntgraten"><f:then>
+                <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviDeburring')}" glue="," as="footerNaviDeburring">
+                     <f:for each="{footerNaviDeburring}" as="pageUID" key="key">
+                        <f:if condition="pageUID > 1"><f:then>
+                        >>{pageUID}<<
+                         <f:link.page pageUid="{pageUID}">
+                             {v:page.info(pageUid: pageUID, field: 'nav_title')}
+                         </f:link.page>
+                        </f:then></f:if>
+                     </f:for>
+                </v:iterator.explode>
+                </f:then></f:if>
+
+            -->
             <div class="left col">
                 <span class="textlabel">KADIA Produktion GmbH + Co</span>
             </div>

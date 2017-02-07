@@ -2,7 +2,8 @@
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/default/config.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/default/metadata.ts">
 
-<INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/powermail.ts">
+    <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/powermail.ts">
+    <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/ext/ktempl/ts/footer.ts">
 
 lib.mainnav = HMENU
 lib.mainnav {

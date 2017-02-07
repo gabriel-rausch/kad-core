@@ -32,7 +32,8 @@ kstatic.modules.totop.prototype.start = function() {
   // ignore hash link and scroll via scrollTop
   goog.events.listen(self.node, goog.events.EventType.CLICK, function(e) {
     e.preventDefault();
-    document.body.scrollTop = 0;
+    var scrollingElement = (document.documentElement.scrollTop !== 0) ? document.documentElement : document.body;
+    scrollingElement.scrollTop = 0;
   });
 
   self.pubsub.subscribe('window:scroll', function() {
