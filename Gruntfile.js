@@ -153,7 +153,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'dest/',
-            src: ['**/fluid-footer.html', '**/*.php']
+            src: ['**/*.html', '**/*.php']
           }
         ]
       },
