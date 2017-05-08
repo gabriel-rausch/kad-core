@@ -1,54 +1,79 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
-<footer class="mod-footer">
+<footer class="mod mod-footer">
     <div class="main-content">
         <div class="main-content-inner">
-            <!--
 
-
-                 <f:link.page pageUid="{pageIdHonen}">{v:page.info(pageUid: pageIdHonen, field: 'nav_title')}</f:link.page>
-                <f:if condition="{data.pid} == {pageIdHonen}">
-                    <f:then>
-                <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviHoning')}" glue="," as="footerNaviHoning">
-                     <f:for each="{footerNaviHoning}" as="pageUID" key="key">
-                         <f:link.page pageUid="{pageUID}">
-                             {v:page.info(pageUid: pageUID, field: 'nav_title')}
-                         </f:link.page>
-                     </f:for>
-                </v:iterator.explode>
-                    </f:then>
-                </f:if>
-
-                ####
-
-                 <f:link.page pageUid="{pageIdEntgraten}">{v:page.info(pageUid: pageIdEntgraten, field: 'nav_title')}</f:link.page>
-                <f:if condition="data.pid == pageIdEntgraten"><f:then>
-                <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviDeburring')}" glue="," as="footerNaviDeburring">
-                     <f:for each="{footerNaviDeburring}" as="pageUID" key="key">
-                        <f:if condition="pageUID > 1"><f:then>
-                        >>{pageUID}<<
-                         <f:link.page pageUid="{pageUID}">
-                             {v:page.info(pageUid: pageUID, field: 'nav_title')}
-                         </f:link.page>
-                        </f:then></f:if>
-                     </f:for>
-                </v:iterator.explode>
-                </f:then></f:if>
-
-            -->
-            <div class="left col">
-                <span class="textlabel">KADIA Produktion GmbH + Co</span>
+            <div class="col col-mobile">
+                <span class="headline">KADIA Produktion GmbH + Co</span>
+                <div class="group show">
+                    <a href="http://kadia.support/newsletter/anmelden/" class="link-text">KADIA News Honen abonnieren</a>
+                </div>
             </div>
 
-            <div class="middle col">
-                <f:link.page pageUid="{pageIdKontakt}" class="link-icon"><i class="icon icon-mail"></i></f:link.page>
+            <div class="col">
+                <a href="#" class="headline clickable">Informationen</a>
+
+                <div class="group">
+                    <f:link.page pageUid="{pageIdUnternehmen}" class="{f:if(condition: '{data.uid} == {pageIdUnternehmen}', then: 'active')}">
+                        {v:page.info(pageUid: pageIdUnternehmen, field: 'nav_title')}</f:link.page>
+                    <f:link.page pageUid="{pageIdKarriere}" class="{f:if(condition: '{data.uid} == {pageIdKarriere}', then: 'active')}">
+                        {v:page.info(pageUid: pageIdKarriere, field: 'nav_title')}</f:link.page>
+                    <f:link.page pageUid="{pageIdKontakt}" class="{f:if(condition: '{data.uid} == {pageIdKontakt}', then: 'active')}">
+                        {v:page.info(pageUid: pageIdKontakt, field: 'nav_title')}</f:link.page>
+                    <f:link.page pageUid="{pageIdImpressum}" class="{f:if(condition: '{data.uid} == {pageIdImpressum}', then: 'active')}">
+                        {v:page.info(pageUid: pageIdImpressum, field: 'nav_title')}</f:link.page>
+                    <f:link.page pageUid="{pageIdAGB}" class="{f:if(condition: '{data.uid} == {pageIdAGB}', then: 'active')}">
+                        {v:page.info(pageUid: pageIdAGB, field: 'nav_title')}</f:link.page>
+                </div>
             </div>
 
-            <div class="right col">
-                <a href="http://kadia.support/newsletter/anmelden/" class="link-text">Newsletter</a>
-                <f:link.page pageUid="{pageIdNews}" class="link-text">News</f:link.page>
-                <f:link.page pageUid="{pageIdImpressum}" class="link-text">Impressum</f:link.page>
+            <div class="col">
+                <f:link.page pageUid="{pageIdHonen}" class="{f:if(condition: '{data.pid} == {pageIdHonen}', then: 'headline clickable active', else: 'headline clickable')}">
+                    {v:page.info(pageUid: pageIdHonen, field: 'nav_title')}
+                </f:link.page>
+
+                <div class="group {f:if(condition:'{data.pid}=={pageIdHonen}',then:'show')}">
+                    <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviHoning')}" glue="," as="footerNaviHoning">
+                        <f:for each="{footerNaviHoning}" as="pageUID" key="key" iteration="iterator">
+                            <f:if condition="{iterator.isLast}">
+                                <f:then></f:then><f:else>
+                                <f:link.page pageUid="{pageUID}" class="{f:if(condition: '{data.uid} == {pageUID}', then: 'active')}">
+                                    {v:page.info(pageUid: pageUID, field: 'nav_title')}
+                                </f:link.page>
+                            </f:else>
+                            </f:if>
+                        </f:for>
+                    </v:iterator.explode>
+                </div>
             </div>
-            <div class="clear"></div>
+
+            <div class="col">
+                <f:link.page pageUid="{pageIdEntgraten}" class="{f:if(condition: '{data.pid} == {pageIdEntgraten}', then: 'headline clickable active', else: 'headline clickable')}">
+                    {v:page.info(pageUid: pageIdEntgraten, field: 'nav_title')}
+                </f:link.page>
+
+                <div class="group {f:if(condition:'{data.pid}=={pageIdEntgraten}',then:'show')}">
+                    <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviDeburring')}" glue="," as="footerNaviDeburring">
+                        <f:for each="{footerNaviDeburring}" as="pageUID" key="key" iteration="iterator">
+                            <f:if condition="{iterator.isLast}">
+                                <f:then></f:then><f:else>
+                                <f:link.page pageUid="{pageUID}" class="{f:if(condition: '{data.uid} == {pageUID}', then: 'active')}">
+                                    {v:page.info(pageUid: pageUID, field: 'nav_title')}
+                                </f:link.page>
+                            </f:else>
+                            </f:if>
+                        </f:for>
+                    </v:iterator.explode>
+                </div>
+            </div>
+
+            <div class="col col-desktop">
+                <span class="headline">KADIA Produktion GmbH + Co</span>
+                <div class="group show">
+                    <a href="http://kadia.support/newsletter/anmelden/" class="link-text">KADIA News Honen abonnieren</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </footer>

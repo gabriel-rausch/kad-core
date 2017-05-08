@@ -28,6 +28,7 @@ goog.require('kstatic.modules.singlecol');
 goog.require('kstatic.modules.address');
 goog.require('kstatic.modules.form');
 goog.require('kstatic.modules.totop');
+goog.require('kstatic.modules.footer');
 
 /**
  * Initial class to handle the application and modules
