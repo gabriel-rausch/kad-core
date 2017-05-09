@@ -1,0 +1,86 @@
+.mod-footer .newsletter-form {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .left-col, .right-col {
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .right-col {
+    float: right;
+  }
+
+  .textfield {
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid @col-antrazitLight;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  .checkboxes {
+    margin: 30px 0;
+
+    input {
+      display: none;
+    }
+
+    label {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 10px 0;
+    }
+
+    .checkbox-inner {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+      left: 0;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid @col-antrazit;
+    }
+
+    input:checked + span {
+      border: 2px solid @col-greenDark;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: @col-green;
+      }
+    }
+  }
+
+  .submit {
+    display: block;
+    text-align: right;
+    color: @col-greenDark;
+
+    input {
+      display: none;
+    }
+    .icon {
+      margin-right: 10px;
+    }
+  }
+}

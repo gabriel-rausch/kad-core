@@ -1,0 +1,104 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+<f:then>
+  <v:variable.set name="formEmail" value="Email Adress" />
+  <v:variable.set name="formFirstName" value="First Name" />
+  <v:variable.set name="formLastName" value="Last Name" />
+  <v:variable.set name="formGerman" value="German" />
+  <v:variable.set name="formEnglish" value="English" />
+  <v:variable.set name="formSpanish" value="Spanish" />
+  <v:variable.set name="formFrensh" value="Frensh" />
+  <v:variable.set name="formItalien" value="Italien" />
+  <v:variable.set name="formChinese" value="Chinese" />
+  <v:variable.set name="formSubscribe" value="Subscribe" />
+</f:then>
+<f:else>
+  <v:variable.set name="formEmail" value="Email Addresse" />
+  <v:variable.set name="formFirstName" value="Vorname" />
+  <v:variable.set name="formLastName" value="Nachname" />
+  <v:variable.set name="formGerman" value="Deutsch" />
+  <v:variable.set name="formEnglish" value="Englisch" />
+  <v:variable.set name="formSpanish" value="Spanisch" />
+  <v:variable.set name="formFrensh" value="Französisch" />
+  <v:variable.set name="formItalien" value="Italienisch" />
+  <v:variable.set name="formChinese" value="Chinesisch" />
+  <v:variable.set name="formSubscribe" value="Abonnieren" />
+</f:else>
+</f:if>
+
+<v:variable.set name="formEmail" value="Email Adress" />
+<v:variable.set name="formFirstName" value="First Name" />
+<v:variable.set name="formLastName" value="Last Name" />
+<v:variable.set name="formGerman" value="German" />
+<v:variable.set name="formEnglish" value="English" />
+<v:variable.set name="formSpanish" value="Spanish" />
+<v:variable.set name="formFrensh" value="Frensh" />
+<v:variable.set name="formItalien" value="Italien" />
+<v:variable.set name="formChinese" value="Chinese" />
+<v:variable.set name="formSubscribe" value="Subscribe" />
+
+<div id="mc_embed_signup" class="newsletter-form">
+  <form action="//kadia.us14.list-manage.com/subscribe/post?u=c6a63970b008d99bece99e1bf&amp;id=72877968bb" method="post" name="mc-embedded-subscribe-form" class="validate" target="_self">
+
+    <input type="email" value="" name="EMAIL" class="textfield" required placeholder="{formEmail}">
+
+    <div class="left-col">
+      <input type="text" value="" name="FNAME" class="textfield" required placeholder="{formFirstName}">
+    </div>
+    <div class="right-col">
+      <input type="text" value="" name="LNAME" class="textfield" required placeholder="{formLastName}">
+    </div>
+
+    <div class="checkboxes">
+      <div class="left-col">
+
+        <label class="checkbox">
+          <input type="checkbox" value="1" name="group[4291][1]">
+          <span class="checkbox-inner"></span>{formGerman}
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" value="2" name="group[4291][2]">
+          <span class="checkbox-inner"></span>{formEnglish}
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" value="4" name="group[4291][4]">
+          <span class="checkbox-inner"></span>{formSpanish}
+        </label>
+      </div>
+      <div class="right-col">
+
+        <label class="checkbox">
+          <input type="checkbox" value="8" name="group[4291][8]">
+          <span class="checkbox-inner"></span>{formFrensh}
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" value="16" name="group[4291][16]">
+          <span class="checkbox-inner"></span>{formItalien}
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" value="32" name="group[4291][32]">
+          <span class="checkbox-inner"></span>{formChinese}
+        </label>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div id="mce-responses" class="clear">
+      <div class="response" style="display:none"></div>
+      <div class="response" style="display:none"></div>
+    </div>
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_c6a63970b008d99bece99e1bf_72877968bb" tabindex="-1" value="">
+    </div>
+
+    <label class="submit">
+      <input type="submit" value="Subscribe" name="subscribe">
+      <span class="icon icon-arrow-next"></span>{formSubscribe}
+    </label>
+
+  </form>
+</div>
