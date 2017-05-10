@@ -26,16 +26,6 @@
 </f:else>
 </f:if>
 
-<v:variable.set name="formEmail" value="Email Adress" />
-<v:variable.set name="formFirstName" value="First Name" />
-<v:variable.set name="formLastName" value="Last Name" />
-<v:variable.set name="formGerman" value="German" />
-<v:variable.set name="formEnglish" value="English" />
-<v:variable.set name="formSpanish" value="Spanish" />
-<v:variable.set name="formFrensh" value="Frensh" />
-<v:variable.set name="formItalien" value="Italien" />
-<v:variable.set name="formChinese" value="Chinese" />
-<v:variable.set name="formSubscribe" value="Subscribe" />
 
 <div id="mc_embed_signup" class="newsletter-form">
   <form action="//kadia.us14.list-manage.com/subscribe/post?u=c6a63970b008d99bece99e1bf&amp;id=72877968bb" method="post" name="mc-embedded-subscribe-form" class="validate" target="_self">
@@ -53,12 +43,12 @@
       <div class="left-col">
 
         <label class="checkbox">
-          <input type="checkbox" value="1" name="group[4291][1]">
+          <input type="checkbox" value="1" name="group[4291][1]" <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} != 'EN'"><f:then>checked</f:then></f:if>>
           <span class="checkbox-inner"></span>{formGerman}
         </label>
 
         <label class="checkbox">
-          <input type="checkbox" value="2" name="group[4291][2]">
+          <input type="checkbox" value="2" name="group[4291][2]" <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'"><f:then>checked</f:then></f:if>>
           <span class="checkbox-inner"></span>{formEnglish}
         </label>
 
