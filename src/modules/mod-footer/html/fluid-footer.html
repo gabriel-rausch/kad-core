@@ -14,7 +14,7 @@
             <div class="col">
                 <a href="#" class="headline clickable">Informationen</a>
 
-                <div class="group">
+                <div class="group subnavi">
                     <f:link.page pageUid="{pageIdUnternehmen}" class="{f:if(condition: '{data.uid} == {pageIdUnternehmen}', then: 'active')}">
                         {v:page.info(pageUid: pageIdUnternehmen, field: 'nav_title')}</f:link.page>
                     <f:link.page pageUid="{pageIdKarriere}" class="{f:if(condition: '{data.uid} == {pageIdKarriere}', then: 'active')}">
@@ -33,7 +33,7 @@
                     {v:page.info(pageUid: pageIdHonen, field: 'nav_title')}
                 </f:link.page>
 
-                <div class="group {f:if(condition:'{data.pid}=={pageIdHonen}',then:'show')}">
+                <div class="group subnavi {f:if(condition:'{data.pid}=={pageIdHonen}',then:'show')}">
                     <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviHoning')}" glue="," as="footerNaviHoning">
                         <f:for each="{footerNaviHoning}" as="pageUID" key="key" iteration="iterator">
                             <f:if condition="{iterator.isLast}">
@@ -53,7 +53,7 @@
                     {v:page.info(pageUid: pageIdEntgraten, field: 'nav_title')}
                 </f:link.page>
 
-                <div class="group {f:if(condition:'{data.pid}=={pageIdEntgraten}',then:'show')}">
+                <div class="group subnavi {f:if(condition:'{data.pid}=={pageIdEntgraten}',then:'show')}">
                     <v:iterator.explode content="{f:cObject(typoscriptObjectPath:'lib.footerNaviDeburring')}" glue="," as="footerNaviDeburring">
                         <f:for each="{footerNaviDeburring}" as="pageUID" key="key" iteration="iterator">
                             <f:if condition="{iterator.isLast}">

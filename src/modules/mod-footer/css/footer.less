@@ -9,9 +9,13 @@
 
   .col {
     position: relative;
-    padding: 8px 35px;
+    padding: 5px 35px;
     box-sizing: border-box;
     width: 100%;
+  }
+
+  .col-mobile {
+    padding: 33px 35px;
   }
 
   .col-desktop {
@@ -40,10 +44,20 @@
 
   .group {
     display: none;
-    margin-top: 20px;
+    margin-top: 10px;
 
     &.show {
       display: block;
+    }
+  }
+
+  .subnavi {
+    margin-top: 8px;
+
+    a {
+      font-weight: normal;
+      color: @col-antrazitDark;
+      margin-bottom: 10px;
     }
   }
 

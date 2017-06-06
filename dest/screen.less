@@ -728,6 +728,7 @@ body {
 
 .mod-footer .newsletter-form {
   display: none;
+  margin-bottom: 15px;
 
   &.show {
     display: block;
@@ -758,7 +759,7 @@ body {
 
     &:focus {
       color: @col-antrazit;
-      border-bottom: 2x solid @col-greenDark;
+      border-bottom: 2px solid @col-antrazit;
     }
   }
 
@@ -767,7 +768,7 @@ body {
   }
 
   .checkboxes {
-    margin: 30px 0;
+    margin: 5px 0;
 
     input {
       display: none;
@@ -831,9 +832,13 @@ body {
 
   .col {
     position: relative;
-    padding: 8px 35px;
+    padding: 5px 35px;
     box-sizing: border-box;
     width: 100%;
+  }
+
+  .col-mobile {
+    padding: 33px 35px;
   }
 
   .col-desktop {
@@ -862,10 +867,20 @@ body {
 
   .group {
     display: none;
-    margin-top: 20px;
+    margin-top: 10px;
 
     &.show {
       display: block;
+    }
+  }
+
+  .subnavi {
+    margin-top: 8px;
+
+    a {
+      font-weight: normal;
+      color: @col-antrazitDark;
+      margin-bottom: 10px;
     }
   }
 
