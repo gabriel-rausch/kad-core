@@ -6,7 +6,16 @@
             <div class="col col-mobile">
                 <span class="headline">KADIA Produktion GmbH + Co</span>
                 <div class="group show">
-                    <a href="http://kadia.support/newsletter/anmelden/" class="newsletter-open-form">KADIA News Honen abonnieren</a>
+                    <a href="http://kadia.support/newsletter/anmelden/" class="newsletter-open-form">
+                        <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+                        <f:then>
+                            Subscribe to KADIA News Honing
+                        </f:then>
+                        <f:else>
+                            KADIA News Honen abonnieren
+                        </f:else>
+                        </f:if>
+                    </a>
                     <f:render partial="fluid-footer-form" arguments="{_all}" />
                 </div>
             </div>
@@ -71,7 +80,16 @@
             <div class="col col-desktop">
                 <span class="headline">KADIA Produktion GmbH + Co</span>
                 <div class="group show">
-                    <a href="http://kadia.support/newsletter/anmelden/" class="newsletter-open-form">KADIA News Honen abonnieren</a>
+                    <a href="http://kadia.support/newsletter/anmelden/" class="newsletter-open-form">
+                        <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+                        <f:then>
+                            Subscribe to KADIA News Honing
+                        </f:then>
+                        <f:else>
+                            KADIA News Honen abonnieren
+                        </f:else>
+                        </f:if>
+                    </a>
                     <f:render partial="fluid-footer-form" arguments="{_all}" />
                 </div>
             </div>
