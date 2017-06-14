@@ -31,4 +31,9 @@ kstatic.modules.form.prototype.start = function() {
     var labelContent = element.querySelector('label span');
     labelContent.innerHTML = '<span class="innerLabel"></span>' + labelContent.innerHTML;
   });
+
+  // add required attr to elements
+  goog.array.forEach(self.node.querySelectorAll('input, textarea'), function(element) {
+    element.setAttribute('required', '');
+  });
 };
