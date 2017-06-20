@@ -74,8 +74,9 @@ kstatic.modules.image.prototype.getResponsiveImgUrl = function() {
   }
 
   // if key refers to high, than take biggest image in imgSizes list
-  if (key >= self.imgSizes.length) {
-    key = self.imgSizes.length - 1;
+  if (key >= self.imgSrcs.length) {
+    key = self.imgSrcs.length - 1;
   }
+
   return self.imgSrcs[key];
 };

@@ -26,6 +26,7 @@
   "maxdepth": 9,
   "maxstatements": 100,
   "maxcomplexity": 50,
+  "debug": true,
   "globals": {
     "kstatic": true,
     "goog": true,
