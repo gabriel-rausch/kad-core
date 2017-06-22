@@ -1,0 +1,47 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<v:variable.set name="pageIdHonen" value="8" /><v:variable.set name="pageIdHonmaschinen" value="12" /><v:variable.set name="pageIdEntgraten" value="9" /><v:variable.set name="pageIdEvents" value="5" /><v:variable.set name="pageIdNews" value="4" /><v:variable.set name="pageIdKontakt" value="21" /><v:variable.set name="pageIdUnternehmen" value="10" /><v:variable.set name="pageIdImpressum" value="23" /><v:variable.set name="pageIdAGB" value="24" /><v:variable.set name="pageIdStellenmarkt" value="22" /><v:variable.set name="pageSearch" value="27" /><v:variable.set name="contentSchneidbelaege" value="106" /><v:variable.set name="pageIdKarriere" value="20" />
+
+<div id="top"></div>
+<f:render partial="fluid-header" arguments="{_all}" />
+
+<!–TYPO3SEARCH_begin–>
+<div class="main-wrapper">
+
+  <f:for each="{content}" as="item">
+    <f:render partial="fluid-title" arguments="{item:{data:{header:item.data.header}},white:1}" />
+    <f:render partial="fluid-fullimageparallax" arguments="{_all}" />
+    <f:render partial="fluid-singlecol" arguments="{item:{data:{bodytext:item.data.bodytext}},white:1}" />
+  </f:for>
+
+  <div class="pattern mod-impression{f:if(condition: '{white} == 1', then: ' white')}">
+    <div class="main-content">
+      <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+      <f:then><h2 class="title-impress-2">The following might also be of interest for you</h2></f:then>
+      <f:else><h2 class="title-impress-2">Das könnte Sie auch interessieren</h2></f:else>
+      </f:if>
+    </div>
+  </div>
+
+  <f:for each="{contentnews}" as="item">
+    <h1>Lorem!</h1>
+  </f:for>
+
+</div>
+<!–TYPO3SEARCH_end–>
+
+<f:render partial="fluid-footer" arguments="{_all}" />
+
+<f:render partial="fluid-totop" arguments="{_all}" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83796017-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
