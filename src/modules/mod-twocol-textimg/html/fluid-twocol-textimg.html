@@ -17,9 +17,12 @@
         <div class="content">
 
           <h2 class="{f:if(condition: \"{pageIdHonmaschinen} == {item.data.pid}\", then: 'pageHonmaschinen')}">{item.data.header}</h2>
-
-          <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.pageID\")} == pageIdNews">
+          <f:comment>
+            Following section is the output for twocol-pattern in the scope of news
+          </f:comment>
+          <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.pageID\")} == {pageIdNews}">
             <f:then>
+              <h3>{f:format.date(date: '{f:if(condition: "item.data.starttime == 0", then: item.data.crdate, else: item.data.starttime)}'  format: "%d. %B %Y")}</h3>
               <f:format.crop maxCharacters="500">
                 <f:format.html>{item.data.bodytext}</f:format.html>
               </f:format.crop>
@@ -30,7 +33,28 @@
               </f:link.page>
             </f:then>
             <f:else>
-              <f:format.html>{item.data.bodytext}</f:format.html>
+              <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.parentPageID\")} == {pageIdNews}">
+                <f:then>
+                  <h3>{f:format.date(date: '{f:if(condition: "item.data.starttime == 0", then: item.data.crdate, else: item.data.starttime)}'  format: "%d. %B %Y")}</h3>
+                  <f:format.crop maxCharacters="500">
+                    <f:format.html>{item.data.bodytext}</f:format.html>
+                  </f:format.crop>
+                  <f:link.page pageUid="{item.data.pid}" class="internal-link link-arrow">
+                    <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+                    <f:then>MORE</f:then><f:else>MEHR</f:else>
+                    </f:if>
+                  </f:link.page>
+                </f:then>
+
+
+
+                <f:else>
+                  <f:format.html>{item.data.bodytext}</f:format.html>
+                </f:else>
+
+
+
+              </f:if>
             </f:else>
           </f:if>
 

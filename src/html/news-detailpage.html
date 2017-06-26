@@ -8,12 +8,25 @@
 <div class="main-wrapper">
 
   <f:for each="{content}" as="item">
-    <f:render partial="fluid-title" arguments="{item:{data:{header:item.data.header}},white:1}" />
+    <f:render partial="fluid-title" arguments="{item:{data:{header:item.data.header}},white:1,newslink:1}" />
     <f:render partial="fluid-fullimageparallax" arguments="{_all}" />
-    <f:render partial="fluid-singlecol" arguments="{item:{data:{bodytext:item.data.bodytext}},white:1}" />
+
+
+
+    <div class="pattern mod mod-singlecol white">
+      <div class="main-content">
+        <div class="main-content-inner">
+          <div class="inner">
+            <h2>{item.data.header}</h2>
+            <h3>{f:format.date(date: '{f:if(condition: "item.data.starttime == 0", then: item.data.crdate, else: item.data.starttime)}'  format: "%d. %B %Y")}</h3>
+            <f:format.html>{item.data.bodytext}</f:format.html>
+          </div>
+        </div>
+      </div>
+    </div>
   </f:for>
 
-  <div class="pattern mod-impression{f:if(condition: '{white} == 1', then: ' white')}">
+  <div class="pattern mod-impression less-height">
     <div class="main-content">
       <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
       <f:then><h2 class="title-impress-2">The following might also be of interest for you</h2></f:then>
@@ -22,8 +35,9 @@
     </div>
   </div>
 
-  <f:for each="{contentnews}" as="item">
-    <h1>Lorem!</h1>
+  <f:comment> Show all other news, exclude this news item </f:comment>
+  <f:for each="{contentnews}" as="item" iteration="iterator" key="entrynumber">
+    <f:render partial="fluid-twocol-textimg" arguments="{item:item,outerspacing:1,order:'{f:if(condition:iterator.isOdd, then: 1)}',pageIdNews:pageIdNews}" />
   </f:for>
 
 </div>

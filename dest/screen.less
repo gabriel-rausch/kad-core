@@ -1757,6 +1757,12 @@ body {
     background: white;
   }
 
+  &.less-height {
+    .main-content {
+      padding-bottom: 0;
+    }
+  }
+
   .main-content {
     padding-bottom: @padding-v-small;
     padding-top: @padding-v-small;
@@ -2651,6 +2657,13 @@ body {
     border-bottom: 10px solid @col-green;
     display: inline-block;
     margin-top: 20px;
+  }
+
+  .internal-link {
+    display: block;
+    margin-top: 10px;
+    color: @col-greenDark;
+    font-style: normal;
   }
 
 @media screen and @phone {

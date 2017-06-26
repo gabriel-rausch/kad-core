@@ -8,6 +8,18 @@
       <h1 class="h1">{item.data.header}</h1>
       <f:format.html>{item.data.bodytext}</f:format.html>
       <span class="border"></span>
+
+      <f:if condition="{newslink} == 1"><f:then>
+        <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+          <f:then>
+            <f:link.page pageUid="4" class="internal-link h2">ALL NEWS</f:link.page>
+          </f:then>
+          <f:else>
+            <f:link.page pageUid="4" class="internal-link h2">ALLE NEWS</f:link.page>
+          </f:else>
+        </f:if>
+      </f:then></f:if>
+
     </div>
 
   </div>

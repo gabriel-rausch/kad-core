@@ -7,6 +7,8 @@
 
 lib.pageID = TEXT
 lib.pageID.data = TSFE:id
+lib.parentPageID = TEXT
+lib.parentPageID.data = leveluid : -2
 
 lib.mainnav = HMENU
 lib.mainnav {
@@ -130,8 +132,8 @@ page.10 {
 
 [globalVar = TSFE:page|uid=4]
 
-temp.newsPUIs = HMENU
-temp.newsPUIs {
+lib.newsPUIs = HMENU
+lib.newsPUIs {
     special = directory
     special.value = 4
     entryLevel = 0
@@ -147,14 +149,11 @@ temp.newsPUIs {
     2 < .1
 }
 
-#page = PAGE
-#page.10 < temp.newsPUIs
-
 page = PAGE
 page.5 = LOAD_REGISTER
 page.5 {
     currentList = TEXT
-    currentList.cObject < temp.newsPUIs
+    currentList.cObject < lib.newsPUIs
 }
 page.10 = FLUIDTEMPLATE
 page.10 {
@@ -163,13 +162,11 @@ page.10 {
     file = typo3conf/ext/ktempl/main.html
     partialRootPath = typo3conf/ext/ktempl/
     layoutRootPath = typo3conf/ext/ktempl/
-
-
-        dataProcessing {
+    dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
             table = tt_content
-            pidInList.cObject < temp.newsPUIs
+            pidInList.cObject < lib.newsPUIs
             orderBy.dataWrap = FIND_IN_SET(pid,'{register:currentList}'),|
             languageField = sys_language_uid
             as = content
@@ -190,7 +187,30 @@ page.10 {
 
 [globalVar = TSFE:page|pid=4]
 
+lib.newsPUIs = HMENU
+lib.newsPUIs {
+    special = directory
+    special.value = 4
+    entryLevel = 0
+    excludeUidList.data = TSFE:id
+
+    1 = TMENU
+    1 {
+        expAll = 1
+        noBlur = 1
+        NO.allStdWrap.field = uid
+        NO.allStdWrap.wrap = | |*|  ,|
+    }
+    2 < .1
+}
+
+
 page = PAGE
+page.5 = LOAD_REGISTER
+page.5 {
+    currentList = TEXT
+    currentList.cObject < lib.newsPUIs
+}
 page.10 = FLUIDTEMPLATE
 page.10 {
     format = html
@@ -198,7 +218,6 @@ page.10 {
     file = typo3conf/ext/ktempl/news-detailpage.html
     partialRootPath = typo3conf/ext/ktempl/
     layoutRootPath = typo3conf/ext/ktempl/
-
     dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
@@ -217,7 +236,7 @@ page.10 {
         20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         20 {
             table = tt_content
-            pidInList = 33
+            pidInList.cObject < lib.newsPUIs
             languageField = sys_language_uid
             as = contentnews
             dataProcessing {
