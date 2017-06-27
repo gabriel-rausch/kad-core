@@ -1,0 +1,42 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<div class="pattern mod mod-twocoltextimg{f:if(condition: '{outerspacing} == 1', then: ' outerspacing')}"
+     id="uid{item.data.uid}">
+  <div class="main-content">
+    <div class="main-content-inner">
+      <div class="{f:if(condition: '{order} == 1', then: 'col-right', else: 'col-left')}">
+        <div class="content">
+
+          <h2>NEWS</h2>
+          <h3>{f:format.date(date: '{f:if(condition: "item.data.starttime == 0", then: item.data.crdate, else: item.data.starttime)}'  format: "%d. %B %Y")}</h3>
+          <h4>{item.data.header}</h4>
+
+          <f:format.crop maxCharacters="500">
+            <f:format.html>{item.data.bodytext}</f:format.html>
+          </f:format.crop>
+
+          <p><f:link.page pageUid="{item.data.pid}" class="internal-link link-arrow">
+              <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+              <f:then>MORE</f:then><f:else>MEHR</f:else>
+              </f:if>
+            </f:link.page></p>
+
+          <p class="align-right">
+            <f:link.page pageUid="{pageIdNews}" class="internal-link link-btn">
+              <f:if condition="{f:cObject(typoscriptObjectPath: \"lib.language\")} == 'EN'">
+              <f:then>ALL NEWS</f:then><f:else>ALLE NEWS</f:else>
+              </f:if>
+            </f:link.page>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="{f:if(condition: '{order} == 1', then: 'col-left flex', else: 'col-right flex')}">
+        <f:render partial="fluid-image" arguments="{data: {uid:'{item.files.0.originalFile.uid}', type:'{f:if(condition: \'{white} == 1\', then: \'contain\', else: \'cover\')}'}}" />
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

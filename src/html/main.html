@@ -1,5 +1,6 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}{namespace flux=FluidTYPO3\Flux\ViewHelpers}
 <v:variable.set name="pageIdHonen" value="8" /><v:variable.set name="pageIdHonmaschinen" value="12" /><v:variable.set name="pageIdEntgraten" value="9" /><v:variable.set name="pageIdEvents" value="5" /><v:variable.set name="pageIdNews" value="4" /><v:variable.set name="pageIdKontakt" value="21" /><v:variable.set name="pageIdUnternehmen" value="10" /><v:variable.set name="pageIdImpressum" value="23" /><v:variable.set name="pageIdAGB" value="24" /><v:variable.set name="pageIdStellenmarkt" value="22" /><v:variable.set name="pageSearch" value="27" /><v:variable.set name="contentSchneidbelaege" value="106" /><v:variable.set name="pageIdKarriere" value="20" />
+<v:variable.set name="latestNewskey" value="0" />
 
 <div id="top"></div>
 <f:render partial="fluid-header" arguments="{_all}" />
@@ -158,6 +159,12 @@
                     </f:case>
                     <f:case value="181">
                         <f:render partial="fluid-about-right" arguments="{item:item}" />
+                    </f:case>
+                    <f:case value="185">
+                        <f:render partial="fluid-twocol-singlenews" arguments="{item:latestnews.0,outerspacing:1,pageIdNews:pageIdNews}" />
+                    </f:case>
+                    <f:case value="186">
+                        <f:render partial="fluid-twocol-singlenews" arguments="{item:latestnews.0,outerspacing:1,order:1,pageIdNews:pageIdNews}" />
                     </f:case>
                     <f:case default="TRUE">
                     </f:case>

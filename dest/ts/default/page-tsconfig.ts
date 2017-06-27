@@ -50,6 +50,8 @@ TCEFORM.tt_content.layout.addItems.160 = Map & Adresse
 TCEFORM.tt_content.layout.addItems.170 = Stellenmarkt
 TCEFORM.tt_content.layout.addItems.180 = Impressum (linke Spalte)
 TCEFORM.tt_content.layout.addItems.181 = Impressum (rechte Spalte)
+TCEFORM.tt_content.layout.addItems.185 = Single News Text/Bild
+TCEFORM.tt_content.layout.addItems.186 = Single-News Bild/Text
 
 TCEFORM.tt_content.subheader.disabled = 0
 
