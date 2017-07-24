@@ -70,9 +70,9 @@
   }
 
   .col {
-    padding: 15px 20px;
+    padding: 15px 0;
     float: left;
-    width: auto;
+    width: 22%;
   }
 
   .col-mobile {
@@ -80,7 +80,6 @@
   }
   .col-desktop {
     display: block;
-    width: 35%;
   }
 
   .group {
@@ -97,10 +96,14 @@
     }
   }
 }
-
 @media screen and @large {
-  .col-desktop {
-    width: 25%;
+
+  .main-content-inner {
+    justify-content: space-around;
+  }
+
+  .col {
+    width: 20%;
   }
 }
 }
